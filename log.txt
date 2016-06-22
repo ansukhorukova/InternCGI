@@ -1,3 +1,6 @@
 Message: I'm a message || Type: error || Creation Date: 22-06-2016 18:53:15
 Message: I'm a message || Type: warning || Creation Date: 22-06-2016 18:53:15
 Message: I'm a message || Type: notice || Creation Date: 22-06-2016 18:53:15
+Message: I'm a message || Type: error || Creation Date: 22-06-2016 19:16:17
+Message: I'm a message || Type: warning || Creation Date: 22-06-2016 19:16:17
+Message: I'm a message || Type: notice || Creation Date: 22-06-2016 19:16:17

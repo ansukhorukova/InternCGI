@@ -1,12 +1,12 @@
 <?php
+require_once 'ConfigDB.php';
 require_once 'LoggerInDB.php';
 require_once 'LoggerInFileSystem.php';
 
 $message = "I'm a message";
-
 /**Use logger to write log into DB
 */
-$LoggerInDB = new LoggerInDB();
+$LoggerInDB = new LoggerInDB(DSN, NAME, PASSWORD);
 
 $LoggerInDB->error($message);
 $LoggerInDB->warning($message);

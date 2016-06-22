@@ -5,3 +5,4 @@ Config.php - The file contains information to login into DB
 log.txt - The file with log messages
 LoggerInterface.php - The file contains interface for log app
 LoggerAbstract.php - The file contains abstract class and implement interface
+LoggerFile.php - The file contains path to writable logfile
