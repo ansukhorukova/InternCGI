@@ -26,5 +26,3 @@ $LoggerInFileSystem = new LoggerInFileSystem($logFile);
     $LoggerInFileSystem->error($message);
     $LoggerInFileSystem->warning($message);
     $LoggerInFileSystem->notice($message);
-
-?>
