@@ -9,9 +9,9 @@ $message = "I'm a message";
 */
 $LoggerInDB = new LoggerInDB($ConnectToPDODB->connectToDB());
 
-$LoggerInDB->error($message);
-$LoggerInDB->warning($message);
-$LoggerInDB->notice($message);
+    $LoggerInDB->error($message);
+    $LoggerInDB->warning($message);
+    $LoggerInDB->notice($message);
 
 /**
  * When it'll finish to work with PDO database
@@ -23,8 +23,8 @@ unset($ConnectToPDODB);
  */
 $LoggerInFileSystem = new LoggerInFileSystem($logFile);
 
-$LoggerInFileSystem->error($message);
-$LoggerInFileSystem->warning($message);
-$LoggerInFileSystem->notice($message);
+    $LoggerInFileSystem->error($message);
+    $LoggerInFileSystem->warning($message);
+    $LoggerInFileSystem->notice($message);
 
 ?>
