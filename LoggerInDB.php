@@ -2,14 +2,10 @@
 require_once 'LoggerAbstract.php';
 
 class LoggerInDB extends LoggerAbstract {
+    protected $dbh = null;
 
-    function __construct($dns, $name, $password) {
-        $this->dbh = new PDO($dns, $name, $password);
-    }
-
-    function __destruct() {
-        // TODO: Implement __destruct() method.
-        unset($this->dbh);
+    function __construct($dbh) {
+        $this->dbh = $dbh;
     }
 
     protected function _writeMessage($message, $type) {

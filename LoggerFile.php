@@ -1,2 +1,2 @@
 <?php
-const LOG_FILE = 'log.txt';
+$logFile = 'log.txt';
