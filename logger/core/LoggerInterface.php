@@ -1,4 +1,6 @@
 <?php
+namespace logger\core;
+
 interface LoggerInterface {
     const TYPE_WARNING = 'warning';
     const TYPE_ERROR = 'error';

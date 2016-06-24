@@ -1,10 +1,11 @@
 <?php
-require_once 'LoggerAbstract.php';
-
+namespace logger\controller;
+use logger\core\LoggerAbstract;
+use logger\config\ConfigPathToLogFile;
 class LoggerInFileSystem extends LoggerAbstract {
 
-    function __construct($logFile) {
-        $this->logFile = $logFile;
+    function __construct() {
+        $this->logFile = ConfigPathToLogFile::$logFile;
     }
 
     protected function _writeMessage($message, $type) {

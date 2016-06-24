@@ -1,13 +1,14 @@
 <?php
-require_once 'ConnectToPDODB.php';
-require_once 'LoggerFile.php';
-require_once 'LoggerInDB.php';
-require_once 'LoggerInFileSystem.php';
 
+require_once './autoloader.php';
+use logger\controller\LoggerInFileSystem as LoggerInFileSystem;
+use logger\controller\LoggerInDB as LoggerInDB;
 $message = "I'm a message";
 /**Use logger to write log into DB
 */
-$LoggerInDB = new LoggerInDB($ConnectToPDODB->connectToDB());
+$LoggerInDB = new LoggerInDB( logger\config\ConfigPdoDataBase::DSN,
+                                                logger\config\ConfigPdoDataBase::NAME,
+                                                logger\config\ConfigPdoDataBase::PASSWORD);
 
     $LoggerInDB->error($message);
     $LoggerInDB->warning($message);
@@ -17,11 +18,10 @@ $LoggerInDB = new LoggerInDB($ConnectToPDODB->connectToDB());
  * When it'll finish to work with PDO database
  * it'll close connection to database
  */
-unset($ConnectToPDODB);
 
 /**Use logger to write log into file
  */
-$LoggerInFileSystem = new LoggerInFileSystem($logFile);
+$LoggerInFileSystem = new LoggerInFileSystem();
 
     $LoggerInFileSystem->error($message);
     $LoggerInFileSystem->warning($message);
