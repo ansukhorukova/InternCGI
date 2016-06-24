@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/ConfigPDODB.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/ConnectToPDODB.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/LoggerAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/LoggerFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/LoggerInDB.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/LoggerInFileSystem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/LoggerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/log.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/index.php" afterPath="$PROJECT_DIR$/logger/index.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logger/readme.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/log.txt" afterPath="$PROJECT_DIR$/logs/log.txt" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/logs/log.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-6042">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
@@ -63,6 +55,16 @@
               <folding>
                 <element signature="e#6#22#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,11 +175,11 @@
         <option value="$PROJECT_DIR$/logger/model/ConnectToPdoDataBase.php" />
         <option value="$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
         <option value="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logger/autoloader.php" />
         <option value="$PROJECT_DIR$/logger/index.php" />
         <option value="$PROJECT_DIR$/logs/log.txt" />
         <option value="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -430,12 +432,12 @@
       <workItem from="1466662233555" duration="5693000" />
       <workItem from="1466674195284" duration="3841000" />
       <workItem from="1466679548202" duration="15321000" />
-      <workItem from="1466747933976" duration="2296000" />
+      <workItem from="1466747933976" duration="3000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40677000" />
+    <option name="totallyTimeSpent" value="41381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -613,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logger/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
@@ -634,7 +628,7 @@
     <entry file="file://$PROJECT_DIR$/logs/log.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6042">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -656,6 +650,14 @@
           <folding>
             <element signature="e#6#22#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
