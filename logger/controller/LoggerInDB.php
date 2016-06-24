@@ -1,8 +1,7 @@
 <?php
 namespace logger\controller;
 use logger\core\LoggerAbstract;
-use logger\model;
-use PDO;
+use logger\config\ConfigPdoDataBase as ConfigPdoDataBase;
 
 class LoggerInDB extends LoggerAbstract {
 
@@ -11,12 +10,12 @@ class LoggerInDB extends LoggerAbstract {
     protected $_password = null;
     protected $dbh = null;
 
-    public function __construct($dsn, $name, $password) {
+    public function __construct() {
         // TODO: __construct() method writes connection data into local variables
-        $this->_dsn = $dsn;
-        $this->_name = $name;
-        $this->_password = $password;
-        $this->dbh = new PDO($this->_dsn, $this->_name, $this->_password);
+        $this->_dsn = ConfigPdoDataBase::$dsn;
+        $this->_name = ConfigPdoDataBase::$name;
+        $this->_password = ConfigPdoDataBase::$password;
+        $this->dbh = new \PDO($this->_dsn, $this->_name, $this->_password);
     }
 
     public function __destruct() {

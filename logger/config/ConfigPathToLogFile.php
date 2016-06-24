@@ -1,5 +1,5 @@
 <?php
 namespace  logger\config;
 class ConfigPathToLogFile {
-    static $logFile = '../logs/log.txt';
+    static $logFile = '/logger/logs/log.txt';
 }
