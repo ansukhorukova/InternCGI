@@ -1,5 +1,3 @@
-index.php - The file implements either write to DB or file
-
 ./config/ConfigPdoDataBase.php - The file contains information to login into DB
 
 ./controller/LoggerInDB.php - The file implements to write message in DB
