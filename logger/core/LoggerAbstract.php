@@ -6,19 +6,19 @@ use logger\config;
 abstract class LoggerAbstract implements LoggerInterface {
 
     public function warning($message) {
-        // TODO: Implement warning() method.
+        // Implement warning() method.
         $this->_writeMessage($message, LoggerInterface::TYPE_WARNING);
     }
 
     public function error($message)
     {
-        // TODO: Implement error() method.
+        // Implement error() method.
         $this->_writeMessage($message, LoggerInterface::TYPE_ERROR);
     }
 
     public function notice($message)
     {
-        // TODO: Implement notice() method.
+        // Implement notice() method.
         $this->_writeMessage($message, LoggerInterface::TYPE_NOTICE);
     }
 
