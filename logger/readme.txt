@@ -1,5 +1,7 @@
 ./config/ConfigPdoDataBase.php - The file contains information to login into DB
 
+./config/ConnectToDataBase.php - The file implements connection to DB
+
 ./controller/LoggerInDB.php - The file implements to write message in DB
 
 ./controller/LoggerInFileSystem.php - The file implements to write message in file

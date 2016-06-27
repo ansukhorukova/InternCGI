@@ -1,25 +1,19 @@
 <?php
 namespace logger\controller;
 use logger\core\LoggerAbstract;
-use logger\config\ConfigPdoDataBase as ConfigPdoDataBase;
+use logger\model\ConnectToDataBase as ConnectToDataBase;
 
 class LoggerInDB extends LoggerAbstract {
 
-    protected $_dsn = null;
-    protected $_name = null;
-    protected $_password = null;
     protected $dbh = null;
 
     public function __construct() {
-        // TODO: __construct() method writes connection data into local variables
-        $this->_dsn = ConfigPdoDataBase::$dsn;
-        $this->_name = ConfigPdoDataBase::$name;
-        $this->_password = ConfigPdoDataBase::$password;
-        $this->dbh = new \PDO($this->_dsn, $this->_name, $this->_password);
+        // TODO: Implement __construct() method for connect to DB
+        $this->dbh = ConnectToDataBase::_ConnectToPdo();
     }
 
     public function __destruct() {
-        // TODO: Implement __destruct() method.
+        // TODO: Implement __destruct() method. It closes connection to DB when object will be removed
         unset($this->dbh);
     }
     
