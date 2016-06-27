@@ -1,11 +1,15 @@
 <?php
+
 namespace logger\core;
+
 use logger\controller;
 use logger\config;
 
-abstract class LoggerAbstract implements LoggerInterface {
+abstract class LoggerAbstract implements LoggerInterface
+{
 
-    public function warning($message) {
+    public function warning($message)
+    {
         /**
          * Implement warning() method.
          */
@@ -27,7 +31,7 @@ abstract class LoggerAbstract implements LoggerInterface {
         /**
          * Implement notice() method.
          */
-        
+
         $this->_writeMessage($message, LoggerInterface::TYPE_NOTICE);
     }
 
