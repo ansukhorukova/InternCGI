@@ -4,5 +4,5 @@ namespace  logger\config;
 
 class ConfigPathToLogFile
 {
-    static $logFile = '/logger/logs/log.txt';
+    public static $logFile = '/logger/logs/log.txt';
 }
