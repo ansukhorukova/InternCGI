@@ -33,3 +33,6 @@ Message: I'm a message || Type: notice || Creation Date: 27-06-2016 12:20:42
 Message: I'm a message || Type: error || Creation Date: 27-06-2016 17:00:32
 Message: I'm a message || Type: warning || Creation Date: 27-06-2016 17:00:42
 Message: I'm a message || Type: notice || Creation Date: 27-06-2016 17:00:43
+Message: I'm a message || Type: error || Creation Date: 27-06-2016 17:51:21
+Message: I'm a message || Type: warning || Creation Date: 27-06-2016 17:51:21
+Message: I'm a message || Type: notice || Creation Date: 27-06-2016 17:51:21
