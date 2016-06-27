@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" afterPath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" afterPath="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/core/LoggerAbstract.php" afterPath="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/logs/log.txt" afterPath="$PROJECT_DIR$/logger/logs/log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" afterPath="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" />
-    </list>
+    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="" />
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -39,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -51,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigPathToLogFile.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConfigPathToLogFile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -398,7 +391,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test.me" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="PHP Script.index.php">
@@ -463,18 +456,18 @@
       <workItem from="1466674195284" duration="3841000" />
       <workItem from="1466679548202" duration="15321000" />
       <workItem from="1466747933976" duration="11337000" />
-      <workItem from="1467007700811" duration="6527000" />
+      <workItem from="1467007700811" duration="9570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56245000" />
+    <option name="totallyTimeSpent" value="59288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="24" width="1862" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25110132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25110132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5018868" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -594,16 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#7#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logger/autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -672,6 +655,16 @@
         <state relative-caret-position="108">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding>
+            <element signature="e#7#70#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
