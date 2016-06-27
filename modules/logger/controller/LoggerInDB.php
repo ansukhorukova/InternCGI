@@ -1,9 +1,9 @@
 <?php
 
-namespace logger\controller;
+namespace modules\logger\controller;
 
-use logger\core\LoggerAbstract;
-use logger\model\ConnectToDataBase as ConnectToDataBase;
+use modules\logger\core\abstracts\LoggerAbstract;
+use model\ConnectToDataBase as ConnectToDataBase;
 
 class LoggerInDB extends LoggerAbstract
 {

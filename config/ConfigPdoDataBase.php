@@ -1,6 +1,6 @@
 <?php
 
-namespace  logger\config;
+namespace  config;
 
 class ConfigPdoDataBase
 {

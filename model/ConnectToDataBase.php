@@ -1,8 +1,8 @@
 <?php
 
-namespace logger\model;
+namespace model;
 
-use logger\config\ConfigPdoDataBase as ConfigPdoDataBase;
+use config\ConfigPdoDataBase as ConfigPdoDataBase;
 
 class ConnectToDataBase
 {

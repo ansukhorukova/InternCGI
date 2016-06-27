@@ -1,9 +1,9 @@
 <?php
 
-use logger\controller\LoggerInFileSystem as LoggerInFileSystem;
-use logger\controller\LoggerInDB as LoggerInDB;
+use modules\logger\controller\LoggerInFileSystem as LoggerInFileSystem;
+use modules\logger\controller\LoggerInDB as LoggerInDB;
 
-require_once './logger/autoloader.php';
+require_once './autoloader.php';
 
 $message = "I'm a message";
 

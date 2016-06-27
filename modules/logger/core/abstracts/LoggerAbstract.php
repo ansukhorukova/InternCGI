@@ -1,9 +1,10 @@
 <?php
 
-namespace logger\core;
+namespace modules\logger\core\abstracts;
 
-use logger\controller;
-use logger\config;
+use modules\logger\controller;
+use modules\logger\core\interfaces\LoggerInterface as LoggerInterface;
+use config;
 
 abstract class LoggerAbstract implements LoggerInterface
 {
