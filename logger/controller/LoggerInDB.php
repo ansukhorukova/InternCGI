@@ -9,7 +9,7 @@ class LoggerInDB extends LoggerAbstract {
 
     public function __construct() {
         // Implement __construct() method for connect to DB
-        $this->dbh = ConnectToDataBase::_ConnectToPdo();
+        $this->dbh = ConnectToDataBase::_connectToPdo();
     }
 
     public function __destruct() {
