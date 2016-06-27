@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" afterPath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/logs/log.txt" afterPath="$PROJECT_DIR$/logger/logs/log.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/readme.txt" afterPath="$PROJECT_DIR$/logger/readme.txt" />
     </list>
     <ignored path="InternCGI.iws" />
@@ -69,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoggerInDB.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoggerInDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/controller/LoggerInDB.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -82,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logger/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -461,12 +458,12 @@
       <workItem from="1466674195284" duration="3841000" />
       <workItem from="1466679548202" duration="15321000" />
       <workItem from="1466747933976" duration="11337000" />
-      <workItem from="1467007700811" duration="1476000" />
+      <workItem from="1467007700811" duration="1643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51194000" />
+    <option name="totallyTimeSpent" value="51361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="24" width="1862" height="1056" extended-state="6" />
@@ -636,14 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -670,6 +659,14 @@
             <element signature="e#35#66#0#PHP" expanded="true" />
             <marker date="1467009037717" expanded="true" signature="695:766" ph="INSERT INTO `log`... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
