@@ -13,7 +13,6 @@ abstract class LoggerAbstract implements LoggerInterface
         /**
          * Implement warning() method.
          */
-
         $this->_writeMessage($message, LoggerInterface::TYPE_WARNING);
     }
 
@@ -22,7 +21,6 @@ abstract class LoggerAbstract implements LoggerInterface
         /**
          * Implement error() method.
          */
-
         $this->_writeMessage($message, LoggerInterface::TYPE_ERROR);
     }
 
@@ -31,7 +29,6 @@ abstract class LoggerAbstract implements LoggerInterface
         /**
          * Implement notice() method.
          */
-
         $this->_writeMessage($message, LoggerInterface::TYPE_NOTICE);
     }
 

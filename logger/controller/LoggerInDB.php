@@ -15,7 +15,6 @@ class LoggerInDB extends LoggerAbstract
         /**
          * Implement __construct() method for connect to DB
          */
-
         $this->dbh = ConnectToDataBase::_connectToPdo();
     }
 
@@ -24,14 +23,15 @@ class LoggerInDB extends LoggerAbstract
         /**
          * Implement __destruct() method. It closes connection to DB when object will be removed
          */
-
         unset($this->dbh);
     }
     
     protected function _writeMessage($message, $type)
     {
-        // Implement abstract writeMessage() method.
+        /**
+         * Implement abstract writeMessage() method.
+         */
         $statement = $this->dbh->prepare("INSERT INTO `log` (`message`, `type`, `creation_date`) values (?, ?, ?)");
-        $inserted = $statement->execute([$message, $type, date('Y-m-d H:i:s')]);
+        $statement->execute([$message, $type, date('Y-m-d H:i:s')]);
     }
 }

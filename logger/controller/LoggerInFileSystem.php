@@ -11,6 +11,9 @@ class LoggerInFileSystem extends LoggerAbstract
 
     function __construct()
     {
+        /**
+         * Getting path to store logs
+         */
         $this->logFile = $_SERVER['DOCUMENT_ROOT'] . ConfigPathToLogFile::$logFile;
     }
 
@@ -19,7 +22,6 @@ class LoggerInFileSystem extends LoggerAbstract
         /**
          * Implement abstract writeMessage() method.
          */
-
         $fileOpen = fopen($this->logFile, 'a+');
         fwrite($fileOpen, 'Message: ' . $message . ' || ');
         fwrite($fileOpen, 'Type: ' . $type . ' || ');
