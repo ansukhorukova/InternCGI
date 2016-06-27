@@ -4,12 +4,8 @@
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/autoloader.php" afterPath="$PROJECT_DIR$/logger/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" afterPath="$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" afterPath="$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" afterPath="$PROJECT_DIR$/logger/controller/LoggerInDB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" afterPath="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/core/LoggerAbstract.php" afterPath="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/core/LoggerInterface.php" afterPath="$PROJECT_DIR$/logger/core/LoggerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/logs/log.txt" afterPath="$PROJECT_DIR$/logger/logs/log.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" afterPath="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" />
     </list>
     <ignored path="InternCGI.iws" />
@@ -35,18 +31,18 @@
       <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="162">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#7#70#0#PHP" expanded="true" />
               </folding>
@@ -54,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigPathToLogFile.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConfigPathToLogFile.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -112,8 +108,8 @@
       <file leaf-file-name="ConnectToDataBase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/model/ConnectToDataBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="306">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,8 +118,8 @@
       <file leaf-file-name="LoggerAbstract.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/core/LoggerAbstract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state relative-caret-position="493">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#31#53#0#PHP" expanded="true" />
               </folding>
@@ -134,8 +130,8 @@
       <file leaf-file-name="LoggerInterface.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logger/core/LoggerInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="234">
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -182,15 +178,15 @@
         <option value="$PROJECT_DIR$/logger/logs/log.txt" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/logger/readme.txt" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
         <option value="$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" />
         <option value="$PROJECT_DIR$/logger/controller/LoggerInDB.php" />
         <option value="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" />
-        <option value="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
         <option value="$PROJECT_DIR$/logger/core/LoggerInterface.php" />
-        <option value="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logger/autoloader.php" />
+        <option value="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" />
+        <option value="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
       </list>
     </option>
   </component>
@@ -466,12 +462,12 @@
       <workItem from="1466674195284" duration="3841000" />
       <workItem from="1466679548202" duration="15321000" />
       <workItem from="1466747933976" duration="11337000" />
-      <workItem from="1467007700811" duration="5158000" />
+      <workItem from="1467007700811" duration="5483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54876000" />
+    <option name="totallyTimeSpent" value="55201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="24" width="1862" height="1056" extended-state="6" />
@@ -511,7 +507,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>13</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>17</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -597,29 +610,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logger/controller/LoggerInDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="493">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#37#68#0#PHP" expanded="true" />
-            <marker date="1467018009869" expanded="true" signature="741:812" ph="INSERT INTO `log`... " />
+            <element signature="e#7#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger/autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger/model/ConnectToDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger/core/LoggerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger/core/LoggerAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#31#53#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -634,47 +664,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger/core/LoggerAbstract.php">
+    <entry file="file://$PROJECT_DIR$/logger/controller/LoggerInDB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="367">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding>
-            <element signature="e#31#53#0#PHP" expanded="true" />
+            <element signature="e#37#68#0#PHP" expanded="true" />
+            <marker date="1467018009869" expanded="true" signature="741:812" ph="INSERT INTO `log`... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger/core/LoggerInterface.php">
+    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logger/model/ConnectToDataBase.php">
+    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logger/autoloader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#70#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
