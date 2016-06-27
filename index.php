@@ -5,8 +5,11 @@ use logger\controller\LoggerInDB as LoggerInDB;
 require_once './logger/autoloader.php';
 
 $message = "I'm a message";
-/**Use logger to write log into DB
+
+/**
+ * Use logger to write log into DB
  */
+
 $LoggerInDB = new LoggerInDB();
 
 $LoggerInDB->error($message);
@@ -20,8 +23,10 @@ $LoggerInDB->notice($message);
 
 unset($LoggerInDB);
 
-/**Use logger to write log into file
+/**
+ * Use logger to write log into file
  */
+
 $LoggerInFileSystem = new LoggerInFileSystem();
 
 $LoggerInFileSystem->error($message);

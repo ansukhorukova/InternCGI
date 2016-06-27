@@ -11,7 +11,10 @@ class LoggerInFileSystem extends LoggerAbstract {
     }
 
     protected function _writeMessage($message, $type) {
-        // Implement abstract writeMessage() method.
+        /**
+         * Implement abstract writeMessage() method.
+         */
+        
         $fileOpen = fopen($this->logFile, 'a+');
         fwrite($fileOpen, 'Message: ' . $message . ' || ');
         fwrite($fileOpen, 'Type: ' . $type . ' || ');
