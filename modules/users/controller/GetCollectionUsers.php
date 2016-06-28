@@ -2,9 +2,9 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\GetUsersFromDataBaseAbstract;
+use modules\users\core\abstracts\GetCollectionUsersAbstract;
 
-class GetCollectionUsers extends GetUsersFromDataBaseAbstract
+class GetCollectionUsers extends GetCollectionUsersAbstract
 {
     protected function _showUsers($users, $dbh)
     {

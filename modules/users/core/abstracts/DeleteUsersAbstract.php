@@ -2,14 +2,12 @@
 
 namespace modules\users\core\abstracts;
 
-use modules\users\core\interfaces\CreateUsersInterface;
-
-abstract class CreateUsersAbstract implements CreateUsersInterface
+abstract class DeleteUsersAbstract
 {
-    public function delete(array $newUser)
+    public function delete(array $deleteUser, $dbh)
     {
-        $this->_deleteUsers($newUser);
+        $this->_deleteUsers($deleteUser, $dbh);
     }
 
-    abstract protected function _deleteUsers(array $newUser);
+    abstract protected function _deleteUsers($deleteUser, $dbh);
 }

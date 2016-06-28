@@ -3,6 +3,7 @@
 namespace model;
 
 use modules\users\controller\CreateUsers;
+use modules\users\controller\DeleteUser;
 use modules\users\controller\GetCollectionUsers;
 use modules\users\controller\GetSingleUser;
 
@@ -22,22 +23,29 @@ class Users
     
     public function register(array $user)
     {
-        $CreateUsers = new CreateUsers();
-        $CreateUsers->registerNewUser($user, $this->dbh);
-        unset($CreateUsers);
+        $createUsers = new CreateUsers();
+        $createUsers->registerNewUser($user, $this->dbh);
+        unset($createUsers);
     }
 
     public function getCollection()
     {
-        $GetCollectionUsers = new GetCollectionUsers();
-        $GetCollectionUsers->getCollectionUsers($this->dbh);
-        unset($GetCollectionUsers);
+        $getCollectionUsers = new GetCollectionUsers();
+        $getCollectionUsers->getCollectionUsers($this->dbh);
+        unset($getCollectionUsers);
     }
 
-    public function getSingle($user)
+    public function getSingleton($user)
     {
-        $GetSingleUser = new GetSingleUser();
-        $GetSingleUser->getSingleUser($user, $this->dbh);
-        unset($GetSingleUser);
+        $getSingleUser = new GetSingleUser();
+        $getSingleUser->getSingleUser($user, $this->dbh);
+        unset($getSingleUser);
+    }
+
+    public function delete(array $user)
+    {
+        $delete = new DeleteUser();
+        $delete->delete($user, $this->dbh);
+        unset($delete);
     }
 }

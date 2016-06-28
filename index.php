@@ -11,8 +11,12 @@ $user = new Users();
 $user->register(ConfigNewUser::$newUser);
 $user->getCollection();
 echo '<br>';
-$userArr = array('id'=>4);
-$user->getSingle($userArr);
+//$userArr = array('id'=>4);
+//$user->getSingleton($userArr);
+//$deleteUser = array('id'=>2);
+//$user->delete($deleteUser);
+
+$user->getCollection();
 
 unset($user);
 

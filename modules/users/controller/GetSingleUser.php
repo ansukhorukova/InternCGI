@@ -2,9 +2,9 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\GetUsersFromDataBaseAbstract;
+use modules\users\core\abstracts\GetCollectionUsersAbstract;
 
-class GetSingleUser extends GetUsersFromDataBaseAbstract
+class GetSingleUser extends GetCollectionUsersAbstract
 {
     protected $dbh = null;
 

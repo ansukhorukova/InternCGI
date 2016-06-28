@@ -4,7 +4,7 @@ namespace modules\users\core\abstracts;
 
 use modules\users\core\interfaces\GetCollectionUsersInterface;
 
-abstract class GetUsersFromDataBaseAbstract
+abstract class GetCollectionUsersAbstract
     implements GetCollectionUsersInterface
 {
     public function getSingleUser(array $user, $dbh)
