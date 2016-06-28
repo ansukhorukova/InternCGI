@@ -2,11 +2,12 @@
 
 namespace modules\users\core\abstracts;
 
-use modules\users\core\interfaces\CreateUsersInterface;
-
-abstract class CreateUsersAbstract implements CreateUsersInterface
+abstract class CreateUsersAbstract 
 {
-    public function 
+    public function registerNewUser(array $newUser, $dbh)
+    {
+        $this->_createUser($newUser, $dbh);
+    }
 
-    abstract protected function _createUser(array $newUser);
+    abstract protected function _createUser($newUser, $dbh);
 }

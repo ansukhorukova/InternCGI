@@ -3,7 +3,7 @@
 namespace modules\logger\controller;
 
 use modules\logger\core\abstracts\LoggerAbstract;
-use model\ConnectToDataBase as ConnectToDataBase;
+use model\ConnectToDataBase;
 
 class LoggerInDB extends LoggerAbstract
 {
@@ -15,7 +15,7 @@ class LoggerInDB extends LoggerAbstract
         /**
          * Implement __construct() method for connect to DB
          */
-        $this->dbh = ConnectToDataBase::_connectToPdo();
+        $this->dbh = ConnectToDataBase::connectToPdo();
     }
 
     public function __destruct()

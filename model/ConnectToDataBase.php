@@ -6,7 +6,7 @@ use config\ConfigPdoDataBase as ConfigPdoDataBase;
 
 class ConnectToDataBase
 {
-    public static function _connectToPdo ()
+    public static function connectToPdo ()
     {
         /**
          * Method _ConnectToPdo implements connection to PDO database
