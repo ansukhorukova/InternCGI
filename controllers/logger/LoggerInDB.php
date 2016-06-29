@@ -3,31 +3,18 @@
 namespace controllers\logger;
 
 use core\abstracts\logger\LoggerAbstract;
-use models\ConnectToDataBase;
 
 class LoggerInDB extends LoggerAbstract
 {
 
-    protected $dbh = null;
+    protected $dbh;
 
-    public function __construct($dbh = null)
+    public function __construct($dbh)
     {
         /**
-         * Implement __construct() method for connect to DB
+         * Implement __construct() get connect to DB
          */
-        if($dbh !== null) {
-            $this->dbh = $dbh;
-        } else {
-            $this->dbh = ConnectToDataBase::connectToPdo();
-        }
-    }
-
-    public function __destruct()
-    {
-        /**
-         * Implement __destruct() method. It closes connection to DB when object will be removed
-         */
-        unset($this->dbh);
+        $this->dbh = $dbh;
     }
     
     protected function _writeMessage($message, $type)

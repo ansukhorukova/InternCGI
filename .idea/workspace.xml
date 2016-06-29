@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="" />
+    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/configs/ConfigNewUser.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/ConfigPathToLogFile.php" afterPath="$PROJECT_DIR$/configs/ConfigPathToLogFile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/logger/LoggerInDB.php" afterPath="$PROJECT_DIR$/controllers/logger/LoggerInDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/users/CreateUsers.php" afterPath="$PROJECT_DIR$/controllers/users/CreateUsers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/users/DeleteUser.php" afterPath="$PROJECT_DIR$/controllers/users/DeleteUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php" afterPath="$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php" afterPath="$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" afterPath="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php" afterPath="$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/ConnectToDataBase.php" afterPath="$PROJECT_DIR$/models/ConnectToDataBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Users.php" afterPath="$PROJECT_DIR$/models/Users.php" />
+    </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,13 +38,23 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+            <state relative-caret-position="284">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
-                <element signature="e#139#156#0#PHP" expanded="true" />
-                <marker date="1467200111595" expanded="true" signature="400:412" ph="SELECT * FRO... users" />
-                <marker date="1467200111595" expanded="true" signature="400:414" ph="SELECT * FRO... users" />
+                <element signature="e#81#115#0#PHP" expanded="true" />
+                <marker date="1467217685850" expanded="true" signature="536:548" ph="SELECT * FRO... users" />
+                <marker date="1467217685850" expanded="true" signature="536:550" ph="SELECT * FRO... users" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateItemsAbstract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -40,7 +63,51 @@
         <entry file="file://$PROJECT_DIR$/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/interfaces/logger/LoggerInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerAbstract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/abstracts/logger/LoggerAbstract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="e#41#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerInDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <marker date="1467216482097" expanded="true" signature="483:554" ph="INSERT INTO `log`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectToPdoDataBase.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connects/ConnectToPdoDataBase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,79 +116,9 @@
       <file leaf-file-name="ConnectToDataBase.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/ConnectToDataBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="306">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerInDB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInDB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="e#38#79#0#PHP" expanded="true" />
-                <marker date="1467201587408" expanded="true" signature="847:918" ph="INSERT INTO `log`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/users/CreateUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-              <folding>
-                <element signature="e#37#71#0#PHP" expanded="true" />
-                <marker date="1467201806350" expanded="true" signature="459:731" ph="INSERT INTO `users`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetCollectionUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/users/GetCollectionUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <marker date="1467198341644" expanded="true" signature="219:240" ph="SELECT * FRO... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigPathToLogFile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/ConfigPathToLogFile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigNewUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/ConfigNewUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerInFileSystem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInFileSystem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="e#38#79#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -129,8 +126,8 @@
       <file leaf-file-name="ConfigPdoDataBase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/ConfigPdoDataBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="90">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,11 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/logger/core/LoggerInterface.php" />
-        <option value="$PROJECT_DIR$/logger/autoloader.php" />
-        <option value="$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
-        <option value="$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" />
-        <option value="$PROJECT_DIR$/logger/logs/log.txt" />
         <option value="$PROJECT_DIR$/logger/model/ConnectToDataBase.php" />
         <option value="$PROJECT_DIR$/logger/core/LoggerAbstract.php" />
         <option value="$PROJECT_DIR$/logger/controller/LoggerInFileSystem.php" />
@@ -180,21 +172,26 @@
         <option value="$PROJECT_DIR$/modules/users/controller/DeleteUser.php" />
         <option value="$PROJECT_DIR$/modules/users/controller/GetSingleUser.php" />
         <option value="$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php" />
-        <option value="$PROJECT_DIR$/controllers/users/DeleteUser.php" />
         <option value="$PROJECT_DIR$/controllers/users/GetCollectionUsers.php" />
         <option value="$PROJECT_DIR$/controllers/users/GetSingleUser.php" />
-        <option value="$PROJECT_DIR$/models/Users.php" />
         <option value="$PROJECT_DIR$/configs/ConfigNewUser.php" />
         <option value="$PROJECT_DIR$/configs/ConfigPdoDataBase.php" />
-        <option value="$PROJECT_DIR$/models/ConnectToDataBase.php" />
-        <option value="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" />
         <option value="$PROJECT_DIR$/core/abstracts/logger/LoggerAbstract.php" />
         <option value="$PROJECT_DIR$/core/interfaces/logger/LoggerInterface.php" />
         <option value="$PROJECT_DIR$/controllers/logger/LoggerInFileSystem.php" />
+        <option value="$PROJECT_DIR$/models/Users.php" />
         <option value="$PROJECT_DIR$/configs/ConfigPathToLogFile.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/controllers/logger/LoggerInDB.php" />
+        <option value="$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php" />
         <option value="$PROJECT_DIR$/controllers/users/CreateUsers.php" />
+        <option value="$PROJECT_DIR$/controllers/users/DeleteUser.php" />
+        <option value="$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php" />
+        <option value="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" />
+        <option value="$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php" />
+        <option value="$PROJECT_DIR$/models/databases/ConnectToPdoDataBase.php" />
+        <option value="$PROJECT_DIR$/controllers/logger/LoggerInDB.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/connects/ConnectToPdoDataBase.php" />
+        <option value="$PROJECT_DIR$/models/ConnectToDataBase.php" />
       </list>
     </option>
   </component>
@@ -368,10 +365,6 @@
               <option name="myItemId" value="abstracts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logger" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -428,6 +421,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="logger" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connects" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,12 +529,12 @@
       <workItem from="1467127386615" duration="5814000" />
       <workItem from="1467133237920" duration="8637000" />
       <workItem from="1467180002103" duration="13343000" />
-      <workItem from="1467199570876" duration="4550000" />
+      <workItem from="1467199570876" duration="11574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97191000" />
+    <option name="totallyTimeSpent" value="104215000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,42 +586,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>19</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>16</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>13</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
           <line>12</line>
-          <option name="timeStamp" value="49" />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>21</line>
-          <option name="timeStamp" value="51" />
+          <line>37</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="52" />
+      <option name="time" value="54" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="index.php">
-        <watch expression="$statement" language="PHP" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logger/controller/LoggerInDB.php" />
-    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" />
-    <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
     <entry file="file://$PROJECT_DIR$/modules/users/core/interfaces/CreateUsersInterface.php" />
     <entry file="file://$PROJECT_DIR$/modules/logger/autoloader.php" />
     <entry file="file://$PROJECT_DIR$/readme.txt">
@@ -650,40 +635,6 @@
     <entry file="file://$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php" />
     <entry file="file://$PROJECT_DIR$/model/Users.php" />
     <entry file="file://$PROJECT_DIR$/modules/users/controller/CreateUsers.php" />
-    <entry file="file://$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/interfaces/logger/LoggerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/abstracts/logger/LoggerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/users/GetSingleUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
@@ -691,42 +642,6 @@
           <folding>
             <marker date="1467198346588" expanded="true" signature="1094:1168" ph="SELECT * FRO... users" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/users/DeleteUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1467198329916" expanded="true" signature="832:905" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#26#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,22 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/ConfigPdoDataBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/ConfigNewUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInFileSystem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -766,60 +665,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/ConfigPathToLogFile.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/configs/ConfigNewUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+        <state relative-caret-position="180">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/ConfigPathToLogFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
           <folding>
-            <element signature="e#139#156#0#PHP" expanded="true" />
-            <marker date="1467200111595" expanded="true" signature="400:412" ph="SELECT * FRO... users" />
-            <marker date="1467200111595" expanded="true" signature="400:414" ph="SELECT * FRO... users" />
+            <element signature="e#26#60#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/users/CreateUsers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="270">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
             <element signature="e#37#71#0#PHP" expanded="true" />
-            <marker date="1467201806350" expanded="true" signature="459:731" ph="INSERT INTO `users`... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInDB.php">
+    <entry file="file://$PROJECT_DIR$/controllers/users/DeleteUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#79#0#PHP" expanded="true" />
-            <marker date="1467201587408" expanded="true" signature="847:918" ph="INSERT INTO `log`... " />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/databases/ConnectToPdoDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/ConfigPdoDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connects/ConnectToPdoDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/interfaces/logger/LoggerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/logger/LoggerInDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1467216482097" expanded="true" signature="483:554" ph="INSERT INTO `log`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/logger/LoggerAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#81#115#0#PHP" expanded="true" />
+            <marker date="1467217685850" expanded="true" signature="536:548" ph="SELECT * FRO... users" />
+            <marker date="1467217685850" expanded="true" signature="536:550" ph="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/ConnectToDataBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="306">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding />
         </state>
       </provider>

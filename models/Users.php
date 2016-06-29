@@ -9,14 +9,15 @@ use controllers\users\GetCollectionUsers;
 
 class Users 
 {
-    protected $dbh = null;
+    private $dbh;
+    private $data = array();
 
     /**
      * Users constructor. Make connection to DB
      */
-    public function __construct ()
+    public function __construct ($dbh)
     {
-        $this->dbh = ConnectToDataBase::connectToPdo();
+        $this->dbh = $dbh;
     }
 
     /**
@@ -27,15 +28,25 @@ class Users
         unset($this->dbh);
     }
 
+    public function __set($name, $value)
+    {
+        $this->data[$name] = $value;
+    }
+
+    public function __get($name)
+    {
+        return $this->data[$name];
+    }
+
     /**
      * Call create() function, it'll create new user in DB.
      *
      * @param array $user. Send array with user data, like name, login, password and etc.
      */
-    public function create(array $user)
+    public function save()
     {
         $createUsers = new CreateUsers();
-        $createUsers->create($user, $this->dbh);
+        $createUsers->create($this->data, $this->dbh);
         unset($createUsers);
     }
 

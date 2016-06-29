@@ -1,13 +1,19 @@
 <?php
 
 //use modules\logger\controller\LoggerInFileSystem as LoggerInFileSystem;
-//use modules\logger\controller\LoggerInDB as LoggerInDB;
+use controllers\logger\LoggerInDB;
 use models\Users;
+use models\ConnectToDataBase;
 use configs\ConfigNewUser;
 
 require_once 'autoloader.php';
 
-$user = new Users();
+$database = 'connects\ConnectToPdoDataBase';
+
+$connect = new ConnectToDataBase($database);
+$dbh = $connect->getConnect();
+/*
+$user = new Users($dbh);
 $user->getCollection();
 echo '<br>';
 $user->create(ConfigNewUser::$newUser);
@@ -20,21 +26,21 @@ $deleteUser = array('id'=>15, 'email'=>null);
 $user->delete($deleteUser);
 
 $user->getCollection();
+*/
 
 
-unset($user);
 
-//$message = "I'm a message";
+$message = "I'm a message";
 
 /**
  * Use logger to write log into DB
  */
-//$LoggerInDB = new LoggerInDB();
+$LoggerInDB = new LoggerInDB($dbh);
 
 //$LoggerInDB->error($message);
 //$LoggerInDB->warning($message);
-//$LoggerInDB->notice($message);
-
+$LoggerInDB->notice($message);
+unset($dbh);
 /**
  * When it'll finish to work with PDO database
  * it'll close connection to database

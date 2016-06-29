@@ -4,5 +4,5 @@ namespace  configs;
 
 class ConfigPathToLogFile
 {
-    public static $logFile = '/logs/log.txt';
+    public static $logFile = DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR . 'log.txt';
 }

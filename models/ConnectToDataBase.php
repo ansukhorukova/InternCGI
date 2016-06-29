@@ -2,15 +2,26 @@
 
 namespace models;
 
-use configs\ConfigPdoDataBase as ConfigPdoDataBase;
-
 class ConnectToDataBase
 {
-    public static function connectToPdo ()
+    public $connect;
+
+    public function __construct($dataBase)
     {
-        /**
-         * Method _ConnectToPdo implements connection to PDO database
-         */
-        return new \PDO(ConfigPdoDataBase::$dsn, ConfigPdoDataBase::$name, ConfigPdoDataBase::$password);
+        $this->connect = new $dataBase();
+        $this->getConnect();
+    }
+
+     /**
+     * @return mixed
+     */
+    private function getConnect()
+    {
+        return $this->connect->getDbh();
+    }
+
+    public function __destruct()
+    {
+        unset($this->dataBaseConnect);
     }
 }
