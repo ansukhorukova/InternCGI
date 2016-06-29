@@ -10,12 +10,16 @@ class LoggerInDB extends LoggerAbstract
 
     protected $dbh = null;
 
-    public function __construct()
+    public function __construct($dbh = null)
     {
         /**
          * Implement __construct() method for connect to DB
          */
-        $this->dbh = ConnectToDataBase::connectToPdo();
+        if($dbh !== null) {
+            $this->dbh = $dbh;
+        } else {
+            $this->dbh = ConnectToDataBase::connectToPdo();
+        }
     }
 
     public function __destruct()

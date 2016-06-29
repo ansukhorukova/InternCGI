@@ -2,6 +2,7 @@
 
 namespace controllers\users;
 
+use controllers\logger\LoggerInDB;
 use core\abstracts\items\CreateItemsAbstract;
 use \controllers\logger\LoggerInFileSystem;
 use \PDO;
@@ -9,10 +10,12 @@ use \PDO;
 class CreateUsers extends CreateItemsAbstract
 {
     private $message = 'New user created';
+    private $dbh;
     protected function _createItem($newUser, $dbh)
     {
+        $this->dbh = $dbh;
         try{
-            $statement = $dbh->prepare("
+            $statement = $this->dbh->prepare("
                                  INSERT INTO `users` (`firstname`, `lastname`, `type`, 
                                                       `login`, `password`, `email`, 
                                                       `creation_date`)
@@ -35,8 +38,9 @@ class CreateUsers extends CreateItemsAbstract
     }
 
     private function logger($message){
-        $logger = new LoggerInFileSystem();
-        $logger->notice($message);
-        unset($logger);
+        $loggerInFile = new LoggerInFileSystem();
+        $loggerInFile->notice($message);
+        $loggerInDB = new LoggerInDB($this->dbh);
+        $loggerInDB->notice($message);
     }
 }
