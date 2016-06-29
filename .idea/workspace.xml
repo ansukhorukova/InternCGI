@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/users/core/abstracts/GetUsersFromDataBaseAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/users/core/abstracts/CreateUsersAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/users/core/abstracts/GetCollectionUsersAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/users/core/interfaces/GetCollectionUsersInterface.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/ConfigNewUser.php" afterPath="$PROJECT_DIR$/config/ConfigNewUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Users.php" afterPath="$PROJECT_DIR$/model/Users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/logger/logs/log.txt" afterPath="$PROJECT_DIR$/modules/logger/logs/log.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/users/controller/CreateUsers.php" afterPath="$PROJECT_DIR$/modules/users/controller/CreateUsers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/users/controller/DeleteUser.php" afterPath="$PROJECT_DIR$/modules/users/controller/DeleteUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php" afterPath="$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/users/controller/GetSingleUser.php" afterPath="$PROJECT_DIR$/modules/users/controller/GetSingleUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php" afterPath="$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +39,19 @@
       <file leaf-file-name="GetSingleUser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/users/controller/GetSingleUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="34" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="367">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <marker date="1467140076244" expanded="true" signature="696:726" ph="..." />
-                <marker date="1467140076244" expanded="true" signature="1127:1169" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="654:684" ph="..." />
+                <marker date="1467196424547" expanded="true" signature="1085:1113" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1114" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1135" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1136" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1137" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1138" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1142" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1154" ph="SELECT * FRO... users" />
+                <marker date="1467196424547" expanded="true" signature="1085:1159" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -47,35 +60,23 @@
       <file leaf-file-name="DeleteUser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/users/controller/DeleteUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="414">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <marker date="1467141501830" expanded="true" signature="569:609" ph="DELETE FROM " />
-                <marker date="1467141501830" expanded="true" signature="575:609" ph="SELECT * FRO... users" />
+                <marker date="1467194643567" expanded="true" signature="823:874" ph="DELETE FROM " />
+                <marker date="1467194643567" expanded="true" signature="823:896" ph="DELETE FROM " />
+                <marker date="1467194643567" expanded="true" signature="829:874" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoggerInFileSystem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInFileSystem.php">
+      <file leaf-file-name="DeleteAbstract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/abstracts/DeleteAbstract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="162">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/users/controller/CreateUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-              <folding>
-                <element signature="e#44#97#0#PHP" expanded="true" />
-                <marker date="1467142905971" expanded="true" signature="384:656" ph="INSERT INTO `users`... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -83,18 +84,8 @@
       <file leaf-file-name="log.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/logger/logs/log.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-200">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerAbstract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/logger/core/abstracts/LoggerAbstract.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="502">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,33 +94,13 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            <state relative-caret-position="342">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#139#155#0#PHP" expanded="true" />
+                <marker date="1467197240146" expanded="true" signature="363:375" ph="SELECT * FRO... users" />
+                <marker date="1467197240146" expanded="true" signature="363:377" ph="SELECT * FRO... users" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerInDB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInDB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-              <folding>
-                <marker date="1467130504106" expanded="true" signature="760:831" ph="INSERT INTO `log`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteUsersAbstract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,10 +108,55 @@
       <file leaf-file-name="Users.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/Users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="169">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#25#66#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoloader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/interfaces/GetInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetAbstract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/abstracts/GetAbstract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCollectionUsers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <marker date="1467196254202" expanded="true" signature="212:232" ph="SELECT * FRO... users" />
+                <marker date="1467196254202" expanded="true" signature="212:235" ph="SELECT * FRO... users" />
+                <marker date="1467196254202" expanded="true" signature="224:232" ph="INSERT INTO `users`... " />
+                <marker date="1467196254202" expanded="true" signature="267:283" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,8 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ConfigDB.php" />
-        <option value="$PROJECT_DIR$/LoggerInDB.php" />
         <option value="$PROJECT_DIR$/ConfigPDODB.php" />
         <option value="$PROJECT_DIR$/ConnectToPDODB.php" />
         <option value="$PROJECT_DIR$/log.txt" />
@@ -188,7 +202,6 @@
         <option value="$PROJECT_DIR$/modules/logger/controller/LoggerInFileSystem.php" />
         <option value="$PROJECT_DIR$/config/ConfigPathToLogFile.php" />
         <option value="$PROJECT_DIR$/modules/users/core/interfaces/CreateUsersInterface.php" />
-        <option value="$PROJECT_DIR$/modules/logger/logs/log.txt" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/modules/users/controller/ShowUsers.php" />
         <option value="$PROJECT_DIR$/model/ConnectToDataBase.php" />
@@ -196,15 +209,18 @@
         <option value="$PROJECT_DIR$/modules/users/core/interfaces/GetCollectionUsersInterface.php" />
         <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/modules/users/core/abstracts/CreateUsersAbstract.php" />
-        <option value="$PROJECT_DIR$/config/ConfigNewUser.php" />
         <option value="$PROJECT_DIR$/modules/users/core/abstracts/GetUsersFromDataBaseAbstract.php" />
+        <option value="$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php" />
+        <option value="$PROJECT_DIR$/modules/logger/logs/log.txt" />
+        <option value="$PROJECT_DIR$/modules/users/controller/CreateUsers.php" />
         <option value="$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php" />
         <option value="$PROJECT_DIR$/modules/users/controller/GetSingleUser.php" />
+        <option value="$PROJECT_DIR$/core/interfaces/GetInterface.php" />
+        <option value="$PROJECT_DIR$/core/abstracts/GetAbstract.php" />
+        <option value="$PROJECT_DIR$/config/ConfigNewUser.php" />
         <option value="$PROJECT_DIR$/modules/users/controller/DeleteUser.php" />
         <option value="$PROJECT_DIR$/model/Users.php" />
-        <option value="$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/modules/users/controller/CreateUsers.php" />
       </list>
     </option>
   </component>
@@ -284,7 +300,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -319,58 +334,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InternCGI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InternCGI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InternCGI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InternCGI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="abstracts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -530,12 +493,49 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstracts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InternCGI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -608,18 +608,19 @@
       <workItem from="1466747933976" duration="11337000" />
       <workItem from="1467007700811" duration="15129000" />
       <workItem from="1467127386615" duration="5814000" />
-      <workItem from="1467133237920" duration="8589000" />
+      <workItem from="1467133237920" duration="8637000" />
+      <workItem from="1467180002103" duration="11183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79250000" />
+    <option name="totallyTimeSpent" value="90481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="24" width="1862" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25495595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25770926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5018868" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -653,19 +654,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>17</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
-        <watch expression="$usersCollection" language="PHP" />
+        <watch expression="$statement" language="PHP" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logger/Autoload.php" />
-    <entry file="file://$PROJECT_DIR$/logger/configDataBases/ConfigPDODB.php" />
-    <entry file="file://$PROJECT_DIR$/logger/connectDataBase/ConnectToPdoDataBase.php" />
-    <entry file="file://$PROJECT_DIR$/logger/configDataBases/ConfigPdoDataBase.php" />
     <entry file="file://$PROJECT_DIR$/logger/LoggerFile.php" />
     <entry file="file://$PROJECT_DIR$/Autoloader.php" />
     <entry file="file://$PROJECT_DIR$/logger/LoggerInterface.php" />
@@ -689,21 +693,7 @@
     <entry file="file://$PROJECT_DIR$/logger/config/ConfigPdoDataBase.php" />
     <entry file="file://$PROJECT_DIR$/logger/config/ConfigPathToLogFile.php" />
     <entry file="file://$PROJECT_DIR$/modules/users/core/interfaces/CreateUsersInterface.php" />
-    <entry file="file://$PROJECT_DIR$/config/ConfigPathToLogFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/logger/autoloader.php" />
-    <entry file="file://$PROJECT_DIR$/modules/logger/core/interfaces/LoggerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -724,7 +714,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/GetUsersFromDataBaseAbstract.php" />
+    <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <marker date="1467130504106" expanded="true" signature="760:831" ph="INSERT INTO `log`... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -736,6 +736,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/GetCollectionUsersAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/CreateUsersAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ConfigNewUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/logger/core/interfaces/LoggerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ConfigPathToLogFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInFileSystem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/logger/core/abstracts/LoggerAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/controller/CreateUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#78#0#PHP" expanded="true" />
+            <marker date="1467194659048" expanded="true" signature="370:642" ph="INSERT INTO `users`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/CreateAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/interfaces/GetInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/controller/GetSingleUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1467196424547" expanded="true" signature="654:684" ph="..." />
+            <marker date="1467196424547" expanded="true" signature="1085:1113" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1114" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1135" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1136" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1137" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1138" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1142" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1154" ph="SELECT * FRO... users" />
+            <marker date="1467196424547" expanded="true" signature="1085:1159" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -744,142 +854,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/GetUsersFromDataBaseAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding>
-            <marker date="1467140065896" expanded="true" signature="257:277" ph="SELECT * FRO... users" />
-            <marker date="1467140065896" expanded="true" signature="257:280" ph="SELECT * FRO... users" />
-            <marker date="1467140065896" expanded="true" signature="269:277" ph="INSERT INTO `users`... " />
-            <marker date="1467140065896" expanded="true" signature="312:328" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/GetCollectionUsersAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/ConfigNewUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/CreateUsersAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/controller/GetSingleUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="34" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <marker date="1467140076244" expanded="true" signature="696:726" ph="..." />
-            <marker date="1467140076244" expanded="true" signature="1127:1169" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding>
-            <element signature="e#25#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/core/abstracts/DeleteUsersAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/users/controller/DeleteUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        <state relative-caret-position="414">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <marker date="1467141501830" expanded="true" signature="569:609" ph="DELETE FROM " />
-            <marker date="1467141501830" expanded="true" signature="575:609" ph="SELECT * FRO... users" />
+            <marker date="1467194643567" expanded="true" signature="823:874" ph="DELETE FROM " />
+            <marker date="1467194643567" expanded="true" signature="823:896" ph="DELETE FROM " />
+            <marker date="1467194643567" expanded="true" signature="829:874" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/logger/core/abstracts/LoggerAbstract.php">
+    <entry file="file://$PROJECT_DIR$/core/abstracts/DeleteAbstract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <marker date="1467130504106" expanded="true" signature="760:831" ph="INSERT INTO `log`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/logger/controller/LoggerInFileSystem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        <state relative-caret-position="342">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#139#155#0#PHP" expanded="true" />
+            <marker date="1467197240146" expanded="true" signature="363:375" ph="SELECT * FRO... users" />
+            <marker date="1467197240146" expanded="true" signature="363:377" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/users/controller/CreateUsers.php">
+    <entry file="file://$PROJECT_DIR$/model/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        <state relative-caret-position="169">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#44#97#0#PHP" expanded="true" />
-            <marker date="1467142905971" expanded="true" signature="384:656" ph="INSERT INTO `users`... " />
+            <element signature="e#25#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/abstracts/GetAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/users/controller/GetCollectionUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1467196254202" expanded="true" signature="212:232" ph="SELECT * FRO... users" />
+            <marker date="1467196254202" expanded="true" signature="212:235" ph="SELECT * FRO... users" />
+            <marker date="1467196254202" expanded="true" signature="224:232" ph="INSERT INTO `users`... " />
+            <marker date="1467196254202" expanded="true" signature="267:283" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/logger/logs/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="502">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>

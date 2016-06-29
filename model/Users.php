@@ -4,8 +4,8 @@ namespace model;
 
 use modules\users\controller\CreateUsers;
 use modules\users\controller\DeleteUser;
-use modules\users\controller\GetCollectionUsers;
 use modules\users\controller\GetSingleUser;
+use modules\users\controller\GetCollectionUsers;
 
 class Users 
 {
@@ -21,24 +21,24 @@ class Users
         unset($this->dbh);
     }
     
-    public function register(array $user)
+    public function create(array $user)
     {
         $createUsers = new CreateUsers();
-        $createUsers->registerNewUser($user, $this->dbh);
+        $createUsers->create($user, $this->dbh);
         unset($createUsers);
     }
 
     public function getCollection()
     {
         $getCollectionUsers = new GetCollectionUsers();
-        $getCollectionUsers->getCollectionUsers($this->dbh);
+        $getCollectionUsers->getCollectionItems($this->dbh);
         unset($getCollectionUsers);
     }
 
     public function getSingleton($user)
     {
         $getSingleUser = new GetSingleUser();
-        $getSingleUser->getSingleUser($user, $this->dbh);
+        $getSingleUser->getSingleItem($user, $this->dbh);
         unset($getSingleUser);
     }
 

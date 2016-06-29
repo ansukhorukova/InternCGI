@@ -2,24 +2,29 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\DeleteUsersAbstract;
+use core\abstracts\DeleteAbstract;
 
-class DeleteUser extends DeleteUsersAbstract
+class DeleteUser extends DeleteAbstract
 {
     protected $dbh = null;
 
-    protected function _deleteUsers($deleteUser, $dbh)
+    protected function _deleteItem($deleteUser, $dbh)
     {
         $this->dbh = $dbh;
         if($deleteUser['id'] != null) {
-            $this->request('id', $deleteUser['id']);
+            if(filter_var($deleteUser['id'], FILTER_VALIDATE_INT) === 0 ||
+                !filter_var($deleteUser['id'], FILTER_VALIDATE_INT) === false){
+                $this->request('id', $deleteUser['id']);
+            }
         } elseif ($deleteUser['email'] != null) {
-            $this->request('email', $deleteUser['id']);
+            if(!filter_var($deleteUser['email'], FILTER_VALIDATE_EMAIL) === false) {
+                $this->request('email', $deleteUser['email']);
+            }
         }
     }
 
     protected function request($searchType, $searchValue)
     {
-        $this->dbh->query("DELETE FROM `users` WHERE $searchType = $searchValue");
+        $this->dbh->query("DELETE FROM `users` WHERE `" . $searchType .  "` = '" . $searchValue . "'");
     }
 }

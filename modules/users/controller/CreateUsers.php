@@ -2,13 +2,14 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\CreateUsersAbstract;
+use core\abstracts\CreateAbstract;
 use modules\logger\controller\LoggerInFileSystem;
+use \PDO;
 
-class CreateUsers extends CreateUsersAbstract
+class CreateUsers extends CreateAbstract
 {
     private $message = 'New user created';
-    protected function _createUser($newUser, $dbh)
+    protected function _createItem($newUser, $dbh)
     {
         try{
             $statement = $dbh->prepare("
@@ -16,12 +17,15 @@ class CreateUsers extends CreateUsersAbstract
                                                       `login`, `password`, `email`, 
                                                       `creation_date`)
                                  VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $statement->execute([
-                $newUser['firstname'], $newUser['lastname'],
-                $newUser['type'], $newUser['login'],
-                $newUser['password'], $newUser['email'],
-                date('Y-m-d H:i:s')
-            ]);
+            $statement->bindParam(1, $newUser['firstname'], PDO::PARAM_STR);
+            $statement->bindParam(2, $newUser['lastname'], PDO::PARAM_STR);
+            $statement->bindParam(3, $newUser['type'], PDO::PARAM_STR);
+            $statement->bindParam(4, $newUser['login'], PDO::PARAM_STR);
+            $statement->bindParam(5, $newUser['password'], PDO::PARAM_STR);
+            $statement->bindParam(6, $newUser['email'], PDO::PARAM_STR);
+            $date = date('Y-m-d H:i:s');
+            $statement->bindParam(7, $date);
+            $statement->execute();
 
             $this->logger($this->message);
 

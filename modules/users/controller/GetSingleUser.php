@@ -2,19 +2,19 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\GetCollectionUsersAbstract;
+use core\abstracts\GetAbstract;
 
-class GetSingleUser extends GetCollectionUsersAbstract
+class GetSingleUser extends GetAbstract
 {
     protected $dbh = null;
 
-    protected function _showUsers($users, $dbh)
+    protected function _showItem($users, $dbh)
     {
         $this->dbh = $dbh;
         if($users['id'] != null) {
             $statement = $this->request('id', $users['id']);
         } elseif ($users['email'] != null) {
-            $statement = $this->request('email', $users['id']);
+            $statement = $this->request('email', $users['email']);
         }
 
         echo '<table border="1">';
@@ -31,6 +31,6 @@ class GetSingleUser extends GetCollectionUsersAbstract
 
     protected function request($searchType, $searchValue)
     {
-        return $this->dbh->query("SELECT * FROM `users` WHERE $searchType = $searchValue");
+        return $this->dbh->query("SELECT * FROM `users` WHERE `" . $searchType . "` = '" . $searchValue . "'");
     }
 }

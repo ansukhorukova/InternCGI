@@ -8,15 +8,17 @@ use config\ConfigNewUser;
 require_once 'autoloader.php';
 
 $user = new Users();
-$user->register(ConfigNewUser::$newUser);
+//$user->create(ConfigNewUser::$newUser);
 $user->getCollection();
 echo '<br>';
-//$userArr = array('id'=>4);
-//$user->getSingleton($userArr);
-//$deleteUser = array('id'=>2);
-//$user->delete($deleteUser);
+$userArr = array('id'=>null, 'email'=>'customer2@example.com');
+$user->getSingleton($userArr);
+echo '<br>';
+$deleteUser = array('id'=>9, 'email'=>null);
+$user->delete($deleteUser);
 
 $user->getCollection();
+
 
 unset($user);
 

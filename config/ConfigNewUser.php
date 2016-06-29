@@ -4,8 +4,8 @@ namespace config;
 
 class ConfigNewUser
 {
-    public static $newUser = array('firstname' => 'Petya', 'lastname' => 'Ivanov',
+    public static $newUser = array('firstname' => 'Petya', 'lastname' => 'Sidorov',
                                    'type' => 'customer', 'login' => 'customer',
-                                   'password' => 'customer1', 'email' => 'customer@example.com'
+                                   'password' => 'customer3', 'email' => 'customer3@example.com'
                                   );
 }

@@ -2,11 +2,11 @@
 
 namespace modules\users\controller;
 
-use modules\users\core\abstracts\GetCollectionUsersAbstract;
+use core\abstracts\GetAbstract;
 
-class GetCollectionUsers extends GetCollectionUsersAbstract
+class GetCollectionUsers extends GetAbstract
 {
-    protected function _showUsers($users, $dbh)
+    protected function _showItem($users, $dbh)
     {
         $statement = $dbh->query("SELECT * FROM `users`");
         echo '<table border="1">';
