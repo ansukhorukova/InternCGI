@@ -1,10 +1,10 @@
 <?php
 
-namespace modules\users\controller;
+namespace controllers\users;
 
-use core\abstracts\DeleteAbstract;
+use core\abstracts\items\DeleteItemsAbstract;
 
-class DeleteUser extends DeleteAbstract
+class DeleteUser extends DeleteItemsAbstract
 {
     protected $dbh = null;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace core\abstracts;
+namespace core\abstracts\items;
 
-use core\interfaces\GetInterface;
+use core\interfaces\items\GetItemsInterface;
 
-abstract class GetAbstract
-    implements GetInterface
+abstract class GetItemsAbstract
+    implements GetItemsInterface
 {
     public function getSingleItem(array $item, $dbh)
     {

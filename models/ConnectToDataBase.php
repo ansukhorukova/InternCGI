@@ -1,8 +1,8 @@
 <?php
 
-namespace model;
+namespace models;
 
-use config\ConfigPdoDataBase as ConfigPdoDataBase;
+use configs\ConfigPdoDataBase as ConfigPdoDataBase;
 
 class ConnectToDataBase
 {

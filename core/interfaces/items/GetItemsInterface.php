@@ -1,8 +1,8 @@
 <?php
 
-namespace core\interfaces;
+namespace core\interfaces\items;
 
-interface GetInterface
+interface GetItemsInterface
 {
     public function getSingleItem(array $item, $dbh);
     public function getCollectionItems($dbh);

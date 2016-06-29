@@ -1,9 +1,9 @@
 <?php
 
-namespace modules\logger\controller;
+namespace controllers\logger;
 
-use modules\logger\core\abstracts\LoggerAbstract;
-use config\ConfigPathToLogFile;
+use core\abstracts\logger\LoggerAbstract;
+use configs\ConfigPathToLogFile;
 
 class LoggerInFileSystem extends LoggerAbstract
 {

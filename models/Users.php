@@ -1,26 +1,37 @@
 <?php
 
-namespace model;
+namespace models;
 
-use modules\users\controller\CreateUsers;
-use modules\users\controller\DeleteUser;
-use modules\users\controller\GetSingleUser;
-use modules\users\controller\GetCollectionUsers;
+use controllers\users\CreateUsers;
+use controllers\users\DeleteUser;
+use controllers\users\GetSingleUser;
+use controllers\users\GetCollectionUsers;
 
 class Users 
 {
     protected $dbh = null;
 
+    /**
+     * Users constructor. Make connection to DB
+     */
     public function __construct ()
     {
         $this->dbh = ConnectToDataBase::connectToPdo();
     }
 
+    /**
+     * Users destructor. Close connection to DB
+     */
     public function __destruct()
     {
         unset($this->dbh);
     }
-    
+
+    /**
+     * Call create() function, it'll create new user in DB.
+     *
+     * @param array $user. Send array with user data, like name, login, password and etc.
+     */
     public function create(array $user)
     {
         $createUsers = new CreateUsers();
@@ -28,6 +39,9 @@ class Users
         unset($createUsers);
     }
 
+    /**
+     * Call getCollectionItems() method, and receive collection users from 'user' table.
+     */
     public function getCollection()
     {
         $getCollectionUsers = new GetCollectionUsers();

@@ -1,8 +1,8 @@
 <?php
 
-namespace core\abstracts;
+namespace core\abstracts\items;
 
-abstract class DeleteAbstract
+abstract class DeleteItemsAbstract
 {
     public function delete(array $item, $dbh)
     {

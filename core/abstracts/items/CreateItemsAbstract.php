@@ -1,8 +1,8 @@
 <?php
 
-namespace core\abstracts;
+namespace core\abstracts\items;
 
-abstract class CreateAbstract 
+abstract class CreateItemsAbstract
 {
     public function create(array $item, $dbh)
     {

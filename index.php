@@ -2,19 +2,21 @@
 
 //use modules\logger\controller\LoggerInFileSystem as LoggerInFileSystem;
 //use modules\logger\controller\LoggerInDB as LoggerInDB;
-use model\Users;
-use config\ConfigNewUser;
+use models\Users;
+use configs\ConfigNewUser;
 
 require_once 'autoloader.php';
 
 $user = new Users();
-//$user->create(ConfigNewUser::$newUser);
+$user->getCollection();
+echo '<br>';
+$user->create(ConfigNewUser::$newUser);
 $user->getCollection();
 echo '<br>';
 $userArr = array('id'=>null, 'email'=>'customer2@example.com');
 $user->getSingleton($userArr);
 echo '<br>';
-$deleteUser = array('id'=>9, 'email'=>null);
+$deleteUser = array('id'=>15, 'email'=>null);
 $user->delete($deleteUser);
 
 $user->getCollection();

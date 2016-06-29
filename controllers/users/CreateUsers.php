@@ -1,12 +1,12 @@
 <?php
 
-namespace modules\users\controller;
+namespace controllers\users;
 
-use core\abstracts\CreateAbstract;
-use modules\logger\controller\LoggerInFileSystem;
+use core\abstracts\items\CreateItemsAbstract;
+use \controllers\logger\LoggerInFileSystem;
 use \PDO;
 
-class CreateUsers extends CreateAbstract
+class CreateUsers extends CreateItemsAbstract
 {
     private $message = 'New user created';
     protected function _createItem($newUser, $dbh)
