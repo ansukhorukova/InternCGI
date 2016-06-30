@@ -7,10 +7,17 @@ use PDO;
 
 class Items implements ItemsInterface
 {
+    protected $id;
     protected $dbh;
     protected $tableName;
-    protected $id;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Users constructor. Make connection to DB
@@ -27,14 +34,6 @@ class Items implements ItemsInterface
     public function __destruct()
     {
         unset($this->dbh);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
@@ -63,7 +62,7 @@ class Items implements ItemsInterface
     }
 
     /**
-     * Call getCollectionItems() method, and receive collection users from 'user' table.
+     * Call loadAll() method, and receive collection users from 'user' table.
      *
      * @return array|void
      */
@@ -81,7 +80,6 @@ class Items implements ItemsInterface
 
     public function load($id)
     {
-        $this->id = $id;
         $sql = "SELECT * FROM `" . $this->tableName . "` WHERE id = " .$id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
@@ -96,48 +94,36 @@ class Items implements ItemsInterface
 
     private function _sqlInsert($data, $tableName)
     {
-        $count = $this->countThis($data);
+        $returnData = $this->returnThisData($data);
+        $data = $returnData[0];
+        $count = $returnData[1];
+        $sqlInsertKey = '';
+        $sqlInsertValue = '';
         $i = 1;
         $sqlInsert = "INSERT INTO `" . $tableName ."` (";
         foreach ($data as $key => $value) {
-            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
-                continue;
-            }
             if($i < $count){
-                $sqlInsert .= "$key, ";
+                $sqlInsertKey .= "$key, ";
+                $sqlInsertValue .= "'$value', ";
             } else {
-                $sqlInsert .= "$key";
+                $sqlInsertKey .= "$key";
+                $sqlInsertValue .= "'$value'";
             }
             $i++;
         }
-        $sqlInsert .= ") VALUES (";
-
-        $i = 1;
-        foreach ($data as $key => $value) {
-            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
-                continue;
-            }
-            if($i < $count){
-                $sqlInsert .= "'$value', ";
-            } else {
-                $sqlInsert .= "'$value'";
-            }
-            $i++;
-        }
-        $sqlInsert .= ')';
+        $sqlInsert .= $sqlInsertKey. ") VALUES (" . $sqlInsertValue . ')';
 
         return $sqlInsert;
     }
 
     private function _sqlUpdate($data, $tableName)
     {
-        $count = $this->countThis($data);
+        $returnData = $this->returnThisData($data);
+        $data = $returnData[0];
+        $count = $returnData[1];
         $i = 1;
         $sqlUpdate = "UPDATE `" . $tableName ."` SET ";
         foreach ($data as $key => $value) {
-            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
-                continue;
-            }
             if($i < $count){
                 $sqlUpdate .= "$key = '$value', ";
             } else {
@@ -150,16 +136,17 @@ class Items implements ItemsInterface
         return $sqlUpdate;
     }
 
-    public function countThis($data) {
+    public function returnThisData($data) {
         $i = 0;
         foreach ($data as $key => $value) {
             if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
                 continue;
             } else {
+                $returnData[0][$key] = $value;
                 $i++;
             }
         }
-
-        return $i;
+        $returnData[1] = $i;
+        return $returnData;
     }
 }

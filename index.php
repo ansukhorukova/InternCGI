@@ -67,4 +67,4 @@ var_dump($arrAll);
 //$LoggerInFileSystem->error($message);
 //$LoggerInFileSystem->warning($message);
 //$LoggerInFileSystem->notice($message);
-require_once 'configs' . DIRECTORY_SEPARATOR . 'SystemStopConfig.php';
+$connectToDataBase->disConnect();
