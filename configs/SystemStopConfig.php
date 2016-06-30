@@ -1,0 +1,3 @@
+<?php
+
+$connectToDataBase->disConnect();

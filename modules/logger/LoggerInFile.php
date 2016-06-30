@@ -1,11 +1,11 @@
 <?php
 
-namespace controllers\logger;
+namespace modules\logger;
 
 use core\abstracts\logger\LoggerAbstract;
 use configs\ConfigPathToLogFile;
 
-class LoggerInFileSystem extends LoggerAbstract
+class LoggerInFile extends LoggerAbstract
 {
     protected $logFile = null;
 

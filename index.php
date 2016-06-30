@@ -1,17 +1,17 @@
 <?php
 
-//use modules\logger\controller\LoggerInFileSystem as LoggerInFileSystem;
-use controllers\logger\LoggerInDB;
-use models\Users;
-use models\ConnectToDataBase;
-use configs\ConfigNewUser;
+use controllers\UsersController;
 
 require_once 'autoloader.php';
+require_once 'configs' . DIRECTORY_SEPARATOR . 'SystemStartConfig.php';
 
-$database = 'connects\ConnectToPdoDataBase';
+/**
+ * Connect with database contained in $dbh var.
+ *
+ * To work with logger, use $logger var
+ */
 
-$connect = new ConnectToDataBase($database);
-$dbh = $connect->getConnect();
+
 /*
 $user = new Users($dbh);
 $user->getCollection();
@@ -35,12 +35,10 @@ $message = "I'm a message";
 /**
  * Use logger to write log into DB
  */
-$LoggerInDB = new LoggerInDB($dbh);
 
 //$LoggerInDB->error($message);
 //$LoggerInDB->warning($message);
-$LoggerInDB->notice($message);
-unset($dbh);
+$logger->notice($message);
 /**
  * When it'll finish to work with PDO database
  * it'll close connection to database
@@ -55,3 +53,4 @@ unset($dbh);
 //$LoggerInFileSystem->error($message);
 //$LoggerInFileSystem->warning($message);
 //$LoggerInFileSystem->notice($message);
+require_once 'configs' . DIRECTORY_SEPARATOR . 'SystemStopConfig.php';

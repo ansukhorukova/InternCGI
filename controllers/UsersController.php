@@ -1,13 +1,10 @@
 <?php
 
-namespace models;
+namespace controllers;
 
-use controllers\users\CreateUsers;
-use controllers\users\DeleteUser;
-use controllers\users\GetSingleUser;
-use controllers\users\GetCollectionUsers;
+use core\interfaces\items\ItemsInterface;
 
-class Users 
+class Users implements ItemsInterface
 {
     private $dbh;
     private $data = array();

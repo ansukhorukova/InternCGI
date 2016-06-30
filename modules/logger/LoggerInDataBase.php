@@ -1,10 +1,10 @@
 <?php
 
-namespace controllers\logger;
+namespace modules\logger;
 
 use core\abstracts\logger\LoggerAbstract;
 
-class LoggerInDB extends LoggerAbstract
+class LoggerInDataBase extends LoggerAbstract
 {
 
     protected $dbh;
