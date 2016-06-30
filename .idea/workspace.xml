@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/abstracts/items/CreateItemsAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/SystemStartConfig.php" afterPath="$PROJECT_DIR$/configs/SystemStartConfig.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UsersController.php" afterPath="$PROJECT_DIR$/controllers/UsersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/items/Items.php" afterPath="$PROJECT_DIR$/modules/items/Items.php" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,12 +30,10 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="455">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="e#7#39#0#PHP" expanded="true" />
-                <marker date="1467294702861" expanded="true" signature="1218:1230" ph="SELECT * FRO... users" />
-                <marker date="1467294702861" expanded="true" signature="1218:1232" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -111,8 +106,8 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="203">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,22 +116,18 @@
       <file leaf-file-name="Items.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/items/Items.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+            <state relative-caret-position="378">
+              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
               <folding>
                 <element signature="e#33#74#0#PHP" expanded="true" />
-                <marker date="1467295080105" expanded="true" signature="2212:2252" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-                <marker date="1467295080105" expanded="true" signature="2514:2527" ph="SELECT * FRO... " />
-                <marker date="1467295080105" expanded="true" signature="2514:2529" ph="SELECT * FRO... " />
-                <marker date="1467295080105" expanded="true" signature="2514:2565" ph="SELECT * FRO... " />
-                <marker date="1467295080105" expanded="true" signature="2514:2566" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-                <marker date="1467295080105" expanded="true" signature="2514:2567" ph="SELECT * FRO... " />
-                <marker date="1467295080105" expanded="true" signature="2855:2868" ph="DELETE FROM " />
-                <marker date="1467295080105" expanded="true" signature="2855:2904" ph="DELETE FROM " />
-                <marker date="1467295080105" expanded="true" signature="2855:2905" ph="DELETE FROM " />
-                <marker date="1467295080105" expanded="true" signature="2855:2906" ph="DELETE FROM " />
-                <marker date="1467295080105" expanded="true" signature="3099:3132" ph="INSERT INTO `${$tableName}`... " />
-                <marker date="1467295080105" expanded="true" signature="3866:3887" ph="INSERT INTO `${$tableName}`... " />
+                <marker date="1467305794457" expanded="true" signature="1580:1620" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+                <marker date="1467305794457" expanded="true" signature="1896:1948" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+                <marker date="1467305794457" expanded="true" signature="2134:2147" ph="DELETE FROM " />
+                <marker date="1467305794457" expanded="true" signature="2134:2183" ph="DELETE FROM " />
+                <marker date="1467305794457" expanded="true" signature="2134:2184" ph="DELETE FROM " />
+                <marker date="1467305794457" expanded="true" signature="2134:2185" ph="DELETE FROM " />
+                <marker date="1467305794457" expanded="true" signature="2375:2408" ph="INSERT INTO `${$tableName}`... " />
+                <marker date="1467305794457" expanded="true" signature="3327:3348" ph="INSERT INTO `${$tableName}`... " />
               </folding>
             </state>
           </provider>
@@ -532,12 +523,12 @@
       <workItem from="1467180002103" duration="13343000" />
       <workItem from="1467199570876" duration="11736000" />
       <workItem from="1467266060578" duration="9745000" />
-      <workItem from="1467280928645" duration="13158000" />
+      <workItem from="1467280928645" duration="21670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127280000" />
+    <option name="totallyTimeSpent" value="135792000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,16 +580,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>25</line>
-          <option name="timeStamp" value="64" />
+          <line>34</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="65" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
@@ -734,14 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/logger/LoggerInDataBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -762,22 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/SystemStopConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/database/ConnectToDataBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/items/SaveItem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -794,36 +756,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="455">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="e#7#39#0#PHP" expanded="true" />
-            <marker date="1467294702861" expanded="true" signature="1218:1230" ph="SELECT * FRO... users" />
-            <marker date="1467294702861" expanded="true" signature="1218:1232" ph="SELECT * FRO... users" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/SystemStopConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/database/ConnectToDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/items/Items.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        <state relative-caret-position="378">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
           <folding>
             <element signature="e#33#74#0#PHP" expanded="true" />
-            <marker date="1467295080105" expanded="true" signature="2212:2252" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-            <marker date="1467295080105" expanded="true" signature="2514:2527" ph="SELECT * FRO... " />
-            <marker date="1467295080105" expanded="true" signature="2514:2529" ph="SELECT * FRO... " />
-            <marker date="1467295080105" expanded="true" signature="2514:2565" ph="SELECT * FRO... " />
-            <marker date="1467295080105" expanded="true" signature="2514:2566" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-            <marker date="1467295080105" expanded="true" signature="2514:2567" ph="SELECT * FRO... " />
-            <marker date="1467295080105" expanded="true" signature="2855:2868" ph="DELETE FROM " />
-            <marker date="1467295080105" expanded="true" signature="2855:2904" ph="DELETE FROM " />
-            <marker date="1467295080105" expanded="true" signature="2855:2905" ph="DELETE FROM " />
-            <marker date="1467295080105" expanded="true" signature="2855:2906" ph="DELETE FROM " />
-            <marker date="1467295080105" expanded="true" signature="3099:3132" ph="INSERT INTO `${$tableName}`... " />
-            <marker date="1467295080105" expanded="true" signature="3866:3887" ph="INSERT INTO `${$tableName}`... " />
+            <marker date="1467305794457" expanded="true" signature="1580:1620" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+            <marker date="1467305794457" expanded="true" signature="1896:1948" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+            <marker date="1467305794457" expanded="true" signature="2134:2147" ph="DELETE FROM " />
+            <marker date="1467305794457" expanded="true" signature="2134:2183" ph="DELETE FROM " />
+            <marker date="1467305794457" expanded="true" signature="2134:2184" ph="DELETE FROM " />
+            <marker date="1467305794457" expanded="true" signature="2134:2185" ph="DELETE FROM " />
+            <marker date="1467305794457" expanded="true" signature="2375:2408" ph="INSERT INTO `${$tableName}`... " />
+            <marker date="1467305794457" expanded="true" signature="3327:3348" ph="INSERT INTO `${$tableName}`... " />
           </folding>
         </state>
       </provider>

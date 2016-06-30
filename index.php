@@ -21,44 +21,30 @@ $logger = $chooseLogger->getLogger();
  * To work with logger, use $logger var
  */
 
-$user1 = new UsersController($dbh);
-$user1->setName('Kolya');
-echo $user1->getName();
-/*$user2 = new UsersController($dbh);
-$user2->name = 'Ivan';
-$user2->email = 'exemple@gmail.com';
-$user2->save();
+//$user1 = new UsersController($dbh);
+//$user1->setName('Kolya');
+//echo $user1->getName();
+$user2 = new UsersController($dbh);
+//$user2->setName('Ivan1');
+//$user2->setEmail('exempl2e@gmail.com');
+//$user2->save();
 //$user1->name = 'Vanya';
-echo 'User2' . $user2->getId();
-$arr =  $user2->load($user2->getId());
-var_dump($arr);
+//echo 'User2' . $user2->getId();
+$user2->load(5);
+$user2->setEmail('prim3er@ya.ru');
+$user2->save();
+//$user2->delete();
 //$user1->save();
 //echo $user1->getId();
-echo 'user1';
-$arr =  $user1->load(4);
-var_dump($arr);
-echo $user1->getId();
-$arrAll = $user1->loadAll();
+//echo 'user1';
+//$arr =  $user1->load(4);
+//var_dump($arr);
+//echo $user1->getId();
+$arrAll = $user2->loadAll();
 var_dump($arrAll);
-/*
-$user = new Users($dbh);
-$user->getCollection();
-echo '<br>';
-$user->create(ConfigNewUser::$newUser);
-$user->getCollection();
-echo '<br>';
-$userArr = array('id'=>null, 'email'=>'customer2@example.com');
-$user->getSingleton($userArr);
-echo '<br>';
-$deleteUser = array('id'=>15, 'email'=>null);
-$user->delete($deleteUser);
-
-$user->getCollection();
-*/
 
 
-
-$message = "I'm a message";
+//$message = "I'm a message";
 
 /**
  * Use logger to write log into DB
@@ -66,7 +52,7 @@ $message = "I'm a message";
 
 //$LoggerInDB->error($message);
 //$LoggerInDB->warning($message);
-$logger->notice($message);
+//$logger->notice($message);
 /**
  * When it'll finish to work with PDO database
  * it'll close connection to database

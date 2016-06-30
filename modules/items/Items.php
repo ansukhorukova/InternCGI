@@ -7,14 +7,10 @@ use PDO;
 
 class Items implements ItemsInterface
 {
-    private $dbh;
-    private $data = array();
-    private $dataAll = array();
-    private $id;
-    private $sqlInsert;
-    private $sqlUpdate;
-    private $tableName;
-    private $functionName;
+    protected $dbh;
+    protected $tableName;
+    protected $id;
+
 
     /**
      * Users constructor. Make connection to DB
@@ -33,51 +29,36 @@ class Items implements ItemsInterface
         unset($this->dbh);
     }
 
-    public function __set($name, $value)
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
-        $this->data[$name] = $value;
-    }
-
-    public function __get($name)
-    {
-        return $this->data[$name];
-    }
-
-    public function __call($name, $arguments)
-    {
-        $this->functionName = substr($name, 0, 3);
-        if($this->functionName == 'get') {
-            $name = strtolower(substr($name,3));
-            return $this->data[$name];
-        } else {
-            $name = strtolower(substr($name,3));
-            $this->data[$name] = $arguments[0];
-        }
-
+        return $this->id;
     }
 
     /**
      * Call create() function, it'll create new user in DB.
      *
-     * @param array $user. Send array with user data, like name, login, password and etc.
+     * @param array $user . Send array with user data, like name, login, password and etc.
+     *
+     * @return string|void
      */
     public function save()
     {
-        $this->data['date'] = date('Y-m-d H:i:s');
+        $this->date = date('Y-m-d H:i:s');
 
-        if(!array_key_exists('id', $this->data)){
-            $sql = $this->_sqlInsert($this->data, $this->tableName);
+        if($this->id == null){
+            $sql = $this->_sqlInsert($this, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
-            $this->data['id'] = $this->dbh->lastInsertId();
+            $this->id = $this->dbh->lastInsertId();
+            return 'New row added in db';
         } else {
-            $this->id = $this->data['id'];
-            unset($this->data['id']);
-            $sql = $this->_sqlUpdate($this->data, $this->tableName);
+            $sql = $this->_sqlUpdate($this, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
-            $this->data['id'] = $this->dbh->lastInsertId();
-
+            return 'row is updated in db';
         }
     }
 
@@ -92,76 +73,93 @@ class Items implements ItemsInterface
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-            $this->dataAll[] = $row;
+             $dataAll[] = $row;
         }
-        return $this->dataAll;
+        return $dataAll;
 
     }
 
     public function load($id)
     {
+        $this->id = $id;
         $sql = "SELECT * FROM `" . $this->tableName . "` WHERE id = " .$id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
-        $this->data = $sth->fetch(PDO::FETCH_ASSOC);
-        return $this->data;
-    }
-
-    public function getId()
-    {
-        return $this->data['id'];
+        return $row = $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     public function delete()
     {
-        $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->data['id'];
+        $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->id;
         $this->dbh->exec($sql);
     }
 
     private function _sqlInsert($data, $tableName)
     {
-        $count = count($data);
+        $count = $this->countThis($data);
         $i = 1;
-        $this->sqlInsert = "INSERT INTO `" . $tableName ."` (";
+        $sqlInsert = "INSERT INTO `" . $tableName ."` (";
         foreach ($data as $key => $value) {
+            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
+                continue;
+            }
             if($i < $count){
-                $this->sqlInsert .= "$key, ";
+                $sqlInsert .= "$key, ";
             } else {
-                $this->sqlInsert .= "$key";
+                $sqlInsert .= "$key";
             }
             $i++;
         }
-        $this->sqlInsert .= ") VALUES (";
+        $sqlInsert .= ") VALUES (";
 
         $i = 1;
         foreach ($data as $key => $value) {
+            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
+                continue;
+            }
             if($i < $count){
-                $this->sqlInsert .= "'$value', ";
+                $sqlInsert .= "'$value', ";
             } else {
-                $this->sqlInsert .= "'$value'";
+                $sqlInsert .= "'$value'";
             }
             $i++;
         }
-        $this->sqlInsert .= ')';
+        $sqlInsert .= ')';
 
-        return $this->sqlInsert;
+        return $sqlInsert;
     }
 
     private function _sqlUpdate($data, $tableName)
     {
-        $count = count($data);
+        $count = $this->countThis($data);
         $i = 1;
-        $this->sqlUpdate = "UPDATE `" . $tableName ."` SET ";
+        $sqlUpdate = "UPDATE `" . $tableName ."` SET ";
         foreach ($data as $key => $value) {
+            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
+                continue;
+            }
             if($i < $count){
-                $this->sqlUpdate .= "$key = $value, ";
+                $sqlUpdate .= "$key = '$value', ";
             } else {
-                $this->sqlUpdate .= "$key = $value";
+                $sqlUpdate .= "$key = '$value'";
             }
             $i++;
         }
-        $this->sqlUpdate .= "WHERE id = " . $this->id;
+        $sqlUpdate .= "WHERE id = " . $this->id;
 
-        return $this->sqlUpdate;
+        return $sqlUpdate;
+    }
+
+    public function countThis($data) {
+        $i = 0;
+        foreach ($data as $key => $value) {
+            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
+                continue;
+            } else {
+                $i++;
+            }
+        }
+
+        return $i;
     }
 }
