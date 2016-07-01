@@ -99,6 +99,8 @@ class EntityModel implements EntityInterface
      * Load data from database and save it in protected properties.
      *
      * @param int|string $id Record Id.
+     *
+     * @return bool|void
      */
     public function load($id)
     {
@@ -108,6 +110,7 @@ class EntityModel implements EntityInterface
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         $this->id = $id;
         $this->_getValuesFromTable($row);
+        return true;
     }
 
     /**
@@ -119,6 +122,8 @@ class EntityModel implements EntityInterface
     {
         $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->id;
         $this->dbh->exec($sql);
+        $this->id = null;
+        return true;
     }
 
     /**
