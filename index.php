@@ -1,17 +1,17 @@
 <?php
 
-use controllers\UsersController;
-use controllers\LoggerController;
+use modules\orm\src\Users;
+use modules\logger\src\LoggerAdapter;
 use configs\ConfigDataBase;
 use configs\ConfigPathToLoggers;
-use core\database\ConnectToDataBase;
+use modules\database\ConnectToDataBase;
 
 require_once 'autoloader.php';
 
 $connectToDataBase = new ConnectToDataBase(ConfigDataBase::$configPdoDataBase);
 $dbh = $connectToDataBase->connect();
 
-$chooseLogger = new LoggerController(ConfigPathToLoggers::$loggerInDataBase, $dbh);
+$chooseLogger = new LoggerAdapter(ConfigPathToLoggers::$loggerInDataBase, $dbh);
 $logger = $chooseLogger->getLogger();
 
 
@@ -21,18 +21,19 @@ $logger = $chooseLogger->getLogger();
  * To work with logger, use $logger var
  */
 
-//$user1 = new UsersController($dbh);
+//$user1 = new Users($dbh);
 //$user1->setName('Kolya');
 //echo $user1->getName();
-$user2 = new UsersController($dbh);
-//$user2->setName('Ivan1');
-//$user2->setEmail('exempl2e@gmail.com');
-//$user2->save();
+$user2 = new Users($dbh);
+$user2->setName('Ivan2');
+$user2->setEmail('exempl4e@gmail.com');
+$user2->save();
 //$user1->name = 'Vanya';
 //echo 'User2' . $user2->getId();
-$user2->load(5);
-$user2->setEmail('prim3er@ya.ru');
-$user2->save();
+$user2->load(1);
+//$user2->setEmail('prim36er@ya.ru');
+//$user2->save();
+
 //$user2->delete();
 //$user1->save();
 //echo $user1->getId();
@@ -50,21 +51,6 @@ var_dump($arrAll);
  * Use logger to write log into DB
  */
 
-//$LoggerInDB->error($message);
-//$LoggerInDB->warning($message);
 //$logger->notice($message);
-/**
- * When it'll finish to work with PDO database
- * it'll close connection to database
- */
-//unset($LoggerInDB);
 
-/**
- * Use logger to write log into file
- */
-//$LoggerInFileSystem = new LoggerInFileSystem();
-
-//$LoggerInFileSystem->error($message);
-//$LoggerInFileSystem->warning($message);
-//$LoggerInFileSystem->notice($message);
 $connectToDataBase->disConnect();

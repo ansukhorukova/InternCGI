@@ -1,8 +1,13 @@
 <?php
 
-namespace core\interfaces\items;
+namespace modules\orm\core\interfaces;
 
-interface ItemsInterface
+/**
+ * Interface EntityInterface
+ *
+ * @package modules\orm\core\interfaces
+ */
+interface EntityInterface
 {
     /**
      * Load data from database.

@@ -1,10 +1,15 @@
 <?php
 
-namespace core\abstracts\logger;
+namespace modules\logger\core\abstracts;
 
-use core\interfaces\logger\LoggerInterface;
+use modules\logger\core\interfaces\LoggerInterface;
 use configs;
 
+/**
+ * Class LoggerAbstract
+ *
+ * @package modules\logger\core\abstracts
+ */
 abstract class LoggerAbstract implements LoggerInterface
 {
 
@@ -32,5 +37,13 @@ abstract class LoggerAbstract implements LoggerInterface
         $this->_writeMessage($message, LoggerInterface::TYPE_NOTICE);
     }
 
+    /**
+     * Method _writeMessage() implements writing to database or file
+     *
+     * @param $message
+     * @param string $type
+     *
+     * @return mixed
+     */
     abstract protected function _writeMessage($message, $type);
 }

@@ -1,18 +1,37 @@
 <?php
 
-namespace modules\items;
+namespace modules\orm\models;
 
-use core\interfaces\items\ItemsInterface;
+use modules\orm\core\interfaces\EntityInterface;
 use PDO;
 
-class Items implements ItemsInterface
+/**
+ * Class EntityModel implements interface ItemsInterface.
+ *
+ * All implemented method are need for work ORM.
+ *
+ * @package modules\orm\models
+ */
+class EntityModel implements EntityInterface
 {
+
+    /**
+     * @var int|string $id.
+     */
     protected $id;
+    /**
+     * @var resource $dbh.
+     */
     protected $dbh;
+    /**
+     * @var string $tableName
+     */
     protected $tableName;
 
     /**
-     * @return mixed
+     * Method getId() returns current item $id.
+     *
+     * @return int $id.
      */
     public function getId()
     {
@@ -37,34 +56,32 @@ class Items implements ItemsInterface
     }
 
     /**
-     * Call create() function, it'll create new user in DB.
+     * Call create() function, it'll create new entity in DB.
      *
-     * @param array $user . Send array with user data, like name, login, password and etc.
+     * @param object. Send object with properties, like name, login, password or etc.
      *
      * @return string|void
      */
     public function save()
     {
-        $this->date = date('Y-m-d H:i:s');
-
         if($this->id == null){
             $sql = $this->_sqlInsert($this, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
             $this->id = $this->dbh->lastInsertId();
-            return 'New row added in db';
+            return 'New row added in db at ' . date('Y-m-d H:i:s');
         } else {
             $sql = $this->_sqlUpdate($this, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
-            return 'row is updated in db';
+            return 'row id:' . $this->id . ' is updated at ' . date('Y-m-d H:i:s');
         }
     }
 
     /**
      * Call loadAll() method, and receive collection users from 'user' table.
      *
-     * @return array|void
+     * @return array $dataAll.
      */
     public function loadAll()
     {
@@ -78,24 +95,48 @@ class Items implements ItemsInterface
 
     }
 
+    /**
+     * Load data from database and save it in protected properties.
+     *
+     * @param int|string $id Record Id.
+     */
     public function load($id)
     {
         $sql = "SELECT * FROM `" . $this->tableName . "` WHERE id = " .$id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
-        return $row = $sth->fetch(PDO::FETCH_ASSOC);
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+        $this->id = $id;
+        $this->_getValuesFromTable($row);
     }
 
+    /**
+     * Delete record from the database.
+     *
+     * @return void
+     */
     public function delete()
     {
         $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->id;
         $this->dbh->exec($sql);
     }
 
-    private function _sqlInsert($data, $tableName)
+    /**
+     * Method _sqlInsert() is internal method for dynamically creates SQL INSERT query.
+     *
+     * @param object $data
+     * @param string $tableName
+     *
+     * @return string $sqlInsert
+     */
+    protected function _sqlInsert($data, $tableName)
     {
-        $returnData = $this->returnThisData($data);
+        $returnData = $this->_returnThisData($data);
         $data = $returnData[0];
+        /**
+         * @param $count, $sqlInsertKey, $sqlInsertValue, $i, $key and $value
+         *     they are internal variables to create the logic of this method.
+         */
         $count = $returnData[1];
         $sqlInsertKey = '';
         $sqlInsertValue = '';
@@ -116,10 +157,22 @@ class Items implements ItemsInterface
         return $sqlInsert;
     }
 
-    private function _sqlUpdate($data, $tableName)
+    /**
+     * Method _sqlUpdate() is internal method for dynamically creates SQL UPDATE query.
+     *
+     * @param object $data
+     * @param string $tableName
+     *
+     * @return string $sqlUpdate
+     */
+    protected function _sqlUpdate($data, $tableName)
     {
-        $returnData = $this->returnThisData($data);
+        $returnData = $this->_returnThisData($data);
         $data = $returnData[0];
+        /**
+         * @param $count, $i, $key and $value
+         *     they are internal variables to create the logic of this method.
+         */
         $count = $returnData[1];
         $i = 1;
         $sqlUpdate = "UPDATE `" . $tableName ."` SET ";
@@ -131,12 +184,21 @@ class Items implements ItemsInterface
             }
             $i++;
         }
-        $sqlUpdate .= "WHERE id = " . $this->id;
+        $sqlUpdate .= " WHERE id = " . $this->id;
 
         return $sqlUpdate;
     }
 
-    public function returnThisData($data) {
+    /**
+     * The method _returnThisData() implements logic iterate object $data,
+     * find all properties, that are will used.
+     * Method _returnThisData() return all found properties and them count.
+     *
+     * @param object $data
+     *
+     * @return mixed $returnData
+     */
+    protected function _returnThisData($data) {
         $i = 0;
         foreach ($data as $key => $value) {
             if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
@@ -148,5 +210,18 @@ class Items implements ItemsInterface
         }
         $returnData[1] = $i;
         return $returnData;
+    }
+
+    /**
+     * Method _getValuesFromTable() saves data returned from table
+     *    in protected properties of object $this.
+     *
+     * @param array $row
+     */
+    protected function _getValuesFromTable($row)
+    {
+        foreach ($row as $key =>$value) {
+            $this->$key = $value;
+        }
     }
 }

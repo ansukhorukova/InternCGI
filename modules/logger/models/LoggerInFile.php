@@ -2,26 +2,29 @@
 
 namespace modules\logger;
 
-use core\abstracts\logger\LoggerAbstract;
+use modules\logger\core\abstracts\LoggerAbstract;
 use configs\ConfigPathToLogFile;
 
 class LoggerInFile extends LoggerAbstract
 {
+    /**
+     * @var null|string $logFile.
+     */
     protected $logFile = null;
 
+    /**
+     * Getting path to store logs.
+     */
     function __construct()
     {
-        /**
-         * Getting path to store logs
-         */
         $this->logFile = $_SERVER['DOCUMENT_ROOT'] . ConfigPathToLogFile::$logFile;
     }
 
+    /**
+     * Implement abstract writeMessage() method.
+     */
     protected function _writeMessage($message, $type)
     {
-        /**
-         * Implement abstract writeMessage() method.
-         */
         $fileOpen = fopen($this->logFile, 'a+');
         fwrite($fileOpen, 'Message: ' . $message . ' || ');
         fwrite($fileOpen, 'Type: ' . $type . ' || ');

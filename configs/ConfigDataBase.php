@@ -2,6 +2,11 @@
 
 namespace  configs;
 
+/**
+ * Class ConfigDataBase contains config data for each database
+ *
+ * @param array $configPdoDataBase
+ */
 class ConfigDataBase
 {
    public static $configPdoDataBase = array(
