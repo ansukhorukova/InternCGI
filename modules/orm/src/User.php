@@ -4,11 +4,14 @@ namespace modules\orm\src;
 
 use modules\orm\models\EntityModel;
 
-class Users extends EntityModel
+class User extends EntityModel
 {
     protected $tableName = 'user';
+    protected $data = array();
     protected $name;
     protected $email;
+
+
 
     /**
      * @return string $name
@@ -41,7 +44,6 @@ class Users extends EntityModel
     {
         $this->email = $email;
     }
-
 
     /**
      * UsersController constructor.

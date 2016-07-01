@@ -1,6 +1,6 @@
 <?php
 
-use modules\orm\src\Users;
+use modules\orm\src\User;
 use modules\logger\src\LoggerAdapter;
 use configs\ConfigDataBase;
 use configs\ConfigPathToLoggers;
@@ -24,7 +24,7 @@ $logger = $chooseLogger->getLogger();
 //$user1 = new Users($dbh);
 //$user1->setName('Kolya');
 //echo $user1->getName();
-$user2 = new Users($dbh);
+$user2 = new User($dbh);
 $user2->setName('Ivan2');
 $user2->setEmail('exempl4e@gmail.com');
 $user2->save();

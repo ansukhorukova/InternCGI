@@ -19,11 +19,19 @@ class EntityModel implements EntityInterface
      * @var int|string $id.
      */
     protected $id;
+
     /**
      * @var resource $dbh.
      */
     protected $dbh;
+
     /**
+     * @var resource $dbh.
+     */
+    protected $data = array();
+
+    /**
+     * @var string $tableName
      * @var string $tableName
      */
     protected $tableName;
@@ -41,10 +49,11 @@ class EntityModel implements EntityInterface
     /**
      * Users constructor. Make connection to DB
      */
-    public function __construct ($dbh, $tableName)
+    public function __construct ($dbh, $tableName, $data)
     {
         $this->dbh = $dbh;
         $this->tableName = $tableName;
+        $this->data = $data;
     }
 
     /**
