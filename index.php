@@ -9,7 +9,7 @@ use modules\database\ConnectToDataBase;
 require_once 'autoloader.php';
 
 $connectToDataBase = new ConnectToDataBase(ConfigDataBase::$configPdoDataBase);
-$dbh = $connectToDataBase->connect();
+$dbh = $connectToDataBase->getConnect();
 
 $chooseLogger = new LoggerAdapter(ConfigPathToLoggers::$loggerInDataBase, $dbh);
 $logger = $chooseLogger->getLogger();
@@ -24,15 +24,15 @@ $logger = $chooseLogger->getLogger();
 //$user1 = new Users($dbh);
 //$user1->setName('Kolya');
 //echo $user1->getName();
-$user2 = new User($dbh);
-$user2->setName('Ivan2');
-$user2->setEmail('exempl4e@gmail.com');
-$user2->save();
+$user2 = new User($dbh, 'user');
+//$user2->setName('Ivan3');
+//$user2->setEmail('exemple3@gmail.com');
+//$user2->save();
 //$user1->name = 'Vanya';
 //echo 'User2' . $user2->getId();
-$user2->load(1);
-//$user2->setEmail('prim36er@ya.ru');
-//$user2->save();
+$user2->load(2);
+$user2->setEmail('prim36er@ya.ru');
+$user2->save();
 
 //$user2->delete();
 //$user1->save();
@@ -43,7 +43,7 @@ $user2->load(1);
 //echo $user1->getId();
 $arrAll = $user2->loadAll();
 var_dump($arrAll);
-
+var_dump($user2);
 
 //$message = "I'm a message";
 

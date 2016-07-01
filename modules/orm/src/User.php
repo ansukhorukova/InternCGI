@@ -2,39 +2,17 @@
 
 namespace modules\orm\src;
 
+use modules\database\ConnectToDataBase;
 use modules\orm\models\EntityModel;
 
 class User extends EntityModel
 {
-    protected $tableName = 'user';
-    protected $data = array();
-    protected $name;
-    protected $email;
-
-
-
     /**
-     * @return string $name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string $email
+     * @return string
      */
     public function getEmail()
     {
-        return $this->email;
+        return $this->data['email'];
     }
 
     /**
@@ -42,7 +20,23 @@ class User extends EntityModel
      */
     public function setEmail($email)
     {
-        $this->email = $email;
+        $this->data['email'] = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->data['name'];
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->data['name'] = $name;
     }
 
     /**
@@ -51,8 +45,12 @@ class User extends EntityModel
      *
      * @param PDO object $dbh
      */
-    public function __construct($dbh)
+    public function __construct($dbh, $tableName)
     {
-        parent::__construct($dbh, $this->tableName);
+        if(!$tableName) {
+            die("When creating new object need give two parameters 'connectToDB' and 'tableName'");
+        } else {
+            parent::__construct($dbh, $tableName);
+        }
     }
 }

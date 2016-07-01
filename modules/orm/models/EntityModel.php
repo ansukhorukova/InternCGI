@@ -26,20 +26,19 @@ class EntityModel implements EntityInterface
     protected $dbh;
 
     /**
-     * @var resource $dbh.
+     * @var array $data.
      */
     protected $data = array();
 
     /**
      * @var string $tableName
-     * @var string $tableName
      */
     protected $tableName;
 
     /**
-     * Method getId() returns current item $id.
+     * Method getId() returns current item id.
      *
-     * @return int $id.
+     * @return int|string $this->data['id'].
      */
     public function getId()
     {
@@ -47,13 +46,12 @@ class EntityModel implements EntityInterface
     }
 
     /**
-     * Users constructor. Make connection to DB
+     * Users constructor. Get connection to DB and configure model to work with entity.
      */
-    public function __construct ($dbh, $tableName, $data)
+    public function __construct ($dbh, $tableName)
     {
         $this->dbh = $dbh;
         $this->tableName = $tableName;
-        $this->data = $data;
     }
 
     /**
@@ -74,13 +72,13 @@ class EntityModel implements EntityInterface
     public function save()
     {
         if($this->id == null){
-            $sql = $this->_sqlInsert($this, $this->tableName);
+            $sql = $this->_sqlInsert($this->data, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
             $this->id = $this->dbh->lastInsertId();
             return 'New row added in db at ' . date('Y-m-d H:i:s');
         } else {
-            $sql = $this->_sqlUpdate($this, $this->tableName);
+            $sql = $this->_sqlUpdate($this->data, $this->tableName);
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
             return 'row id:' . $this->id . ' is updated at ' . date('Y-m-d H:i:s');
@@ -101,7 +99,6 @@ class EntityModel implements EntityInterface
              $dataAll[] = $row;
         }
         return $dataAll;
-
     }
 
     /**
@@ -109,17 +106,16 @@ class EntityModel implements EntityInterface
      *
      * @param int|string $id Record Id.
      *
-     * @return bool|void
+     * @return void
      */
     public function load($id)
     {
+        $this->id = $id;
         $sql = "SELECT * FROM `" . $this->tableName . "` WHERE id = " .$id;
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         $row = $sth->fetch(PDO::FETCH_ASSOC);
-        $this->id = $id;
         $this->_getValuesFromTable($row);
-        return true;
     }
 
     /**
@@ -132,7 +128,6 @@ class EntityModel implements EntityInterface
         $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->id;
         $this->dbh->exec($sql);
         $this->id = null;
-        return true;
     }
 
     /**
@@ -145,30 +140,10 @@ class EntityModel implements EntityInterface
      */
     protected function _sqlInsert($data, $tableName)
     {
-        $returnData = $this->_returnThisData($data);
-        $data = $returnData[0];
-        /**
-         * @param $count, $sqlInsertKey, $sqlInsertValue, $i, $key and $value
-         *     they are internal variables to create the logic of this method.
-         */
-        $count = $returnData[1];
-        $sqlInsertKey = '';
-        $sqlInsertValue = '';
-        $i = 1;
-        $sqlInsert = "INSERT INTO `" . $tableName ."` (";
-        foreach ($data as $key => $value) {
-            if($i < $count){
-                $sqlInsertKey .= "$key, ";
-                $sqlInsertValue .= "'$value', ";
-            } else {
-                $sqlInsertKey .= "$key";
-                $sqlInsertValue .= "'$value'";
-            }
-            $i++;
-        }
-        $sqlInsert .= $sqlInsertKey. ") VALUES (" . $sqlInsertValue . ')';
-
-        return $sqlInsert;
+        return
+            $sqlInsert = "INSERT INTO `"
+            . $tableName . "` (`" . implode("`, `", array_keys($data)) . "`) "
+                    . "VALUES ('" . implode("', '", $data) . "')";
     }
 
     /**
@@ -181,26 +156,16 @@ class EntityModel implements EntityInterface
      */
     protected function _sqlUpdate($data, $tableName)
     {
-        $returnData = $this->_returnThisData($data);
-        $data = $returnData[0];
-        /**
-         * @param $count, $i, $key and $value
-         *     they are internal variables to create the logic of this method.
-         */
-        $count = $returnData[1];
-        $i = 1;
-        $sqlUpdate = "UPDATE `" . $tableName ."` SET ";
-        foreach ($data as $key => $value) {
-            if($i < $count){
-                $sqlUpdate .= "$key = '$value', ";
-            } else {
-                $sqlUpdate .= "$key = '$value'";
-            }
-            $i++;
-        }
-        $sqlUpdate .= " WHERE id = " . $this->id;
-
-        return $sqlUpdate;
+        return $sqlUpdate = "UPDATE `" . $tableName ."` SET "
+            . array_map(
+                function ($key, $value)
+                {
+                    return $key . " = '" . $value;
+                },
+                array_keys($data),
+                $data
+              )
+            . " WHERE id = " . $this->id;
     }
 
     /**
@@ -212,6 +177,7 @@ class EntityModel implements EntityInterface
      *
      * @return mixed $returnData
      */
+    /*
     protected function _returnThisData($data) {
         $i = 0;
         foreach ($data as $key => $value) {
@@ -225,7 +191,7 @@ class EntityModel implements EntityInterface
         $returnData[1] = $i;
         return $returnData;
     }
-
+    */
     /**
      * Method _getValuesFromTable() saves data returned from table
      *    in protected properties of object $this.
@@ -235,7 +201,7 @@ class EntityModel implements EntityInterface
     protected function _getValuesFromTable($row)
     {
         foreach ($row as $key =>$value) {
-            $this->$key = $value;
+            $this->data[$key] = $value;
         }
     }
 }
