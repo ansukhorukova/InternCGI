@@ -7,10 +7,8 @@
  */
 function autoloadApp($class)
 {
-    $corePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'app';
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $file = $corePath . DIRECTORY_SEPARATOR . $class . '.php';
-    @ include_once $file;
+    $root = 'app';
+    createPathToFile($root, $class);
 }
 
 /**
@@ -20,7 +18,12 @@ function autoloadApp($class)
  */
 function autoloadVendor($class)
 {
-    $corePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'vendor';
+    $root = 'vendor';
+    createPathToFile($root, $class);
+}
+
+function createPathToFile ($root, $class) {
+    $corePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $root;
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
     $file = $corePath . DIRECTORY_SEPARATOR . $class . '.php';
     @ include_once $file;
