@@ -24,16 +24,19 @@ $logger = $chooseLogger->getLogger();
 // 1. Creating a record
 
 $user1 = new User($dbh[0]);
-$user1->setName('Ivan');
-$user1->setEmail('Vanya123@exe.com');
+$user1->setName('Jim');
+$user1->setEmail('Jimmy13@exe.com');
+$user1->setPassword('123456');
 $user1->save();
 
 echo $user1->getId();
 echo '<br>';
 echo $user1->getName();
+echo $user1->getPassword();
+var_dump($user1->loadAll());
 
 // 2. Loading / updating a record
-
+/*
 $user2 = new User($dbh[0]);
 $user2->load(6);
 
@@ -52,28 +55,7 @@ $user3 = new User($dbh[0]);
 $user3->load(4);
 $user3->delete();
 var_dump($user3->loadAll());
-
-// Object comparison
-
-echo 'User1:';
-echo '<br>';
-$user1->getId();
-echo '<br>';
-echo $user1->getName();
-echo '<br>';
-
-echo 'User2:';
-echo '<br>';
-echo $user2->getId();
-echo '<br>';
-echo $user2->getName();
-echo '<br>';
-
-echo 'User3:';
-echo '<br>';
-$user3->getId();
-echo '<br>';
-echo $user3->getName();
+*/
 /**
  * Use logger to write log into DB or File
  */
