@@ -6,7 +6,8 @@ use Orm\Molneek\Models\EntityModel;
 
 class User extends EntityModel
 {
-    protected $tableName = 'user';
+    protected $_tableName = 'user';
+    protected $_idName = 'id';
     /**
      * UsersController constructor.
      * Implement transfer connection to model
@@ -15,7 +16,7 @@ class User extends EntityModel
      */
     public function __construct($dbh, $logger = null)
     {
-        parent::__construct($dbh, $this->tableName, $logger);
+        parent::__construct($dbh, $this->_tableName, $this->_idName, $logger);
 
     }
 
@@ -28,15 +29,15 @@ class User extends EntityModel
      */
     public function __call($name, $arguments)
     {
-        $this->functionName = substr($name, 0, 3);
+        $this->_functionName = substr($name, 0, 3);
         $name = strtolower(substr($name, 3));
-        if($this->functionName == 'get') {
-            return $this->data[$name];
-        } elseif($this->functionName == 'set') {
-            if(!$this->id) {
-                $this->data[$name] = $arguments[0];
+        if($this->_functionName == 'get') {
+            return !isset($this->_data[$name]) ? false : $this->_data[$name];
+        } elseif($this->_functionName == 'set') {
+            if(!$this->_id) {
+                $this->_data[$name] = $arguments[0];
             } else {
-                $this->updateData[$name] = $arguments[0];
+                $this->_updateData[$name] = $arguments[0];
             }
         }
     }

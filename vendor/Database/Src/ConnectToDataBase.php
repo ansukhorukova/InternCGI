@@ -17,7 +17,7 @@ class ConnectToDataBase
     /**
      * @var \PDO $dbh.
      */
-    public $dbh = array();
+    public $dbh;
 
     /**
      * ConnectToDataBase constructor. Create new PDO object and connect to database.
@@ -26,7 +26,7 @@ class ConnectToDataBase
      */
     public function __construct($dataBaseConfig)
     {
-        $this->dbh[] = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
+        $this->dbh = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
                               $dataBaseConfig['password'], $dataBaseConfig['options']);
     }
 
@@ -47,10 +47,6 @@ class ConnectToDataBase
      */
     public function disConnect($numberOfConnection = null)
     {
-        if($numberOfConnection !== null) {
-            unset($this->dbh[$numberOfConnection]);
-        } else {
-            unset($this->dbh);
-        }
+        unset($this->dbh);
     }
 }

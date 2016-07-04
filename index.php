@@ -22,8 +22,8 @@ $logger = $chooseLogger->getLogger();
  */
 
 // 1. Creating a record
-
-$user1 = new User($dbh[0]);
+/*
+$user1 = new User($dbh);
 $user1->setName('Ivan');
 $user1->setEmail('Vanya123@exe.com');
 $user1->save();
@@ -34,7 +34,7 @@ echo $user1->getName();
 
 // 2. Loading / updating a record
 
-$user2 = new User($dbh[0]);
+$user2 = new User($dbh);
 $user2->load(6);
 
 echo $user2->getId();
@@ -48,7 +48,7 @@ $user2->save();
 
 // 3. Deleting record
 
-$user3 = new User($dbh[0]);
+$user3 = new User($dbh);
 $user3->load(4);
 $user3->delete();
 var_dump($user3->loadAll());
@@ -72,7 +72,8 @@ echo '<br>';
 echo 'User3:';
 echo '<br>';
 $user3->getId();
-echo '<br>';
+echo '<br>';*/
+$user3 = new User($dbh);
 echo $user3->getName();
 /**
  * Use logger to write log into DB or File
