@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configs/ConfigDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configs/ConfigPathToLogFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configs/ConfigPathToLoggers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/database/ConnectToDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/logger/core/abstracts/LoggerAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/logger/core/interfaces/LoggerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/logger/models/LoggerInDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/logger/models/LoggerInFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/logger/src/LoggerAdapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/orm/core/interfaces/EntityInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/orm/models/EntityModel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/orm/src/User.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoloader.php" afterPath="$PROJECT_DIR$/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
     </list>
     <ignored path="InternCGI.iws" />
@@ -51,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/orm/src/models/EntityModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-522">
@@ -63,6 +49,16 @@
                 <marker date="1467623365729" expanded="true" signature="3336:3386" ph="DELETE FROM " />
                 <marker date="1467623365729" expanded="true" signature="3792:3975" ph="INSERT INTO `${$tableName}`... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/abstracts/items/DeleteItemsAbstract.php" />
         <option value="$PROJECT_DIR$/core/abstracts/items/GetItemsAbstract.php" />
         <option value="$PROJECT_DIR$/core/interfaces/items/GetItemsInterface.php" />
         <option value="$PROJECT_DIR$/models/databases/ConnectToPdoDataBase.php" />
@@ -166,6 +161,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/app/orm/src/models/EntityModel.php" />
+        <option value="$PROJECT_DIR$/readme.txt" />
       </list>
     </option>
   </component>
@@ -554,12 +550,12 @@
       <workItem from="1467368276960" duration="2931000" />
       <workItem from="1467378214023" duration="9211000" />
       <workItem from="1467611571398" duration="419000" />
-      <workItem from="1467612040620" duration="10584000" />
+      <workItem from="1467612040620" duration="11009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172768000" />
+    <option name="totallyTimeSpent" value="173193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,9 +577,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -639,13 +635,6 @@
     <entry file="file://$PROJECT_DIR$/configs/SystemStopConfig.php" />
     <entry file="file://$PROJECT_DIR$/core/database/ConnectToDataBase.php" />
     <entry file="file://$PROJECT_DIR$/modules/items/Items.php" />
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/UsersController.php" />
     <entry file="file://$PROJECT_DIR$/core/interfaces/items/ItemsInterface.php" />
     <entry file="file://$PROJECT_DIR$/modules/logger/core/interfaces/LoggerInterface.php">
@@ -880,6 +869,14 @@
             <marker date="1467623365729" expanded="true" signature="3336:3386" ph="DELETE FROM " />
             <marker date="1467623365729" expanded="true" signature="3792:3975" ph="INSERT INTO `${$tableName}`... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
