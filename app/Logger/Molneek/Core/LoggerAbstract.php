@@ -1,9 +1,9 @@
 <?php
 
-namespace logger\src\core;
+namespace Logger\Molneek\Core;
 
-use logger\src\core\LoggerInterface;
-use configs;
+use Logger\Molneek\Core\LoggerInterface;
+use Configs;
 
 /**
  * Class LoggerAbstract

@@ -1,8 +1,8 @@
 <?php
 
-namespace logger\src\models;
+namespace Logger\Molneek\Models;
 
-use logger\src\core\LoggerAbstract;
+use Logger\Molneek\Core\LoggerAbstract;
 
 class LoggerInDataBase extends LoggerAbstract
 {

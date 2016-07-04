@@ -1,10 +1,10 @@
 <?php
 
-use orm\src\User;
-use logger\src\LoggerAdapter;
-use configs\ConfigDataBase;
-use configs\ConfigPathToLoggers;
-use database\src\ConnectToDataBase;
+use Orm\Src\User;
+use Logger\Src\LoggerAdapter;
+use Configs\ConfigDataBase;
+use Configs\ConfigPathToLoggers;
+use Database\Src\ConnectToDataBase;
 
 require_once 'autoloader.php';
 

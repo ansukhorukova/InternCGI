@@ -1,6 +1,6 @@
 <?php
 
-namespace  configs;
+namespace  Configs;
 
 /**
  * Class ConfigPathToLogFile contains path for log file

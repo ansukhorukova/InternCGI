@@ -1,8 +1,8 @@
 <?php
 
-namespace orm\src\models;
+namespace Orm\Molneek\Models;
 
-use orm\src\core\EntityInterface;
+use Orm\Molneek\Core\EntityInterface;
 use PDO;
 
 /**

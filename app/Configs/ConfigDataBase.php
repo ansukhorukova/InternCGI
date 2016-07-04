@@ -1,6 +1,6 @@
 <?php
 
-namespace  configs;
+namespace  Configs;
 
 /**
  * Class ConfigDataBase contains config data for each database

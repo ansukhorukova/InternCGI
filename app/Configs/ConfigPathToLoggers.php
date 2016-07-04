@@ -1,6 +1,6 @@
 <?php
 
-namespace configs;
+namespace Configs;
 
 /**
  * Class ConfigPathToLoggers contains path to models files module of Logger
