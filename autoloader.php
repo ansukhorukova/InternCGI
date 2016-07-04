@@ -3,7 +3,7 @@
 /**
  * Function autoloadVendor() looking for files in app directory.
  *
- * @param $class
+ * @param string $class. Name of the desired class.
  */
 function autoloadApp($class)
 {
@@ -14,7 +14,7 @@ function autoloadApp($class)
 /**
  * Function autoloadVendor() looking for files in vendor directory.
  *
- * @param $class
+ * @param string $class. Name of the desired class.
  */
 function autoloadVendor($class)
 {
@@ -22,6 +22,12 @@ function autoloadVendor($class)
     createPathToFile($root, $class);
 }
 
+/**
+ * Function createPathToFile() creates path to look file.
+ *
+ * @param string $root. Name of root directory.
+ * @param string $class. Name of the desired class.
+ */
 function createPathToFile ($root, $class) {
     $corePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $root;
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
