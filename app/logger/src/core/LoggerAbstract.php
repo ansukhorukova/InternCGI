@@ -1,8 +1,8 @@
 <?php
 
-namespace modules\logger\core\abstracts;
+namespace logger\src\core;
 
-use modules\logger\core\interfaces\LoggerInterface;
+use logger\src\core\LoggerInterface;
 use configs;
 
 /**

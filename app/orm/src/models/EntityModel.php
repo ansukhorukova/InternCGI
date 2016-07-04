@@ -1,8 +1,8 @@
 <?php
 
-namespace modules\orm\models;
+namespace orm\src\models;
 
-use modules\orm\core\interfaces\EntityInterface;
+use orm\src\core\EntityInterface;
 use PDO;
 
 /**
@@ -26,9 +26,14 @@ class EntityModel implements EntityInterface
     protected $dbh;
 
     /**
-     * @var array $data.
+     * @var array $data. The array for creating new records in table.
      */
     protected $data = array();
+
+    /**
+     * @var array $updateData. The array for update records in table.
+     */
+    protected $updateData = array();
 
     /**
      * @var string $tableName
@@ -36,22 +41,23 @@ class EntityModel implements EntityInterface
     protected $tableName;
 
     /**
-     * Method getId() returns current item id.
-     *
-     * @return int|string $this->data['id'].
+     * @var string $functionName.
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $functionName;
+
+    /**
+     * @var string $logger.
+     */
+    protected $logger;
 
     /**
      * Users constructor. Get connection to DB and configure model to work with entity.
      */
-    public function __construct ($dbh, $tableName)
+    public function __construct ($dbh, $tableName, $logger = null)
     {
         $this->dbh = $dbh;
         $this->tableName = $tableName;
+        $this->logger = $logger;
     }
 
     /**
@@ -62,26 +68,38 @@ class EntityModel implements EntityInterface
         unset($this->dbh);
     }
 
+     /**
+     * Method getId() returns current item id.
+     *
+     * @return int|string $this->id.
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
-     * Call create() function, it'll create new entity in DB.
+     * Method save() creates new entity or update it in DB.
      *
-     * @param object. Send object with properties, like name, login, password or etc.
+     * @internal param array $this->data. Contains properties, like name, email or etc.
      *
-     * @return string|void
+     * @return void
      */
     public function save()
     {
         if($this->id == null){
             $sql = $this->_sqlInsert($this->data, $this->tableName);
             $sth = $this->dbh->prepare($sql);
+            $this->_bindValue($this->data, $sth);
             $sth->execute();
             $this->id = $this->dbh->lastInsertId();
-            return 'New row added in db at ' . date('Y-m-d H:i:s');
         } else {
-            $sql = $this->_sqlUpdate($this->data, $this->tableName);
+            $sql = $this->_sqlUpdate($this->updateData, $this->tableName);
             $sth = $this->dbh->prepare($sql);
+            $this->_bindValue($this->updateData, $sth);
             $sth->execute();
-            return 'row id:' . $this->id . ' is updated at ' . date('Y-m-d H:i:s');
+            $this->data = array_replace($this->data, $this->updateData);
+            unset($this->updateData);
         }
     }
 
@@ -128,6 +146,7 @@ class EntityModel implements EntityInterface
         $sql = "DELETE FROM `" . $this->tableName . "` WHERE id = " . $this->id;
         $this->dbh->exec($sql);
         $this->id = null;
+        $this->data = null;
     }
 
     /**
@@ -140,10 +159,9 @@ class EntityModel implements EntityInterface
      */
     protected function _sqlInsert($data, $tableName)
     {
-        return
-            $sqlInsert = "INSERT INTO `"
-            . $tableName . "` (`" . implode("`, `", array_keys($data)) . "`) "
-                    . "VALUES ('" . implode("', '", $data) . "')";
+        return $sqlInsert = "INSERT INTO `"
+                 . $tableName . "` (`" . implode("`, `", array_keys($data)) . "`) "
+                 . "VALUES (" . implode(", ", array_fill(0, count($data), '?')) . ")";
     }
 
     /**
@@ -157,41 +175,16 @@ class EntityModel implements EntityInterface
     protected function _sqlUpdate($data, $tableName)
     {
         return $sqlUpdate = "UPDATE `" . $tableName ."` SET "
-            . array_map(
-                function ($key, $value)
-                {
-                    return $key . " = '" . $value;
-                },
-                array_keys($data),
-                $data
-              )
+            . implode(", ", array_map(function ($key)
+                                        {
+                                            return $key . " = ? ";
+                                        },
+                                        array_keys($data)
+                                     )
+            )
             . " WHERE id = " . $this->id;
     }
 
-    /**
-     * The method _returnThisData() implements logic iterate object $data,
-     * find all properties, that are will used.
-     * Method _returnThisData() return all found properties and them count.
-     *
-     * @param object $data
-     *
-     * @return mixed $returnData
-     */
-    /*
-    protected function _returnThisData($data) {
-        $i = 0;
-        foreach ($data as $key => $value) {
-            if($key == 'dbh' || $key == 'tableName' || $key == 'id') {
-                continue;
-            } else {
-                $returnData[0][$key] = $value;
-                $i++;
-            }
-        }
-        $returnData[1] = $i;
-        return $returnData;
-    }
-    */
     /**
      * Method _getValuesFromTable() saves data returned from table
      *    in protected properties of object $this.
@@ -202,6 +195,20 @@ class EntityModel implements EntityInterface
     {
         foreach ($row as $key =>$value) {
             $this->data[$key] = $value;
+        }
+    }
+
+    /**
+     * Method _bindValue() bind data with prepared expressions.
+     *
+     * @param array $data.
+     * @param object $sth.
+     */
+    protected function _bindValue($data, $sth)
+    {
+        $i = 0;
+        foreach ($data as $key => $value) {
+            $sth->bindValue(++$i, $value);
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\database;
+namespace database\src;
 
 /**
  * Class ConnectToDataBase implements connection to database.
@@ -17,7 +17,7 @@ class ConnectToDataBase
     /**
      * @var \PDO $dbh.
      */
-    public $dbh;
+    public $dbh = array();
 
     /**
      * ConnectToDataBase constructor. Create new PDO object and connect to database.
@@ -26,7 +26,7 @@ class ConnectToDataBase
      */
     public function __construct($dataBaseConfig)
     {
-        $this->dbh = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
+        $this->dbh[] = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
                               $dataBaseConfig['password'], $dataBaseConfig['options']);
     }
 

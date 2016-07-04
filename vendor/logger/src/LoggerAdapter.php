@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\logger\src;
+namespace logger\src;
 
 class LoggerAdapter
 {

@@ -13,3 +13,36 @@ autoloader.php - The file implements spl_autoload_register() function
 ./log - contains log file.
 
 ./modules - dir contains main files for works app
+
+
+/**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->data['email'];
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->data['email'] = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->data['name'];
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->data['name'] = $name;
+    }

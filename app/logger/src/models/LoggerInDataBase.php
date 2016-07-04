@@ -1,8 +1,8 @@
 <?php
 
-namespace modules\logger\models;
+namespace logger\src\models;
 
-use modules\logger\core\abstracts\LoggerAbstract;
+use logger\src\core\LoggerAbstract;
 
 class LoggerInDataBase extends LoggerAbstract
 {

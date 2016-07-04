@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\orm\core\interfaces;
+namespace orm\src\core;
 
 /**
  * Interface EntityInterface
@@ -21,7 +21,7 @@ interface EntityInterface
     /**
      * Get all records from database.
      *
-     * @return void
+     * @return array
      */
     public function loadAll();
 

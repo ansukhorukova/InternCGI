@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\logger\core\interfaces;
+namespace logger\src\core;
 
 interface LoggerInterface
 {

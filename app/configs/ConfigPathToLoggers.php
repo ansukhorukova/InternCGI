@@ -10,6 +10,6 @@ namespace configs;
  */
 class ConfigPathToLoggers
 {
-    public static $loggerInDataBase = 'modules\logger\models\LoggerInDataBase';
-    public static $loggerInFile = 'modules\logger\models\LoggerInFile';
+    public static $loggerInDataBase = 'logger\src\models\LoggerInDataBase';
+    public static $loggerInFile = 'logger\src\models\LoggerInFile';
 }
