@@ -81,9 +81,10 @@ class EntityModel implements EntityInterface
     /**
      * Method save() creates new entity or update it in DB.
      *
-     * @internal param array $this->data. Contains properties, like name, email or etc.
+     * @param array $this ->data. Contains properties, like name, email or etc.
+     * @param string $this ->tableName. Contains name of DataBase.
      *
-     * @return void
+     * @return void.
      */
     public function save()
     {
