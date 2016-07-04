@@ -42,9 +42,15 @@ class ConnectToDataBase
 
     /**
      *Method disConnect() implements disconnection from database.
+     *
+     * @param null|integer $numberOfConnection
      */
-    public function disConnect()
+    public function disConnect($numberOfConnection = null)
     {
-        unset($this->dbh);
+        if($numberOfConnection !== null) {
+            unset($this->dbh[$numberOfConnection]);
+        } else {
+            unset($this->dbh);
+        }
     }
 }
