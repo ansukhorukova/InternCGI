@@ -46,7 +46,7 @@ class User extends EntityModel
         if($this->_functionName == 'get') {
             return !isset($this->_data[$name]) ? false : $this->_data[$name];
         } elseif($this->_functionName == 'set') {
-            if(!$this->_id) {
+            if(!isset($this->_data[$this->_idName])) {
                 $this->_data[$name] = $arguments[0];
             } else {
                 $this->_updateData[$name] = $arguments[0];

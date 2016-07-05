@@ -14,12 +14,6 @@ use PDO;
  */
 class EntityModel implements EntityInterface
 {
-
-    /**
-     * @var int|string $id.
-     */
-    protected $_id;
-
     /**
      * @var int|string $idName.
      */
@@ -86,7 +80,7 @@ class EntityModel implements EntityInterface
      */
     public function getId()
     {
-        return $this->_id;
+        return $this->_data[$this->_idName];
     }
 
     /**
@@ -96,13 +90,13 @@ class EntityModel implements EntityInterface
      */
     public function save()
     {
-        if($this->_id == null){
+        if(!isset($this->_data[$this->_idName])){
             $sql = $this->_sqlInsert($this->_data);
             $this->_executeSql($sql, $this->_data);
-            $this->_id = $this->_dbh->lastInsertId();
+            $this->_data[$this->_idName] = $this->_dbh->lastInsertId();
         } else {
             $sql = $this->_sqlUpdate($this->_updateData);
-            $this->_updateData[$this->_idName] = $this->_id;
+            $this->_updateData[$this->_idName] = $this->_data[$this->_idName];
             $this->_executeSql($sql, $this->_updateData);
             $this->_data = array_replace($this->_data, $this->_updateData);
             unset($this->_updateData);
@@ -133,9 +127,9 @@ class EntityModel implements EntityInterface
      */
     public function load($id)
     {
-        $this->_id = $id;
+        $this->_data[$this->_idName] = $id;
         $sql = "SELECT * FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = ?";
-        $sth = $this->_executeSql($sql, $this->_id);
+        $sth = $this->_executeSql($sql, $this->_data[$this->_idName]);
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         $this->_getValuesFromTable($row);
     }
@@ -147,9 +141,9 @@ class EntityModel implements EntityInterface
      */
     public function delete()
     {
-        $sql = "DELETE FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = " . $this->_id;
+        $sql = "DELETE FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = " . $this->_data[$this->_idName];
         $this->_dbh->exec($sql);
-        $this->_id = null;
+        $this->_data[$this->_idName] = null;
         $this->_data = null;
     }
 

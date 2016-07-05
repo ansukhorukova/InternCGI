@@ -47,3 +47,7 @@ Message: New user created || Type: notice || Creation Date: 29-06-2016 12:11:50
 Message: New user created || Type: notice || Creation Date: 29-06-2016 13:42:02
 Message: New user created || Type: notice || Creation Date: 29-06-2016 14:34:37
 Message: New user created || Type: notice || Creation Date: 29-06-2016 14:35:16
+Message: I'm a message || Type: notice || Creation Date: 05-07-2016 16:06:30
+Message: I'm a message || Type: notice || Creation Date: 05-07-2016 16:10:48
+Message: I'm a message || Type: notice || Creation Date: 05-07-2016 16:12:53
+Message: I'm a message || Type: notice || Creation Date: 05-07-2016 16:13:52

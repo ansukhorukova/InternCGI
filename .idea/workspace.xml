@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/spet/Database/ConnectToDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/spet/Logger/LoggerAdapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/spet/Orm/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Configs/ConfigDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Configs/ConfigPathToLogFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Configs/ConfigPathToLoggers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Core/LoggerAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Core/LoggerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Models/LoggerInDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Models/LoggerInFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Orm/Core/EntityInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Orm/Models/EntityModel.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" afterPath="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/log.txt" afterPath="$PROJECT_DIR$/logs/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" afterPath="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="-41">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#369#405#0#PHP" expanded="true" />
               </folding>
@@ -69,17 +59,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1779">
-              <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+            <state relative-caret-position="113">
+              <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
               <folding>
                 <element signature="e#23#52#0#PHP" expanded="true" />
-                <marker date="1467722286233" expanded="true" signature="2519:2560" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-                <marker date="1467722286233" expanded="true" signature="2967:3041" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-                <marker date="1467722286233" expanded="true" signature="3326:3397" ph="DELETE FROM " />
-                <marker date="1467722286233" expanded="true" signature="3763:3953" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
+                <marker date="1467724426566" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+                <marker date="1467724426566" expanded="true" signature="2991:3065" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+                <marker date="1467724426566" expanded="true" signature="3368:3439" ph="DELETE FROM " />
+                <marker date="1467724426566" expanded="true" signature="3841:4031" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
               </folding>
             </state>
           </provider>
@@ -98,8 +88,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -198,13 +188,13 @@
         <option value="$PROJECT_DIR$/vendor/Spet/Configs/Src/ConfigPathToLoggers.php" />
         <option value="$PROJECT_DIR$/vendor/Spet/Configs/Src/ConfigPathToLogFile.php" />
         <option value="$PROJECT_DIR$/vendor/Spet/Configs/Src/ConfigDataBase.php" />
-        <option value="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
         <option value="$PROJECT_DIR$/app/Spet/Src/Logger/LoggerAdapter.php" />
         <option value="$PROJECT_DIR$/app/Spet/Src/Database/ConnectToDataBase.php" />
         <option value="$PROJECT_DIR$/vendor/Configs/Src/ConfigPathToLoggers.php" />
         <option value="$PROJECT_DIR$/vendor/Logger/Src/Models/Core/LoggerAbstract.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
+        <option value="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
       </list>
     </option>
@@ -623,12 +613,12 @@
       <workItem from="1467638227006" duration="7225000" />
       <workItem from="1467698067900" duration="7534000" />
       <workItem from="1467714681991" duration="2492000" />
-      <workItem from="1467717776718" duration="4538000" />
+      <workItem from="1467717776718" duration="6340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196322000" />
+    <option name="totallyTimeSpent" value="198124000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,9 +640,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -931,24 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <element signature="e#369#405#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Spet/Src/Database/ConnectToDataBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -965,16 +937,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1779">
-          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+        <state relative-caret-position="113">
+          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding>
             <element signature="e#23#52#0#PHP" expanded="true" />
-            <marker date="1467722286233" expanded="true" signature="2519:2560" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-            <marker date="1467722286233" expanded="true" signature="2967:3041" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-            <marker date="1467722286233" expanded="true" signature="3326:3397" ph="DELETE FROM " />
-            <marker date="1467722286233" expanded="true" signature="3763:3953" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
+            <marker date="1467724426566" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+            <marker date="1467724426566" expanded="true" signature="2991:3065" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+            <marker date="1467724426566" expanded="true" signature="3368:3439" ph="DELETE FROM " />
+            <marker date="1467724426566" expanded="true" signature="3841:4031" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#369#405#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
