@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/log.txt" afterPath="$PROJECT_DIR$/logs/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" afterPath="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +30,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-483">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+            <state relative-caret-position="301">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="e#369#405#0#PHP" expanded="true" />
               </folding>
@@ -36,7 +39,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoggerAdapter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Spet/Src/Logger/LoggerAdapter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
@@ -50,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/logs/log.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-132">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,17 +99,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1602">
-              <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+            <state relative-caret-position="378">
+              <caret line="134" column="45" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
               <folding>
                 <element signature="e#23#52#0#PHP" expanded="true" />
-                <marker date="1467724426566" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-                <marker date="1467724426566" expanded="true" signature="2991:3065" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-                <marker date="1467724426566" expanded="true" signature="3368:3439" ph="DELETE FROM " />
-                <marker date="1467724426566" expanded="true" signature="3841:4031" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
+                <marker date="1467727858789" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+                <marker date="1467727858789" expanded="true" signature="3033:3107" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+                <marker date="1467727858789" expanded="true" signature="3432:3503" ph="DELETE FROM " />
+                <marker date="1467727858789" expanded="true" signature="3905:4095" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
               </folding>
             </state>
           </provider>
@@ -118,18 +131,6 @@
             <state relative-caret-position="273">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerInFile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/Logger/Src/Models/LoggerInFile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#26#57#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -188,11 +189,11 @@
         <option value="$PROJECT_DIR$/vendor/Configs/Src/ConfigPathToLoggers.php" />
         <option value="$PROJECT_DIR$/vendor/Logger/Src/Models/Core/LoggerAbstract.php" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
-        <option value="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
         <option value="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
         <option value="$PROJECT_DIR$/readme.txt" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
       </list>
     </option>
   </component>
@@ -624,12 +625,12 @@
       <workItem from="1467638227006" duration="7225000" />
       <workItem from="1467698067900" duration="7534000" />
       <workItem from="1467714681991" duration="2492000" />
-      <workItem from="1467717776718" duration="8343000" />
+      <workItem from="1467717776718" duration="9582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200127000" />
+    <option name="totallyTimeSpent" value="201366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,7 +654,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -678,18 +679,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>34</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>23</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="108" />
     </breakpoint-manager>
     <watches-manager>
@@ -873,14 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Logger/LoggerAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/Logger/Src/Models/Core/LoggerAbstract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -947,20 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
-          <folding>
-            <element signature="e#23#52#0#PHP" expanded="true" />
-            <marker date="1467724426566" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-            <marker date="1467724426566" expanded="true" signature="2991:3065" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
-            <marker date="1467724426566" expanded="true" signature="3368:3439" ph="DELETE FROM " />
-            <marker date="1467724426566" expanded="true" signature="3841:4031" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -972,18 +939,8 @@
     <entry file="file://$PROJECT_DIR$/logs/log.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-132">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding>
-            <element signature="e#369#405#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,6 +949,38 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Logger/LoggerAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#369#405#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="134" column="45" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
+          <folding>
+            <element signature="e#23#52#0#PHP" expanded="true" />
+            <marker date="1467727858789" expanded="true" signature="2525:2566" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+            <marker date="1467727858789" expanded="true" signature="3033:3107" ph="SELECT * FRO... ${$this-&gt;_tableName}" />
+            <marker date="1467727858789" expanded="true" signature="3432:3503" ph="DELETE FROM " />
+            <marker date="1467727858789" expanded="true" signature="3905:4095" ph="INSERT INTO `${$this-&gt;_tableName}`... " />
+          </folding>
         </state>
       </provider>
     </entry>

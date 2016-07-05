@@ -125,13 +125,15 @@ class EntityModel implements EntityInterface
      *
      * @return void
      */
-    public function load($id)
+    public function load($id = null)
     {
-        $this->_data[$this->_idName] = $id;
-        $sql = "SELECT * FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = ?";
-        $sth = $this->_executeSql($sql, $this->_data[$this->_idName]);
-        $row = $sth->fetch(PDO::FETCH_ASSOC);
-        $this->_getValuesFromTable($row);
+        if($id !== null) {
+            $this->_data[$this->_idName] = $id;
+            $sql = "SELECT * FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = ?";
+            $sth = $this->_executeSql($sql, $this->_data[$this->_idName]);
+            $row = $sth->fetch(PDO::FETCH_ASSOC);
+            $this->_getValuesFromTable($row);
+        }
     }
 
     /**
@@ -186,11 +188,17 @@ class EntityModel implements EntityInterface
      *    in protected properties of object $this.
      *
      * @param array $row
+     *
+     * @return bool
      */
     protected function _getValuesFromTable($row)
     {
-        foreach ($row as $key =>$value) {
-            $this->_data[$key] = $value;
+        if($row === false) {
+            return false;
+        } else {
+            foreach ($row as $key =>$value) {
+                $this->_data[$key] = $value;
+            }
         }
     }
 
