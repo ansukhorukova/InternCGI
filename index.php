@@ -25,7 +25,7 @@ $logger = $chooseLogger->getLogger();
 
 
 /**
- * Connect with database contained in array $dbh.
+ * Connect with database contained in $dbh var.
  *
  * To work with logger, use $logger var
  */
