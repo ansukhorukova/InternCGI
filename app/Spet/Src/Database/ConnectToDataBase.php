@@ -33,7 +33,7 @@ class ConnectToDataBase
     /**
      * Method connect() return connection to database.
      *
-     * @return \PDO
+     * @return object PDO
      */
     public function getConnect()
     {
@@ -42,10 +42,8 @@ class ConnectToDataBase
 
     /**
      * Method disConnect() implements disconnection from database.
-     *
-     * @param null|integer $numberOfConnection
      */
-    public function disConnect($numberOfConnection = null)
+    public function disConnect()
     {
         unset($this->dbh);
     }
