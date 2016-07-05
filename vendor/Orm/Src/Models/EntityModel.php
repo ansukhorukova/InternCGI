@@ -132,7 +132,9 @@ class EntityModel implements EntityInterface
             $sql = "SELECT * FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = ?";
             $sth = $this->_executeSql($sql, $this->_data[$this->_idName]);
             $row = $sth->fetch(PDO::FETCH_ASSOC);
-            $this->_getValuesFromTable($row);
+            if($row !== false) {
+                $this->_data = $row;
+            }
         }
     }
 
@@ -181,25 +183,6 @@ class EntityModel implements EntityInterface
                                      )
             )
             . " WHERE " . $this->_idName . " = ?";
-    }
-
-    /**
-     * Method _getValuesFromTable() saves data returned from table
-     *    in protected properties of object $this.
-     *
-     * @param array $row
-     *
-     * @return bool
-     */
-    protected function _getValuesFromTable($row)
-    {
-        if($row === false) {
-            return false;
-        } else {
-            foreach ($row as $key =>$value) {
-                $this->_data[$key] = $value;
-            }
-        }
     }
 
     /**

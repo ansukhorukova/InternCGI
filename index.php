@@ -33,9 +33,7 @@ $logger = $chooseLogger->getLogger();
 // 1. Creating a record
 
 $user1 = new User($dbh);
-$user1->load();
-var_dump($user1);
-/*
+
 $user1->setName('Frank');
 $user1->setEmail('Frank123@exe.com');
 $user1->save();
