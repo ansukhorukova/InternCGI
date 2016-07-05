@@ -1,6 +1,6 @@
 <?php
 
-namespace configs;
+namespace Configs;
 
 /**
  * Class ConfigPathToLoggers contains path to models files module of Logger
@@ -10,6 +10,6 @@ namespace configs;
  */
 class ConfigPathToLoggers
 {
-    public static $loggerInDataBase = 'logger\src\models\LoggerInDataBase';
-    public static $loggerInFile = 'logger\src\models\LoggerInFile';
+    public static $loggerInDataBase = 'Logger\Models\LoggerInDataBase';
+    public static $loggerInFile = 'Logger\Models\LoggerInFile';
 }

@@ -1,14 +1,9 @@
 <?php
 
-namespace database\src;
+namespace Database;
 
 /**
  * Class ConnectToDataBase implements connection to database.
- *
- * @package modules\database
- */
-/**
- * Class ConnectToDataBase
  *
  * @package modules\database
  */
@@ -17,7 +12,7 @@ class ConnectToDataBase
     /**
      * @var \PDO $dbh.
      */
-    public $dbh = array();
+    public $dbh;
 
     /**
      * ConnectToDataBase constructor. Create new PDO object and connect to database.
@@ -26,7 +21,7 @@ class ConnectToDataBase
      */
     public function __construct($dataBaseConfig)
     {
-        $this->dbh[] = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
+        $this->dbh = new \PDO($dataBaseConfig['dsn'], $dataBaseConfig['name'],
                               $dataBaseConfig['password'], $dataBaseConfig['options']);
     }
 
@@ -41,16 +36,12 @@ class ConnectToDataBase
     }
 
     /**
-     *Method disConnect() implements disconnection from database.
+     * Method disConnect() implements disconnection from database.
      *
      * @param null|integer $numberOfConnection
      */
-    public function disConnect($numberOfConnection = null)
+    public function disConnect()
     {
-        if($numberOfConnection !== null) {
-            unset($this->dbh[$numberOfConnection]);
-        } else {
-            unset($this->dbh);
-        }
+        unset($this->dbh);
     }
 }

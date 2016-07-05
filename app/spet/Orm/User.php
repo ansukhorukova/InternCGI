@@ -1,13 +1,32 @@
 <?php
 
-namespace orm\src;
+namespace Orm;
 
-use orm\src\models\EntityModel;
+use Orm\Models\EntityModel;
 
 class User extends EntityModel
 {
-    protected $tableName = 'user';
+    /**
+     * Specify the table name to work with database.
+     *
+     * @var string $_tableName.
+     */
+    protected $_tableName = 'user';
+
+    /**
+     * Specify the id field name.
+     *
+     * @var string $_idName.
+     */
+    protected $_idName = 'id';
+
+    /**
+     * Specify the options for encrypting password.
+     *
+     * @var array $optionsForPass.
+     */
     protected $optionsForPass = array('cost' => 13);
+
     /**
      * UsersController constructor.
      * Implement transfer connection to model
@@ -16,7 +35,7 @@ class User extends EntityModel
      */
     public function __construct($dbh, $logger = null)
     {
-        parent::__construct($dbh, $this->tableName, $logger);
+        parent::__construct($dbh, $this->_tableName, $this->_idName, $logger);
 
     }
 
@@ -25,26 +44,28 @@ class User extends EntityModel
      *
      * @param string $name. Name of called function.
      * @param array $arguments. Arguments of called function.
-     * @return array
+     * @return string
      */
     public function __call($name, $arguments)
     {
-        $this->functionName = substr($name, 0, 3);
+        $this->_functionName = substr($name, 0, 3);
         $name = strtolower(substr($name, 3));
-        if($this->functionName == 'get') {
+        if($this->_functionName == 'get') {
             if($name == 'password') {
                 return false;
+            } elseif(!isset($this->_data[$name])) {
+                return false;
             } else {
-                return $this->data[$name];
+                return $this->_data[$name];
             }
-        } elseif($this->functionName == 'set') {
+        } elseif($this->_functionName == 'set') {
             if($name == 'password') {
                 $arguments[0] = password_hash($arguments[0], PASSWORD_BCRYPT, $this->optionsForPass);
             }
-            if(!$this->id) {
-                $this->data[$name] = $arguments[0];
+            if(!$this->_id) {
+                $this->_data[$name] = $arguments[0];
             } else {
-                $this->updateData[$name] = $arguments[0];
+                $this->_updateData[$name] = $arguments[0];
             }
         }
     }
