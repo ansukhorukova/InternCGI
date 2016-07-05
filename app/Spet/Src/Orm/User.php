@@ -24,7 +24,8 @@ class User extends EntityModel
      * UsersController constructor.
      * Implement transfer connection to model
      *
-     * @param PDO object $dbh
+     * @param resource $dbh
+     * @param null $logger
      */
     public function __construct($dbh, $logger = null)
     {
