@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Database/Src/ConnectToDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Logger/Src/LoggerAdapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Orm/Src/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Molneek/Core/LoggerAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Molneek/Core/LoggerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Molneek/Models/LoggerInDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Logger/Molneek/Models/LoggerInFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Orm/Molneek/Core/EntityInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/Orm/Molneek/Models/EntityModel.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoloader.php" afterPath="$PROJECT_DIR$/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/Configs/ConfigPathToLoggers.php" afterPath="$PROJECT_DIR$/vendor/Configs/ConfigPathToLoggers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,21 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="468">
+              <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigDataBase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/Configs/ConfigDataBase.php">
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -173,7 +162,6 @@
         <option value="$PROJECT_DIR$/app/configs/ConfigPathToLoggers.php" />
         <option value="$PROJECT_DIR$/vendor/orm/src/User.php" />
         <option value="$PROJECT_DIR$/app/orm/src/core/EntityInterface.php" />
-        <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/app/orm/src/models/EntityModel.php" />
         <option value="$PROJECT_DIR$/vendor/database/src/ConnectToDataBase.php" />
         <option value="$PROJECT_DIR$/app/Configs/ConfigDataBase.php" />
@@ -201,6 +189,7 @@
         <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/vendor/Configs/ConfigPathToLoggers.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/readme.txt" />
       </list>
     </option>
   </component>
@@ -600,12 +589,12 @@
       <workItem from="1467612040620" duration="12336000" />
       <workItem from="1467632293769" duration="13000" />
       <workItem from="1467638227006" duration="7225000" />
-      <workItem from="1467698067900" duration="6925000" />
+      <workItem from="1467698067900" duration="7024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188683000" />
+    <option name="totallyTimeSpent" value="188782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,7 +618,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -674,13 +663,6 @@
     <entry file="file://$PROJECT_DIR$/app/logger/src/core/LoggerInterface.php" />
     <entry file="file://$PROJECT_DIR$/app/configs/ConfigPathToLoggers.php" />
     <entry file="file://$PROJECT_DIR$/vendor/logger/src/LoggerAdapter.php" />
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/orm/src/core/EntityInterface.php" />
     <entry file="file://$PROJECT_DIR$/vendor/orm/src/User.php" />
     <entry file="file://$PROJECT_DIR$/app/orm/src/models/EntityModel.php" />
@@ -967,8 +949,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>
