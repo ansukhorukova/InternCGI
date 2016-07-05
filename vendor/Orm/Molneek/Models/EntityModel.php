@@ -100,11 +100,12 @@ class EntityModel implements EntityInterface
     {
         if($this->_id == null){
             $sql = $this->_sqlInsert($this->_data);
-            $this->_executeSql($this->_data, $sql);
+            $this->_executeSql($sql, $this->_data);
             $this->_id = $this->_dbh->lastInsertId();
         } else {
             $sql = $this->_sqlUpdate($this->_updateData);
-            $this->_executeSql($this->_updateData, $sql);
+            $this->_updateData[$this->_idName] = $this->_id;
+            $this->_executeSql($sql, $this->_updateData);
             $this->_data = array_replace($this->_data, $this->_updateData);
             unset($this->_updateData);
         }
@@ -118,10 +119,9 @@ class EntityModel implements EntityInterface
     public function loadAll()
     {
         $sql = "SELECT * FROM `" . $this->_tableName . "`";
-        $sth = $this->_dbh->prepare($sql);
-        $sth->execute();
+        $sth = $this->_executeSql($sql);
         while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-             $dataAll[] = $row;
+            $dataAll[] = $row;
         }
         return $dataAll;
     }
@@ -135,10 +135,9 @@ class EntityModel implements EntityInterface
      */
     public function load($id)
     {
-        $this->id = $id;
-        $sql = "SELECT * FROM `" . $this->tableName . "` WHERE " . $this->_idName . " = " .$id;
-        $sth = $this->_dbh->prepare($sql);
-        $sth->execute();
+        $this->_id = $id;
+        $sql = "SELECT * FROM `" . $this->_tableName . "` WHERE " . $this->_idName . " = ?";
+        $sth = $this->_executeSql($sql, $this->_id);
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         $this->_getValuesFromTable($row);
     }
@@ -205,6 +204,21 @@ class EntityModel implements EntityInterface
     }
 
     /**
+     * Method _executeSql() implements binding parameters for sql query.
+     *
+     * @param array $data
+     */
+    protected function _executeSql($sql, $data = null)
+    {
+        $sth = $this->_dbh->prepare($sql);
+        if($data !==null) {
+            $this->_bindValue($data, $sth);
+        }
+        $sth->execute();
+        return $sth;
+    }
+
+    /**
      * Method _bindValue() bind data with prepared expressions.
      *
      * @param array $data.
@@ -212,22 +226,13 @@ class EntityModel implements EntityInterface
      */
     protected function _bindValue($data, $sth)
     {
-        $i = 0;
-        foreach ($data as $key => $value) {
-            $sth->bindValue(++$i, $value);
+        if(!is_array($data)){
+            $sth->bindValue(1, $data);
+        } else {
+            $i = 0;
+            foreach ($data as $key => $value) {
+                $sth->bindValue(++$i, $value);
+            }
         }
-    }
-
-    /**
-     * @param $data
-     */
-    protected function _executeSql($data, $sql)
-    {
-        if($this->_id) {
-            $data[$this->_idName] = $this->_id;
-        }
-        $sth = $this->_dbh->prepare($sql);
-        $this->_bindValue($data, $sth);
-        $sth->execute();
     }
 }

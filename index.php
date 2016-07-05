@@ -31,7 +31,7 @@ $user1->save();
 echo $user1->getId();
 echo '<br>';
 echo $user1->getName();
-
+*/
 // 2. Loading / updating a record
 
 $user2 = new User($dbh);
@@ -43,9 +43,14 @@ echo $user2->getName();
 echo '<br>';
 echo $user2->getEmail();
 
-$user2->setEmail('exemple@mail.com');
+$user2->setEmail('ex251@il.com');
 $user2->save();
+echo '<br>';
+echo $user2->getEmail();
+echo '<br>';
+var_dump($user2->loadAll());
 
+/*
 // 3. Deleting record
 
 $user3 = new User($dbh);
@@ -73,8 +78,8 @@ echo 'User3:';
 echo '<br>';
 $user3->getId();
 echo '<br>';*/
-$user3 = new User($dbh);
-echo $user3->getName();
+//$user3 = new User($dbh);
+//echo $user3->getName();
 /**
  * Use logger to write log into DB or File
  */
