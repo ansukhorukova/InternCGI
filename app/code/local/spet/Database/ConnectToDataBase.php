@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Src;
+namespace Database;
 
 /**
  * Class ConnectToDataBase implements connection to database.

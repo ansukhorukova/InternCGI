@@ -1,6 +1,6 @@
 <?php
 
-namespace Logger\Molneek\Core;
+namespace Logger\Core;
 
 interface LoggerInterface
 {

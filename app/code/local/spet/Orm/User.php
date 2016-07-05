@@ -1,8 +1,8 @@
 <?php
 
-namespace Orm\Src;
+namespace Orm;
 
-use Orm\Molneek\Models\EntityModel;
+use Orm\Models\EntityModel;
 
 class User extends EntityModel
 {

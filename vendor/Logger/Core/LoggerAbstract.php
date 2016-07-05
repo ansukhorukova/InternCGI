@@ -1,8 +1,8 @@
 <?php
 
-namespace Logger\Molneek\Core;
+namespace Logger\Core;
 
-use Logger\Molneek\Core\LoggerInterface;
+use Logger\Core\LoggerInterface;
 use Configs;
 
 /**

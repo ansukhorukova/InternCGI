@@ -1,10 +1,10 @@
 <?php
 
-use Orm\Src\User;
-use Logger\Src\LoggerAdapter;
+use Orm\User;
+use Logger\LoggerAdapter;
 use Configs\ConfigDataBase;
 use Configs\ConfigPathToLoggers;
-use Database\Src\ConnectToDataBase;
+use Database\ConnectToDataBase;
 
 require_once 'autoloader.php';
 
@@ -22,16 +22,17 @@ $logger = $chooseLogger->getLogger();
  */
 
 // 1. Creating a record
-/*
+
 $user1 = new User($dbh);
-$user1->setName('Ivan');
-$user1->setEmail('Vanya123@exe.com');
+$user1->setName('Frank');
+$user1->setEmail('Frank123@exe.com');
 $user1->save();
 
 echo $user1->getId();
 echo '<br>';
 echo $user1->getName();
-*/
+echo '<br>';
+var_dump($user1->loadAll());
 // 2. Loading / updating a record
 
 $user2 = new User($dbh);
@@ -50,11 +51,11 @@ echo $user2->getEmail();
 echo '<br>';
 var_dump($user2->loadAll());
 
-/*
+
 // 3. Deleting record
 
 $user3 = new User($dbh);
-$user3->load(4);
+$user3->load(7);
 $user3->delete();
 var_dump($user3->loadAll());
 
@@ -62,7 +63,7 @@ var_dump($user3->loadAll());
 
 echo 'User1:';
 echo '<br>';
-$user1->getId();
+echo $user1->getId();
 echo '<br>';
 echo $user1->getName();
 echo '<br>';
@@ -77,9 +78,7 @@ echo '<br>';
 echo 'User3:';
 echo '<br>';
 $user3->getId();
-echo '<br>';*/
-//$user3 = new User($dbh);
-//echo $user3->getName();
+
 /**
  * Use logger to write log into DB or File
  */

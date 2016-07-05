@@ -10,6 +10,6 @@ namespace Configs;
  */
 class ConfigPathToLoggers
 {
-    public static $loggerInDataBase = 'Logger\Molneek\Models\LoggerInDataBase';
-    public static $loggerInFile = 'Logger\Molneek\Models\LoggerInFile';
+    public static $loggerInDataBase = 'Logger\Models\LoggerInDataBase';
+    public static $loggerInFile = 'Logger\Models\LoggerInFile';
 }

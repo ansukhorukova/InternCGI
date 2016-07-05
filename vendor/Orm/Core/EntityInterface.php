@@ -1,6 +1,6 @@
 <?php
 
-namespace Orm\Molneek\Core;
+namespace Orm\Core;
 
 /**
  * Interface EntityInterface
