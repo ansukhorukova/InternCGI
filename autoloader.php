@@ -7,8 +7,7 @@
  */
 function autoloadApp($class)
 {
-    $root = 'app' . DIRECTORY_SEPARATOR . 'code' . DIRECTORY_SEPARATOR
-            . 'local' . DIRECTORY_SEPARATOR . 'spet';
+    $root = 'app' . DIRECTORY_SEPARATOR . 'spet';
     createPathToFile($root, $class);
 }
 
