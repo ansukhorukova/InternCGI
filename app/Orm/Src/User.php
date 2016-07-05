@@ -6,8 +6,20 @@ use Orm\Molneek\Models\EntityModel;
 
 class User extends EntityModel
 {
+    /**
+     * Specify the table name to work with database.
+     *
+     * @var string $_tableName.
+     */
     protected $_tableName = 'user';
+
+    /**
+     * Specify the id field name.
+     *
+     * @var string $_idName.
+     */
     protected $_idName = 'id';
+
     /**
      * UsersController constructor.
      * Implement transfer connection to model
