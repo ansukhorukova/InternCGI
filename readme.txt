@@ -1,6 +1,6 @@
 index.php - The file implements main app
 
-autoloader.php - The file implements spl_autoload_register() function
+./vendor/autoload.php - The file implements Psr4Autoload
 
 ./app - dir contains files that inherit core files and implement them.
 

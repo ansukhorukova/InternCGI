@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" afterPath="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
     </list>
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,6 +36,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ConnectToDataBase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Spet/Src/Database/ConnectToDataBase.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,7 +69,7 @@
       <file leaf-file-name="EntityModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
+            <state relative-caret-position="1602">
               <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
               <folding>
                 <element signature="e#23#52#0#PHP" expanded="true" />
@@ -82,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -107,16 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggerAbstract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/Logger/Src/Models/Core/LoggerAbstract.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,7 +169,6 @@
         <option value="$PROJECT_DIR$/app/code/local/spet/Logger/LoggerAdapter.php" />
         <option value="$PROJECT_DIR$/app/code/local/spet/Orm/User.php" />
         <option value="$PROJECT_DIR$/vendor/Configs/ConfigPathToLoggers.php" />
-        <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/vendor/Psr4Autoloader.php" />
         <option value="$PROJECT_DIR$/vendor/Spet/Orm/Src/Core/EntityInterface.php" />
@@ -193,6 +192,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php" />
         <option value="$PROJECT_DIR$/app/Spet/Src/Orm/User.php" />
+        <option value="$PROJECT_DIR$/readme.txt" />
       </list>
     </option>
   </component>
@@ -610,12 +610,12 @@
       <workItem from="1467638227006" duration="7225000" />
       <workItem from="1467698067900" duration="7534000" />
       <workItem from="1467714681991" duration="2492000" />
-      <workItem from="1467717776718" duration="6437000" />
+      <workItem from="1467717776718" duration="6660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198221000" />
+    <option name="totallyTimeSpent" value="198444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,13 +706,6 @@
     <entry file="file://$PROJECT_DIR$/app/code/local/spet/Orm/User.php" />
     <entry file="file://$PROJECT_DIR$/app/code/local/spet/Logger/LoggerAdapter.php" />
     <entry file="file://$PROJECT_DIR$/app/code/local/spet/Database/ConnectToDataBase.php" />
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/Orm/Models/EntityModel.php" />
     <entry file="file://$PROJECT_DIR$/vendor/Psr4Autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -934,9 +927,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/Orm/Src/Models/EntityModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
+        <state relative-caret-position="1602">
           <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding>
             <element signature="e#23#52#0#PHP" expanded="true" />
@@ -958,10 +959,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Spet/Src/Orm/User.php">
+    <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
           <folding />
         </state>
       </provider>
