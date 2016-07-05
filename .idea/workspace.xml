@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/configs/ConfigDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/configs/ConfigPathToLogFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/configs/ConfigPathToLoggers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/logger/src/core/LoggerAbstract.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/logger/src/core/LoggerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/logger/src/models/LoggerInDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/logger/src/models/LoggerInFile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/orm/src/core/EntityInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/orm/src/models/EntityModel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/database/src/ConnectToDataBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/logger/src/LoggerAdapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/orm/src/User.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoloader.php" afterPath="$PROJECT_DIR$/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-    </list>
+    <list default="true" id="c7b3cc18-9842-4a9b-a55e-f77699267bde" name="Default" comment="" />
     <ignored path="InternCGI.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -42,8 +25,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="-177">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#7#20#0#PHP" expanded="true" />
                 <marker date="1467714511106" expanded="true" signature="1602:1647" ph=" Use logger to write log into DB or File ..." />
@@ -65,8 +48,8 @@
       <file leaf-file-name="ConnectToDataBase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/spet/Database/ConnectToDataBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="180">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,8 +90,8 @@
       <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="347">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <marker date="1467712717020" expanded="true" signature="10:89" ph=" Function autoloadVendor() looking for files in app directory. ..." />
               </folding>
@@ -583,12 +566,12 @@
       <workItem from="1467612040620" duration="14667000" />
       <workItem from="1467628244883" duration="1369000" />
       <workItem from="1467632374650" duration="654000" />
-      <workItem from="1467711397823" duration="2468000" />
+      <workItem from="1467711397823" duration="2558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181342000" />
+    <option name="totallyTimeSpent" value="181432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,7 +596,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33541667" sideWeight="0.49811321" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -881,24 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoloader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <marker date="1467712717020" expanded="true" signature="10:89" ph=" Function autoloadVendor() looking for files in app directory. ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/spet/Database/ConnectToDataBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/spet/Orm/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -907,10 +872,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/spet/Database/ConnectToDataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1467712717020" expanded="true" signature="10:89" ph=" Function autoloadVendor() looking for files in app directory. ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="-177">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#7#20#0#PHP" expanded="true" />
             <marker date="1467714511106" expanded="true" signature="1602:1647" ph=" Use logger to write log into DB or File ..." />
