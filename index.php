@@ -1,12 +1,21 @@
 <?php
 
-use Orm\User;
-use Logger\LoggerAdapter;
+require_once 'vendor/autoload.php';
+
+$loader = new \Autoload\Psr4Autoload;
+
+$loader->register();
+
+$loader->addNamespace('Spet', __DIR__ . '/app/Spet/Src');
+$loader->addNamespace('Orm', __DIR__ . '/vendor/Orm/Src/Models');
+$loader->addNamespace('Logger', __DIR__ . '/vendor/Logger/Src/Models');
+$loader->addNamespace('Configs', __DIR__ . '/vendor/Configs/Src');
+
+use Spet\Database\ConnectToDataBase;
+use Spet\Orm\User;
+use Spet\Logger\LoggerAdapter;
 use Configs\ConfigDataBase;
 use Configs\ConfigPathToLoggers;
-use Database\ConnectToDataBase;
-
-require_once 'autoloader.php';
 
 $connectToDataBase = new ConnectToDataBase(ConfigDataBase::$configPdoDataBase);
 $dbh = $connectToDataBase->getConnect();
@@ -32,7 +41,7 @@ echo $user1->getId();
 echo '<br>';
 echo $user1->getName();
 echo '<br>';
-var_dump($user1->loadAll());
+var_dump($user1->loadAll());/*
 // 2. Loading / updating a record
 
 $user2 = new User($dbh);

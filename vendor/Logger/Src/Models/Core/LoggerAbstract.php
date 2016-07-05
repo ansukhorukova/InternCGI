@@ -2,7 +2,6 @@
 
 namespace Logger\Core;
 
-use Logger\Core\LoggerInterface;
 use Configs;
 
 /**

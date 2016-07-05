@@ -1,6 +1,6 @@
 <?php
 
-namespace Orm\Models;
+namespace Orm;
 
 use Orm\Core\EntityInterface;
 use PDO;
@@ -56,7 +56,7 @@ class EntityModel implements EntityInterface
     protected $_logger;
 
     /**
-     * Users constructor. Get connection to DB and configure model to work with entity.
+     * Get connection to DB and configure model to work with entity.
      *
      * @param resource $dbh
      * @param string $tableName
@@ -91,8 +91,6 @@ class EntityModel implements EntityInterface
 
     /**
      * Method save() creates new entity or update it in DB.
-     *
-     * @param array $this ->data. Contains properties, like name, email or etc.
      *
      * @return void.
      */
@@ -159,7 +157,6 @@ class EntityModel implements EntityInterface
      * Method _sqlInsert() is internal method for dynamically creates SQL INSERT query.
      *
      * @param object $data
-     * @param string $tableName
      *
      * @return string $sqlInsert
      */

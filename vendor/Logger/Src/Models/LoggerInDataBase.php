@@ -1,6 +1,6 @@
 <?php
 
-namespace Logger\Models;
+namespace Logger;
 
 use Logger\Core\LoggerAbstract;
 

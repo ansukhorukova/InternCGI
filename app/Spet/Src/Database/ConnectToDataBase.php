@@ -1,6 +1,6 @@
 <?php
 
-namespace Database;
+namespace Spet\Database;
 
 /**
  * Class ConnectToDataBase implements connection to database.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Orm;
+namespace Spet\Orm;
 
-use Orm\Models\EntityModel;
+use Orm\EntityModel;
 
 class User extends EntityModel
 {
