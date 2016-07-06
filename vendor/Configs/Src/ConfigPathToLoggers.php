@@ -3,10 +3,10 @@
 namespace Configs;
 
 /**
- * Class ConfigPathToLoggers contains path to models files module of Logger
+ * Class ConfigPathToLoggers contains path to models files module of Logger.
  *
- * @param string $loggerInDataBase
- * @param string $loggerInFile
+ * @param string $loggerInDataBase.
+ * @param string $loggerInFile.
  */
 class ConfigPathToLoggers
 {

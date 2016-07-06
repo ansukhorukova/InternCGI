@@ -5,12 +5,7 @@ namespace Spet\Database;
 /**
  * Class ConnectToDataBase implements connection to database.
  *
- * @package modules\database
- */
-/**
- * Class ConnectToDataBase
- *
- * @package modules\database
+ * @package modules\database.
  */
 class ConnectToDataBase
 {
@@ -22,7 +17,7 @@ class ConnectToDataBase
     /**
      * ConnectToDataBase constructor. Create new PDO object and connect to database.
      *
-     * @param array $dataBaseConfig
+     * @param array $dataBaseConfig.
      */
     public function __construct($dataBaseConfig)
     {
@@ -33,7 +28,7 @@ class ConnectToDataBase
     /**
      * Method connect() return connection to database.
      *
-     * @return object PDO
+     * @return object PDO.
      */
     public function getConnect()
     {

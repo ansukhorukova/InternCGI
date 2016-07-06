@@ -1,6 +1,6 @@
 <?php
 
-namespace Autoload;
+namespace Autoloader;
 
 /**
  * An example of a general-purpose implementation that includes the optional
@@ -46,7 +46,7 @@ namespace Autoload;
  *      <?php
  *      new \Foo\Bar\Qux\QuuxTest;
  */
-class Psr4Autoload
+class Psr4Autoloader
 {
     /**
      * An associative array where the key is a namespace prefix and the value

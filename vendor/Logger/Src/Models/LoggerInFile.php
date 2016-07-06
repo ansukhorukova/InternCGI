@@ -5,6 +5,11 @@ namespace Logger;
 use Logger\Core\LoggerAbstract;
 use Configs\ConfigPathToLogFile;
 
+/**
+ * Class LoggerInFile
+ *
+ * @package Logger
+ */
 class LoggerInFile extends LoggerAbstract
 {
     /**
@@ -22,6 +27,9 @@ class LoggerInFile extends LoggerAbstract
 
     /**
      * Implement abstract writeMessage() method.
+     *
+     * @param string $message.
+     * @param string $type.
      */
     protected function _writeMessage($message, $type)
     {

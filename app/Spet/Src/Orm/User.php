@@ -4,6 +4,11 @@ namespace Spet\Orm;
 
 use Orm\EntityModel;
 
+/**
+ * Class User implements logic to work with 'user' table.
+ *
+ * @package Spet\Orm.
+ */
 class User extends EntityModel
 {
     /**
@@ -21,11 +26,11 @@ class User extends EntityModel
     protected $_idName = 'id';
 
     /**
-     * UsersController constructor.
-     * Implement transfer connection to model
+     * UsersController constructor,
+     *     implement transfer connection to model.
      *
-     * @param resource $dbh
-     * @param null $logger
+     * @param resource $dbh.
+     * @param null $logger.
      */
     public function __construct($dbh, $logger = null)
     {
@@ -34,11 +39,13 @@ class User extends EntityModel
     }
 
     /**
-     * Magic method __call() is used for set or get properties, without creating get and set methods.
+     * Magic method __call() is used for set or get properties,
+     *     without creating get and set methods.
      *
      * @param string $name. Name of called function.
      * @param array $arguments. Arguments of called function.
-     * @return array
+     *
+     * @return array $this->_updateData.
      */
     public function __call($name, $arguments)
     {

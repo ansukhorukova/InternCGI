@@ -4,16 +4,23 @@ namespace Logger;
 
 use Logger\Core\LoggerAbstract;
 
+/**
+ * Class LoggerInDataBase
+ *
+ * @package Logger
+ */
 class LoggerInDataBase extends LoggerAbstract
 {
 
     /**
-     * @var PDO $dbh.
+     * @var PDO object $dbh.
      */
     protected $dbh;
 
     /**
-     * Implement __construct() get connect to DB.
+     * Method __construct() get connect to DB.
+     *
+     * @param object $dbh
      */
     public function __construct($dbh)
     {
@@ -22,6 +29,9 @@ class LoggerInDataBase extends LoggerAbstract
 
     /**
      * Implement abstract writeMessage() method.
+     *
+     * @param string $message.
+     * @param string $type.
      */
     protected function _writeMessage($message, $type)
     {

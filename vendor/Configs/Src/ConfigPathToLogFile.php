@@ -3,9 +3,9 @@
 namespace  Configs;
 
 /**
- * Class ConfigPathToLogFile contains path for log file
+ * Class ConfigPathToLogFile contains path for log file.
  *
- * @param string $logFile
+ * @param string $logFile.
  */
 class ConfigPathToLogFile
 {

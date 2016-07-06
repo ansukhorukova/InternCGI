@@ -1,8 +1,8 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once 'vendor/Autoloader.php';
 
-$loader = new \Autoload\Psr4Autoload;
+$loader = new \Autoloader\Psr4Autoloader;
 
 $loader->register();
 

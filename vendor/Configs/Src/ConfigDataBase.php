@@ -3,9 +3,9 @@
 namespace  Configs;
 
 /**
- * Class ConfigDataBase contains config data for each database
+ * Class ConfigDataBase contains config data for each database.
  *
- * @param array $configPdoDataBase
+ * @param array $configPdoDataBase.
  */
 class ConfigDataBase
 {
