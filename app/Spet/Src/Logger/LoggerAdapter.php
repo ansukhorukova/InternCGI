@@ -3,8 +3,8 @@
 namespace Spet\Logger;
 
 /**
- * Class LoggerAdapter loads config database file
- *     and creates new object to connection to database.
+ * Class LoggerAdapter loads config from PathToLoggers file
+ *     and creates new object to working with chosen logger.
  *
  * @package Spet\Logger
  */
