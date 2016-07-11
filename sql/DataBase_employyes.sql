@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `employees` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `employees`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Linux (x86_64)
 --
 -- Host: localhost    Database: employees
@@ -52,10 +50,12 @@ DROP TABLE IF EXISTS `payments`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_empl` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
   `payment_date` date NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_idx` (`employee_id`),
+  CONSTRAINT `id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-08 18:38:27
+-- Dump completed on 2016-07-11 10:47:11
