@@ -33,7 +33,7 @@ class CheckAuthorizationController extends Controller
         $this->verified = $this->model->setData($this->data);
 
         if($this->verified === TRUE) {
-            $this->view->generate('PanelView.php', 'TemplateView.php');
+            header("Location: Panel");
         } else {
             header("Location: Authorization");
         }

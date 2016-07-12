@@ -16,7 +16,7 @@ class AuthorizationModel extends Model
      *
      * @var array $optionsForPass.
      */
-    protected $optionsForPass = array('cost' => 13);
+    protected $optionsForPass = array('cost' => 7);
 
     public function setData($data)
     {
@@ -25,6 +25,7 @@ class AuthorizationModel extends Model
         }
 
         $this->password = $this->_testInput($data['password']);
+        $this->optionsForPass['salt'] = 'D/vtVeH03t213d!@$' . strrev($this->password);
         $this->password = password_hash($this->password, PASSWORD_BCRYPT, $this->optionsForPass);
         $this->remember = $this->_testInput($data['remember']);
 
@@ -40,10 +41,10 @@ class AuthorizationModel extends Model
         $user = new UserModel($this->dbh);
         if($user->loadByEmail($this->email) === TRUE) {
             if(($userPassword = $user->getPassword()) == $this->password) {
-                setcookie("validate", "yes", time()+3600);
+                $_SESSION['validate'] = 'yes';
                 return TRUE;
             } else {
-                setcookie("validate", "no", time()+3600);
+                $_SESSION['validate'] = 'no';
                 return FALSE;
             }
         }
