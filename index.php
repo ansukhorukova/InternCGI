@@ -1,35 +1,10 @@
 <?php
 
-require_once 'vendor/Autoloader.php';
+ini_set('display_errors', 1);
 
-$loader = new \Autoloader\Psr4Autoloader;
+require_once __DIR__ . '/vendor/Autoloader.php';
+require_once __DIR__ . '/app/Bootstrap.php';
 
-$loader->register();
-
-$loader->addNamespace('Spet', __DIR__ . '/app/Spet/Src');
-$loader->addNamespace('Orm', __DIR__ . '/vendor/Orm/Src/Models');
-$loader->addNamespace('Logger', __DIR__ . '/vendor/Logger/Src/Models');
-$loader->addNamespace('Configs', __DIR__ . '/vendor/Configs/Src');
-
-use Spet\Database\ConnectToDataBase;
-use Spet\Orm\User;
-use Spet\Logger\LoggerAdapter;
-use Configs\ConfigDataBase;
-use Configs\ConfigPathToLoggers;
-use Spet\ManagePanel\AuthorizationForm;
-
-$connectToDataBase = new ConnectToDataBase(ConfigDataBase::$configPdoDataBase);
-$dbh = $connectToDataBase->getConnect();
-
-$chooseLogger = new LoggerAdapter(ConfigPathToLoggers::$loggerInFile);
-$logger = $chooseLogger->getLogger();
-
-if(!isset($_SESSION['authorized'])) {
-    $form = new AuthorizationForm();
-} else {
-    unset($form);
-    $user = new User($dbh);
-}
 
 
 /**
@@ -39,4 +14,4 @@ if(!isset($_SESSION['authorized'])) {
 $message = "I'm a message";
 $logger->notice($message);
 */
-$connectToDataBase->disConnect();
+//$connectToDataBase->disConnect();

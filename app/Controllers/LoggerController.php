@@ -1,6 +1,6 @@
 <?php
 
-namespace Spet\Logger;
+namespace Controllers;
 
 /**
  * Class LoggerAdapter loads config from PathToLoggers file
@@ -8,7 +8,7 @@ namespace Spet\Logger;
  *
  * @package Spet\Logger
  */
-class LoggerAdapter
+class LoggerController
 {
     /**
      * @var string $logger.

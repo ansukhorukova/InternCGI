@@ -1,6 +1,6 @@
 <?php
 
-namespace Spet\Orm;
+namespace Models;
 
 use Orm\EntityModel;
 

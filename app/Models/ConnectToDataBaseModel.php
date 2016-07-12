@@ -1,13 +1,13 @@
 <?php
 
-namespace Spet\Database;
+namespace Models;
 
 /**
  * Class ConnectToDataBase implements connection to database.
  *
  * @package modules\database.
  */
-class ConnectToDataBase
+class ConnectToDataBaseModel
 {
     /**
      * @var \PDO $dbh.
