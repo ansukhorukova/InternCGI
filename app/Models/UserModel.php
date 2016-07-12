@@ -9,7 +9,7 @@ use Orm\EntityModel;
  *
  * @package Spet\Orm.
  */
-class User extends EntityModel
+class UserModel extends EntityModel
 {
     /**
      * Specify the table name to work with database.
@@ -26,6 +26,13 @@ class User extends EntityModel
     protected $_idName = 'id';
 
     /**
+     * Specify the id field name.
+     *
+     * @var string $_idName.
+     */
+    protected $_email = 'email';
+
+    /**
      * UsersController constructor,
      *     implement transfer connection to model.
      *
@@ -36,6 +43,21 @@ class User extends EntityModel
     {
         parent::__construct($dbh, $this->_tableName, $this->_idName, $logger);
 
+    }
+
+    public function loadByEmail($email)
+    {
+        $sql = "SELECT `password` FROM `" . $this->_tableName . "` WHERE " . $this->_email . " = ?";
+        $sth = $this->_executeSql($sql, $email);
+        $row = $sth->fetch(\PDO::FETCH_ASSOC);
+        if($row !== false) {
+            $this->_data = $row;
+            return TRUE;
+        }
+    }
+
+    public function getPassword() {
+        return $this->_data['password'];
     }
 
     /**

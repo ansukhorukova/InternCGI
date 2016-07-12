@@ -5,8 +5,18 @@ ini_set('display_errors', 1);
 require_once __DIR__ . '/vendor/Autoloader.php';
 require_once __DIR__ . '/app/Bootstrap.php';
 
+use Core\Route;
+use Models\ConnectToDataBaseModel;
+use Models\UserModel;
+use Controllers\LoggerController;
+use Configs\ConfigPathToLoggers;
 
+/*
+$chooseLogger = new LoggerController(ConfigPathToLoggers::$loggerInFile);
+$logger = $chooseLogger->getLogger();
+*/
 
+Route::start(); // Starting the route
 /**
  * Use logger to write log into DB or File
  */

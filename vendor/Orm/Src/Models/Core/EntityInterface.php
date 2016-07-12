@@ -19,13 +19,6 @@ interface EntityInterface
     public function load($id);
 
     /**
-     * Get all records from database.
-     *
-     * @return array
-     */
-    public function loadAll();
-
-    /**
      * Get record Id.
      *
      * @return int|string|null

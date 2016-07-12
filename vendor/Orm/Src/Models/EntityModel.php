@@ -104,21 +104,6 @@ class EntityModel implements EntityInterface
     }
 
     /**
-     * Call loadAll() method, and receive collection users from 'user' table.
-     *
-     * @return array $dataAll.
-     */
-    public function loadAll()
-    {
-        $sql = "SELECT * FROM `" . $this->_tableName . "`";
-        $sth = $this->_executeSql($sql);
-        while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-            $dataAll[] = $row;
-        }
-        return $dataAll;
-    }
-
-    /**
      * Load data from database and save it in protected properties.
      *
      * @param int|string $id Record Id.
