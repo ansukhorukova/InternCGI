@@ -29,7 +29,7 @@ class PanelController extends Controller
     {
         $this->_url = $_SESSION['mageUrl'];
         $this->_page = 1;
-        $this->_limit = 20;
+        $this->_limit = 0;
 
         $callbackUrl = "http://interncgi.loc/Panel/GetProducts";
         $temporaryCredentialsRequestUrl = "http://{$this->_url}/oauth/initiate?oauth_callback=" . urlencode
@@ -37,8 +37,8 @@ class PanelController extends Controller
         $adminAuthorizationUrl = "http://{$this->_url}/oauth/authorize";
         $accessTokenRequestUrl = "http://{$this->_url}/oauth/token";
         $apiUrl = "http://{$this->_url}/api/rest";
-        $consumerKey = '287da3f611821e7c523fbfa56045e0f3';
-        $consumerSecret = '913cc4a692ed337bd93ce94e554f8837';
+        $consumerKey = '2ca734828a4a6ddfa1e324aa946d6944';
+        $consumerSecret = '2db53b6ba7c39778cc7630b9cf68539d';
 
         if (!isset($_GET['oauth_token']) && isset($_SESSION['state']) && $_SESSION['state'] == 1) {
             $_SESSION['state'] = 0;
