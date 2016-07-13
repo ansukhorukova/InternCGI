@@ -1,68 +1,77 @@
 <?php
 namespace Core;
 
-use Controllers;
 
 class Route
 {
 	public static function start()
 	{
-		// Controller and act by default
+		session_start();
+		/**
+		 * Controller and act by default
+		 */
 		$controllerName = 'Main';
 		$actionName = 'Index';
-		
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
-		// Get name of controller
-		if ( !empty($routes[1]) )
-		{	
-			$controllerName = $routes[1];
-		}
-		
-		// Get name of action
-		if ( !empty($routes[2]) )
-		{
-			$actionName = $routes[2];
+		if($_SERVER['REQUEST_URI'] == '/favicon.ico') {
+			$controllerName = 'Main';
+			$actionName = 'Index';
+		} else {
+
+			$routes = explode("/", $_SERVER['REQUEST_URI']);
+
+			/**
+			 * Get name of controller
+			 */
+			if ( !empty($routes[1]) )
+			{
+				$controllerName = $routes[1];
+			}
+
+			/**
+			 * Get name of action
+			 */
+			if ( !empty($routes[2]) )
+			{
+				$actionName = $routes[2];
+			}
 		}
 
-		// Add prefixes
-		$modelName = $controllerName.'Model';
+
+		/**
+		 * Add prefixes
+		 */
 		$controllerName = $controllerName.'Controller';
 		$actionName = 'action' . $actionName;
 
-		// Connect model file
-
-		$modelFile = $modelName . '.php';
-		$modelPath = "app/Models/".$modelFile;
-		if(file_exists($modelPath))
-		{
-			include "app/Models/".$modelFile;
-		}
-
-		// Connect controller file
+		/**
+		 * Connect controller file
+		 */
 		$controllerFile = $controllerName . '.php';
 		$controllerPath = "app/Controllers/".$controllerFile;
 		if(file_exists($controllerPath))
 		{
-			include "app/Controllers/" . $controllerFile;
-		}
-		else
-		{
 			/**
-			 * TODO: Add exception and move to 404 page
+			 * Create controller
 			 */
-			Route::_ErrorPage404();
-		}
-		
-		// Create controller
-		$controllerName = 'Controllers\\' . $controllerName;
-		$controller = new $controllerName;
-		$action = $actionName;
-		
-		if(method_exists($controller, $action))
-		{
-			// Call controller action
-			$controller->$action();
+			$controllerName = 'Controllers\\' . $controllerName;
+			$controller = new $controllerName;
+			$action = $actionName;
+
+			if(method_exists($controller, $action))
+			{
+				/**
+				 * Call controller action
+				 */
+				$controller->$action();
+			}
+			else
+			{
+				/**
+				 * TODO: Add exception and move to 404 page
+				 */
+				Route::_ErrorPage404();
+			}
 		}
 		else
 		{

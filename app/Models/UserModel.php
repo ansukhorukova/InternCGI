@@ -52,7 +52,9 @@ class UserModel extends EntityModel
         $row = $sth->fetch(\PDO::FETCH_ASSOC);
         if($row !== false) {
             $this->_data = $row;
-            return TRUE;
+            return true;
+        } else {
+            return false;
         }
     }
 

@@ -21,7 +21,10 @@ class AuthorizationModel extends Model
     public function setData($data)
     {
         if (!filter_var($data['email'] = $this->_testInput($data['email']), FILTER_VALIDATE_EMAIL) === false) {
-                $this->email = $data['email'];
+            $this->email = $data['email'];
+        } else {
+            $this->_setSession('no');
+            return false;
         }
 
         $this->password = $this->_testInput($data['password']);
@@ -31,24 +34,18 @@ class AuthorizationModel extends Model
 
         $this->dbh = $this->getConnect();
 
-        return $this->_checkUser();
-    }
-
-
-
-    protected function _checkUser()
-    {
         $user = new UserModel($this->dbh);
-        if($user->loadByEmail($this->email) === TRUE) {
-            if(($userPassword = $user->getPassword()) == $this->password) {
-                $_SESSION['validate'] = 'yes';
-                return TRUE;
+        if($user->loadByEmail($this->email) === true && (($userPassword = $user->getPassword()) == $this->password)) {
+            if($this->remember == 'yes') {
+                $this->_setSession('yes');
             } else {
-                $_SESSION['validate'] = 'no';
-                return FALSE;
+                $this->_setSession('no');
             }
+            return true;
+        } else {
+            $this->_setSession('no');
+            return false;
         }
-
     }
 
     protected function _testInput($data)
@@ -57,5 +54,10 @@ class AuthorizationModel extends Model
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    protected function _setSession($parameter)
+    {
+        $_SESSION['validate'] = $parameter;
     }
 }

@@ -33,9 +33,9 @@ class CheckAuthorizationController extends Controller
         $this->verified = $this->model->setData($this->data);
 
         if($this->verified === TRUE) {
-            header("Location: Panel");
+            header("Location: http://interncgi.loc/Panel");
         } else {
-            header("Location: Authorization");
+            header("Location: http://interncgi.loc/Authorization");
         }
     }
 }
