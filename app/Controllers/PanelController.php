@@ -6,14 +6,37 @@ use Core\Controller;
 
 class PanelController extends Controller
 {
+    protected $_url;
+    protected $_page;
+    protected $_limit;
+
     public function actionIndex()
     {
-        $callbackUrl = "http://interncgi.loc/Panel";
-        $temporaryCredentialsRequestUrl = "http://magento1.loc/oauth/initiate?oauth_callback=" . urlencode
+        $this->view->generate('PanelView.php', 'TemplateView.php');
+    }
+
+    public function actionGetMageUrl()
+    {
+        if(isset($_POST['mageUrl'])) {
+            $_SESSION['mageUrl'] = $_POST['mageUrl'];
+            header("Location: http://interncgi.loc/Panel/GetProducts");
+        } else {
+            header("Location: http://interncgi.loc/Panel");
+        }
+    }
+
+    public function actionGetProducts()
+    {
+        $this->_url = $_SESSION['mageUrl'];
+        $this->_page = 1;
+        $this->_limit = 20;
+
+        $callbackUrl = "http://interncgi.loc/Panel/GetProducts";
+        $temporaryCredentialsRequestUrl = "http://{$this->_url}/oauth/initiate?oauth_callback=" . urlencode
             ($callbackUrl);
-        $adminAuthorizationUrl = 'http://magento1.loc/oauth/authorize';
-        $accessTokenRequestUrl = 'http://magento1.loc/oauth/token';
-        $apiUrl = 'http://magento1.loc/api/rest';
+        $adminAuthorizationUrl = "http://{$this->_url}/oauth/authorize";
+        $accessTokenRequestUrl = "http://{$this->_url}/oauth/token";
+        $apiUrl = "http://{$this->_url}/api/rest";
         $consumerKey = '287da3f611821e7c523fbfa56045e0f3';
         $consumerSecret = '913cc4a692ed337bd93ce94e554f8837';
 
@@ -41,23 +64,23 @@ class PanelController extends Controller
                 exit;
             } else {
                 $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
-                $resourceUrl = "$apiUrl/products";
+                $resourceUrl = "$apiUrl/products?page=$this->_page&limit=$this->_limit";
+                //$resourceUrl = "$apiUrl/products";
                 $oauthClient->fetch($resourceUrl, array(), 'GET',
-                                        array("Content-Type" => "application/json","Accept" => "*/*"));
+                    array("Content-Type" => "application/json","Accept" => "*/*"));
                 //$oauthClient->fetch($resourceUrl);
+
                 $productsList = json_decode($oauthClient->getLastResponse());
                 var_dump($productsList);
             }
         } catch (\OAuthException $e) {
             print_r($e);
         }
-
-        $this->view->generate('PanelView.php', 'TemplateView.php');
     }
 
     public function actionLogOut()
     {
-        unset($_SESSION['validate']);
+        unset($_SESSION);
         header("Location: http://interncgi.loc/");
     }
 }

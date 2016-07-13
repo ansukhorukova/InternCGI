@@ -17,8 +17,14 @@ class Route
 			$controllerName = 'Main';
 			$actionName = 'Index';
 		} else {
+			function multiexplode ($delimiters,$string) {
 
-			$routes = explode("/", $_SERVER['REQUEST_URI']);
+				$ready = str_replace($delimiters, $delimiters[0], $string);
+				$launch = explode($delimiters[0], $ready);
+				return  $launch;
+			}
+
+			$routes = multiexplode(array("/","?"), $_SERVER['REQUEST_URI']);
 
 			/**
 			 * Get name of controller
@@ -34,6 +40,14 @@ class Route
 			if ( !empty($routes[2]) )
 			{
 				$actionName = $routes[2];
+			}
+
+			/**
+			 * Add GET data
+			 */
+			if ( !empty($routes[3]) )
+			{
+				$routes[2] = $routes[2] . $routes[3];
 			}
 		}
 
