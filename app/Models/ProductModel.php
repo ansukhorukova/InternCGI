@@ -38,6 +38,14 @@ class ProductModel extends EntityModel
 
     }
 
+
+    public function updateProduct($id, $data)
+    {
+        $this->_data[$this->_idName] = $id;
+        $this->_updateData = $data;
+        $this->save();
+    }
+
     /**
      * Insert data in database
      *
@@ -97,6 +105,11 @@ class ProductModel extends EntityModel
         } else {
             return $dataAll;
         }
+    }
+
+    public function getLineData()
+    {
+        return $this->_data;
     }
 
 }

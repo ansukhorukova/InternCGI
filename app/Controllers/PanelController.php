@@ -16,6 +16,9 @@ class PanelController extends Controller
         $this->view->generate('PanelView.php', 'TemplateView.php', $data);
     }
 
+    /**
+     * Get remote magento url
+     */
     public function actionGetMageUrl()
     {
         if(isset($_POST['mageUrl'])) {
@@ -27,7 +30,35 @@ class PanelController extends Controller
     }
 
     /**
-     *
+     * Get product edit page
+     */
+    public function actionEdit()
+    {
+        if(isset($_GET['id'])) {
+            $id = abs($_GET['id']);
+            $this->_model = new PanelModel();
+            $data = $this->_model->getLineFromDataBase($id);
+            $this->view->generate('PanelEditView.php', 'TemplateView.php', $data);
+        }
+    }
+
+    public function actionSave()
+    {
+        if(isset($_GET['id']) && isset($_GET['save'])) {
+            $id = abs($_GET['id']);
+            $data['sku'] = $_POST['sku'];
+            $data['description'] = $_POST['description'];
+            $data['name'] = $_POST['name'];
+            $data['final_price_with_tax'] = $_POST['final_price_with_tax'];
+            $data['is_saleable'] = $_POST['is_saleable'];
+            $this->_model = new PanelModel();
+            $this->_model->updateProduct($id, $data);
+            header("Location: http://interncgi.loc/panel");
+        }
+    }
+
+    /**
+     * Get products from magento Rest API
      */
     public function actionGetProducts()
     {
@@ -76,11 +107,8 @@ class PanelController extends Controller
 
                 $productsList = json_decode($oauthClient->getLastResponse());
                 $this->_model = new PanelModel();
-                $data = $this->_model->setDataInDataBase($productsList, $this->_page, $this->_limit);
-
-                if( !is_null($data)) {
-                    $this->view->generate('PanelView.php', 'TemplateView.php', $data);
-                }
+                $this->_model->setDataInDataBase($productsList, $this->_page, $this->_limit);
+                header("Location: http://interncgi.loc/panel");
             }
         } catch (\OAuthException $e) {
             print_r($e);

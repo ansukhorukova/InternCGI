@@ -27,8 +27,21 @@ class PanelModel extends Model
         if(true == $this->_productModel->setDataInDataBase($productsList)) {
             return $data = $this->_productModel->getDataFromDataBase($nextPage, $numOnPage);
         }
-
     }
+    
+    public function updateProduct($id, $data)
+    {
+        if($data['is_saleable'] == 'on') {
+            $data['is_saleable'] = true;
+        } else {
+            $data['is_saleable'] = false;
+        }
+        $this->_dbh = $this->getConnect();
+        $this->_productModel = new ProductModel($this->_dbh);
+        $this->_productModel->updateProduct($id, $data);
+    }
+    
+    
 
     /**
      * @param $nextPage
@@ -40,6 +53,14 @@ class PanelModel extends Model
         $this->_dbh = $this->getConnect();
         $this->_productModel = new ProductModel($this->_dbh);
         return $data = $this->_productModel->getDataFromDataBase($nextPage, $numOnPage);
+    }
+
+    public function getLineFromDataBase($id)
+    {
+        $this->_dbh = $this->getConnect();
+        $this->_productModel = new ProductModel($this->_dbh);
+        $this->_productModel->load($id);
+        return $this->_productModel->getLineData();
     }
 
     /**

@@ -61,3 +61,21 @@ footer {
     width: 485px;
     box-shadow: 0 0 10px rgba(0,0,150,0.5);
 }
+
+.editForm {
+    margin: auto;
+    padding: 15px;
+    width: 500px;
+}
+
+.editForm #sku, .editForm #price, .editForm #time {
+    width: 170px;
+}
+
+.editForm #name {
+    width: 250px;
+}
+
+.editForm textarea {
+    height: 200px;
+}

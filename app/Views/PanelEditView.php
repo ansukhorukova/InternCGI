@@ -47,6 +47,42 @@
             </div>
         </div>
         <!-- Modal -->
-        
+        <div class="editForm">
+            <form role="form" method="post" action="http://interncgi.loc/panel/save?id=<?php echo $data['id']?>&save=yes">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" value="<?php echo $data['name']?>" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="sku">Sku</label>
+                    <input type="text" class="form-control" id="sku" value="<?php echo $data['sku']?>" name="sku" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description"
+                               name="description" required><?php echo $data['description']?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price"
+                           value="<?php echo $data['final_price_with_tax']?>" name="final_price_with_tax" required>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="is_saleable"
+                                  <?php
+                                      if($data['is_saleable']) {
+                                          echo 'checked';
+                                      }
+                                  ?>>Status</label>
+                </div>
+                <div class="form-group">
+                    <label for="time">Last Updated</label>
+                    <input type="text" class="form-control" id="time"
+                           value="<?php echo $data['updated_time']?>" name="time" disabled>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            </table>
+        </div>
     </div>
 </div>

@@ -67,7 +67,7 @@
                 }
                 echo '</table>';
             } else {
-                echo '<h1>Please import data from Magento tables</h1>';
+                echo '<h1 style="text-align: center;">Please import data from Magento tables</h1>';
             }
             ?>
             </table>
