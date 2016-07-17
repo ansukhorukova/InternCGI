@@ -2,7 +2,7 @@
     <div class="col-sm-2">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://interncgi.loc/"
-                    class="btn btn-primary">Home
+                   class="btn btn-primary">Home
                 </a>
             </li>
             <li><a href=""<button
@@ -47,30 +47,6 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="tableWithProducts">
-            <?php
-            if($data != null) {
-                echo '<h2>Products Table</h2>';
-                echo '<table class="table table-bordered">';
-                echo '<thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Edit</th></tr></thead>';
-                for($i = 0; $i < count($data); $i++) {
-                    echo '<tr>';
-                    foreach ($data[$i] as $key => $value) {
-                        if($key == 'id' || $key == 'name' || $key == 'final_price_with_tax') {
-                            echo '<td>' . $value . '</td>';
-                        } else {
-                            continue;
-                        }
-                    }
-                    echo "<td><a href='http://interncgi.loc/panel/edit?id={$data[$i]['id']}'>Edit</a></td>";
-                    echo '</tr>';
-                }
-                echo '</table>';
-            } else {
-                echo '<h1>Please import data from Magento tables</h1>';
-            }
-            ?>
-            </table>
-        </div>
+        
     </div>
 </div>

@@ -4,27 +4,24 @@ namespace Core;
 
 class Route
 {
+	/**
+	 * Start routing
+     */
 	public static function start()
 	{
 		session_start();
 		/**
 		 * Controller and act by default
 		 */
-		$controllerName = 'Main';
-		$actionName = 'Index';
+		$controllerName = 'main';
+		$actionName = 'index';
 
 		if($_SERVER['REQUEST_URI'] == '/favicon.ico') {
-			$controllerName = 'Main';
-			$actionName = 'Index';
+			$controllerName = 'main';
+			$actionName = 'index';
 		} else {
-			function multiexplode ($delimiters,$string) {
 
-				$ready = str_replace($delimiters, $delimiters[0], $string);
-				$launch = explode($delimiters[0], $ready);
-				return  $launch;
-			}
-
-			$routes = multiexplode(array("/","?"), $_SERVER['REQUEST_URI']);
+			$routes = self::_multiExplode(array("/","?"), $_SERVER['REQUEST_URI']);
 
 			/**
 			 * Get name of controller
@@ -55,48 +52,57 @@ class Route
 		/**
 		 * Add prefixes
 		 */
-		$controllerName = $controllerName.'Controller';
-		$actionName = 'action' . $actionName;
+		$controllerName = ucfirst($controllerName) . 'Controller';
+		$actionName = 'action' . ucfirst($actionName);
 
 		/**
 		 * Connect controller file
 		 */
-		$controllerFile = $controllerName . '.php';
-		$controllerPath = "app/Controllers/".$controllerFile;
-		if(file_exists($controllerPath))
-		{
-			/**
-			 * Create controller
-			 */
-			$controllerName = 'Controllers\\' . $controllerName;
-			$controller = new $controllerName;
-			$action = $actionName;
+		$controllerPath = "app/Controllers/" . $controllerName . '.php';
 
-			if(method_exists($controller, $action))
-			{
+		try {
+			if(file_exists($controllerPath)) {
+				/**
+				 * Create controller
+				 */
+				$controllerName = 'Controllers\\' . $controllerName;
+				$controller = new $controllerName;
+				$action = $actionName;
+
+				if(!method_exists($controller, $action))
+				{
+					$action = 'actionIndex';
+				}
 				/**
 				 * Call controller action
 				 */
 				$controller->$action();
-			}
-			else
-			{
-				/**
-				 * TODO: Add exception and move to 404 page
-				 */
-				Route::_ErrorPage404();
-			}
-		}
-		else
-		{
-			/**
-			 * TODO: Add exception and move to 404 page
-			 */
+			} else {
+				throw new \Exception();
+				}
+		} catch (\Exception $e) {
 			Route::_ErrorPage404();
 		}
-	
 	}
-	
+
+	/**
+	 * The method _multiExplode() implements function explode for multi delimiters
+	 *
+	 * @param array $delimiters
+	 * @param string $string
+	 * @return array $launch
+     */
+	protected static function _multiExplode ($delimiters, $string)
+	{
+
+		$ready = str_replace($delimiters, $delimiters[0], $string);
+		$launch = explode($delimiters[0], $ready);
+		return  $launch;
+	}
+
+	/**
+	 * Get 404 error page
+     */
 	protected static function _ErrorPage404()
 	{
         $host = 'http://'.$_SERVER['HTTP_HOST'].'/';

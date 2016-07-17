@@ -3,35 +3,39 @@
 namespace Controllers;
 
 use Core\Controller;
+use Models\PanelModel;
 
 class PanelController extends Controller
 {
-    protected $_url;
-    protected $_page;
-    protected $_limit;
+    protected $_model;
 
     public function actionIndex()
     {
-        $this->view->generate('PanelView.php', 'TemplateView.php');
+        $this->_model = new PanelModel();
+        $data = $this->_model->getDataFromDataBase(null, 10);
+        $this->view->generate('PanelView.php', 'TemplateView.php', $data);
     }
 
     public function actionGetMageUrl()
     {
         if(isset($_POST['mageUrl'])) {
             $_SESSION['mageUrl'] = $_POST['mageUrl'];
-            header("Location: http://interncgi.loc/Panel/GetProducts");
+            header("Location: http://interncgi.loc/panel/getProducts");
         } else {
-            header("Location: http://interncgi.loc/Panel");
+            header("Location: http://interncgi.loc/panel");
         }
     }
 
+    /**
+     *
+     */
     public function actionGetProducts()
     {
         $this->_url = $_SESSION['mageUrl'];
         $this->_page = 1;
-        $this->_limit = 0;
+        $this->_limit = 10;
 
-        $callbackUrl = "http://interncgi.loc/Panel/GetProducts";
+        $callbackUrl = "http://interncgi.loc/panel/getProducts";
         $temporaryCredentialsRequestUrl = "http://{$this->_url}/oauth/initiate?oauth_callback=" . urlencode
             ($callbackUrl);
         $adminAuthorizationUrl = "http://{$this->_url}/oauth/authorize";
@@ -71,7 +75,12 @@ class PanelController extends Controller
                 //$oauthClient->fetch($resourceUrl);
 
                 $productsList = json_decode($oauthClient->getLastResponse());
-                var_dump($productsList);
+                $this->_model = new PanelModel();
+                $data = $this->_model->setDataInDataBase($productsList, $this->_page, $this->_limit);
+
+                if( !is_null($data)) {
+                    $this->view->generate('PanelView.php', 'TemplateView.php', $data);
+                }
             }
         } catch (\OAuthException $e) {
             print_r($e);
@@ -80,7 +89,8 @@ class PanelController extends Controller
 
     public function actionLogOut()
     {
-        unset($_SESSION);
+        unset($_SESSION['validate']);
+
         header("Location: http://interncgi.loc/");
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class Controller
+abstract class Controller
 {
     public $model;
     public $view;
@@ -12,8 +12,5 @@ class Controller
         $this->view = new View();
     }
 
-    public function actionIndex()
-    {
-        
-    }
+    abstract  public function actionIndex();
 }

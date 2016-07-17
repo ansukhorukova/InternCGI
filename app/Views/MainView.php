@@ -1,6 +1,16 @@
-<div class="container">
-    <h1>Welcome!</h1>
-    <p>
-        <a href="Authorization" class="btn btn-primary">Sing in</a>
-    </p>
+<div class="row content">
+    <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="authorization"
+                   class="btn btn-primary">Sing in
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-sm-10">
+        <div class="bigh">
+            <h1>Welcome!</h1>
+        </div>
+    </div>
 </div>

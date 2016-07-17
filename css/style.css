@@ -1,0 +1,63 @@
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.wrap {
+    margin: auto;
+    width: 100%;
+    min-height: 500px;
+}
+
+header {
+    margin: 0;
+    padding: 10px;
+    background-color: #0B779C;
+    color: white;
+    height:100px;
+}
+
+.row.content {min-height: 500px;}
+
+    
+    /* Set black background color, white text and some padding */
+footer {
+    clear: both;
+    background-color: #FF8400;
+    color: white;
+    text-align: center;
+}
+
+.import {
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,150,0.5);
+}
+
+.import-pr {
+    margin-bottom: 10px;
+}
+
+.nav a:hover{
+    color: #0B779C;
+}
+
+.bigh {
+    margin: auto;
+}
+
+.bigh h1 {
+    font-size: 72px;
+    text-align: center;
+}
+
+.col-sm-2 {
+    background-color: #f1f1f1;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 27px;
+}
+
+.authorization {
+    margin: 10px auto auto;
+    padding: 10px;
+    width: 485px;
+    box-shadow: 0 0 10px rgba(0,0,150,0.5);
+}

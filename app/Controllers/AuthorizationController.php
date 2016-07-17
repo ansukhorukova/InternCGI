@@ -3,7 +3,6 @@
 namespace Controllers;
 
 use Core\Controller;
-use Core\View;
 use Models\AuthorizationModel;
 
 class AuthorizationController extends Controller
@@ -11,17 +10,12 @@ class AuthorizationController extends Controller
     protected $verified;
     protected $data = array();
 
-    public function __construct()
-    {
-        $this->model = new AuthorizationModel();
-
-        $this->view = new View();
-    }
 
     public function actionIndex()
     {
+
         if (isset($_SESSION['validate']) && $_SESSION['validate'] == 'yes') {
-            header("Location: http://interncgi.loc/Panel");
+            header("Location: http://interncgi.loc/panel");
         } else {
             unset($_SESSION['validate']);
             $this->view->generate('AuthorizationView.php', 'TemplateView.php');
@@ -40,12 +34,13 @@ class AuthorizationController extends Controller
             }
         }
 
+        $this->model = new AuthorizationModel();
         $this->verified = $this->model->setData($this->data);
 
         if($this->verified === TRUE) {
-            header("Location: http://interncgi.loc/Panel");
+            header("Location: http://interncgi.loc/panel");
         } else {
-            header("Location: http://interncgi.loc/Authorization");
+            header("Location: http://interncgi.loc/authorization");
         }
     }
 
