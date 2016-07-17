@@ -53,6 +53,7 @@ class ProductModel extends EntityModel
                 if($data[$i]['sku'] == $dataInDataBase[$j]['sku']) {
                     $this->_updateData = $data[$i];
                     $this->_data[$this->_idName] = $dataInDataBase[$j][$this->_idName];
+                    break;
                 } else {
                     continue;
                 }
