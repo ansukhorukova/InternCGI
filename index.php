@@ -6,10 +6,6 @@ require_once __DIR__ . '/vendor/Autoloader.php';
 require_once __DIR__ . '/app/Bootstrap.php';
 
 use Core\Route;
-use Models\ConnectToDataBaseModel;
-use Models\UserModel;
-use Controllers\LoggerController;
-use Configs\ConfigPathToLoggers;
 
 /*
 $chooseLogger = new LoggerController(ConfigPathToLoggers::$loggerInFile);

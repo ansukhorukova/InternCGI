@@ -18,7 +18,7 @@ class PanelModel extends Model
      * @param $numOnPage
      * @return array
      */
-    public function setDataInDataBase($productsList, $nextPage, $numOnPage)
+    public function workWithDataInDataBase($productsList, $nextPage, $numOnPage)
     {
         $productsList = $this->_objectToArray($productsList);
         $productsList = array_values($productsList);
@@ -44,17 +44,25 @@ class PanelModel extends Model
     
 
     /**
+     * Get all data from database.
+     *
      * @param $nextPage
      * @param $numOnPage
      * @return array
      */
-    public function getDataFromDataBase($nextPage, $numOnPage)
+    public function getDataFromDataBase($nextPage, $numOnPage, $orderBy)
     {
         $this->_dbh = $this->getConnect();
         $this->_productModel = new ProductModel($this->_dbh);
-        return $data = $this->_productModel->getDataFromDataBase($nextPage, $numOnPage);
+        return $data = $this->_productModel->getDataFromDataBase($nextPage, $numOnPage, $orderBy);
     }
 
+    /**
+     * Get single product from database.
+     *
+     * @param $id
+     * @return array
+     */
     public function getLineFromDataBase($id)
     {
         $this->_dbh = $this->getConnect();
@@ -64,6 +72,8 @@ class PanelModel extends Model
     }
 
     /**
+     * Convert object from magento REST API to array.
+     *
      * @param $obj
      * @return array
      */
@@ -78,5 +88,4 @@ class PanelModel extends Model
         else $new = $obj;
         return $new;
     }
-
 }

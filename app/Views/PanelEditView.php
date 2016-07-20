@@ -68,6 +68,7 @@
                            value="<?php echo $data['final_price_with_tax']?>" name="final_price_with_tax" required>
                 </div>
                 <div class="checkbox">
+                    <p><b>When checked, product is available in stock<b></p>
                     <label><input type="checkbox" name="is_saleable"
                                   <?php
                                       if($data['is_saleable']) {

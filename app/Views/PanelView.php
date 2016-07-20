@@ -2,7 +2,7 @@
     <div class="col-sm-2">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://interncgi.loc/"
-                    class="btn btn-primary">Home
+                   class="btn btn-primary">Home
                 </a>
             </li>
             <li><a href=""<button
@@ -50,8 +50,44 @@
         <div class="tableWithProducts">
             <?php
             if($data != null) {
-                echo '<h2>Products Table</h2>';
-                echo '<table class="table table-bordered">';
+                echo '<h2>Products Table</h2>'; ?>
+                <form style="float: left" class="form-inline"
+                      action="/panel/index">
+                    <div class="form-group">
+                        Sort by: <select name="subject">
+                            <option value="name"
+                                <?php
+                                if(isset($_GET['subject']) && $_GET['subject'] == 'name') {
+                                    echo 'selected';
+                                }
+                                ?>>Name</option>
+                            <option value="final_price_with_tax"
+                                <?php
+                                if(isset($_GET['subject']) && $_GET['subject'] == 'final_price_with_tax') {
+                                    echo 'selected';
+                                }
+                                ?>>Price</option>
+                        </select>
+                        <select name="method">
+                            <option value="ASC"
+                                <?php
+                                if(isset($_GET['method']) && $_GET['method'] == 'ASC') {
+                                    echo 'selected';
+                                }
+                                ?>>Ascending</option>
+                            <option value="DESC"
+                                <?php
+                                if(isset($_GET['method']) && $_GET['method'] == 'DESC') {
+                                    echo 'selected';
+                                }
+                                ?>>Descending</option>
+                        </select>
+
+                        <button type="submit" class="btn btn-default">Sort</button>
+                    </div>
+                </form>
+                <?php
+                echo '<br><br><table class="table table-bordered">';
                 echo '<thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Edit</th></tr></thead>';
                 for($i = 0; $i < count($data); $i++) {
                     echo '<tr>';

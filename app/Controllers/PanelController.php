@@ -9,10 +9,21 @@ class PanelController extends Controller
 {
     protected $_model;
 
+    /**
+     * Main action, implements render main page.
+     */
     public function actionIndex()
     {
+
+        if(empty($_GET['subject']) && empty($_GET['method'])) {
+            $orderBy['subject'] = 'name';
+            $orderBy['method'] = 'ASC';
+        } else {
+            $orderBy['subject'] = htmlspecialchars($_GET['subject']);
+            $orderBy['method'] = htmlspecialchars($_GET['method']);
+        }
         $this->_model = new PanelModel();
-        $data = $this->_model->getDataFromDataBase(null, 10);
+        $data = $this->_model->getDataFromDataBase(null, 15, $orderBy);
         $this->view->generate('PanelView.php', 'TemplateView.php', $data);
     }
 
@@ -42,6 +53,9 @@ class PanelController extends Controller
         }
     }
 
+    /**
+     * Get data from panel after editing and save it in database.
+     */
     public function actionSave()
     {
         if(isset($_GET['id']) && isset($_GET['save'])) {
@@ -64,7 +78,7 @@ class PanelController extends Controller
     {
         $this->_url = $_SESSION['mageUrl'];
         $this->_page = 1;
-        $this->_limit = 10;
+        $this->_limit = 0;
 
         $callbackUrl = "http://interncgi.loc/panel/getProducts";
         $temporaryCredentialsRequestUrl = "http://{$this->_url}/oauth/initiate?oauth_callback=" . urlencode
@@ -107,7 +121,7 @@ class PanelController extends Controller
 
                 $productsList = json_decode($oauthClient->getLastResponse());
                 $this->_model = new PanelModel();
-                $this->_model->setDataInDataBase($productsList, $this->_page, $this->_limit);
+                $this->_model->workWithDataInDataBase($productsList, $this->_page, $this->_limit);
                 header("Location: http://interncgi.loc/panel");
             }
         } catch (\OAuthException $e) {

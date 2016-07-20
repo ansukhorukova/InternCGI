@@ -174,6 +174,7 @@ class EntityModel implements EntityInterface
      * Method _executeSql() implements binding parameters for sql query.
      *
      * @param array $data
+     * @return mixed $sth
      */
     protected function _executeSql($sql, $data = null)
     {

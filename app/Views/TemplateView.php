@@ -13,7 +13,7 @@
     <div class="wrap">
         <header><h1>Magento REST API Panel</h1></header>
         <?php include 'app/Views/' . $contentView; ?>
-        <footer>&copy; All rights reserved </footer>
+        <!-- <footer>&copy; All rights reserved </footer> -->
     </div>
 </body>
 </html>
