@@ -73,7 +73,11 @@ class PanelController extends Controller
             $data['final_price_with_tax'] = $validate
                                             ->validatePrice($validate
                                             ->validateClear($_POST['final_price_with_tax']));
-            $data['is_saleable'] = $validate->validateIsSaleable($_POST['is_saleable']);
+            if(empty($_POST['is_saleable'])) {
+                $data['is_saleable'] = false;
+            } else {
+                $data['is_saleable'] = $validate->validateIsSaleable($_POST['is_saleable']);
+            }
 
             if(true === ($validation = $validate->validateAll($data))) {
                 $this->_model = new ProductModel($this->_connectToDataBase());
