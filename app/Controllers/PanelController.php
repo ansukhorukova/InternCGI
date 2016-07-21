@@ -3,7 +3,10 @@
 namespace Controllers;
 
 use Core\Controller;
-use Models\PanelModel;
+use Lib\SortBy;
+use Models\ProductModel;
+use Models\ConnectToDataBaseModel as connect;
+use Lib\Validate;
 
 class PanelController extends Controller
 {
@@ -14,17 +17,17 @@ class PanelController extends Controller
      */
     public function actionIndex()
     {
-
-        if(empty($_GET['subject']) && empty($_GET['method'])) {
-            $orderBy['subject'] = 'name';
-            $orderBy['method'] = 'ASC';
+        if(($_SESSION['validate'] == 'no') || empty($_SESSION['validate'])) {
+            header("Location: http://interncgi.loc/");
         } else {
-            $orderBy['subject'] = htmlspecialchars($_GET['subject']);
-            $orderBy['method'] = htmlspecialchars($_GET['method']);
+            $sort = new SortBy();
+            $orderBy = $sort->sortBy($_GET);
+
+            $this->_getNumberPagesToPaginator();
+            $this->_model = new ProductModel($this->_connectToDataBase());
+            $data = $this->_model->getDataFromDataBase($_SESSION['page'], $_SESSION['onPage'], $orderBy);
+            $this->view->generate('PanelView.php', 'TemplateView.php', $data);
         }
-        $this->_model = new PanelModel();
-        $data = $this->_model->getDataFromDataBase(null, 15, $orderBy);
-        $this->view->generate('PanelView.php', 'TemplateView.php', $data);
     }
 
     /**
@@ -47,8 +50,8 @@ class PanelController extends Controller
     {
         if(isset($_GET['id'])) {
             $id = abs($_GET['id']);
-            $this->_model = new PanelModel();
-            $data = $this->_model->getLineFromDataBase($id);
+            $this->_model = new ProductModel($this->_connectToDataBase());
+            $data = $this->_model->getRowData($id);
             $this->view->generate('PanelEditView.php', 'TemplateView.php', $data);
         }
     }
@@ -58,16 +61,29 @@ class PanelController extends Controller
      */
     public function actionSave()
     {
+        $validate = new Validate();
+
         if(isset($_GET['id']) && isset($_GET['save'])) {
-            $id = abs($_GET['id']);
-            $data['sku'] = $_POST['sku'];
-            $data['description'] = $_POST['description'];
-            $data['name'] = $_POST['name'];
-            $data['final_price_with_tax'] = $_POST['final_price_with_tax'];
-            $data['is_saleable'] = $_POST['is_saleable'];
-            $this->_model = new PanelModel();
-            $this->_model->updateProduct($id, $data);
-            header("Location: http://interncgi.loc/panel");
+            $id = abs($validate->validateClear($_GET['id']));
+            $data['sku'] = $validate->validateSku($validate->validateClear($_POST['sku']));
+            $data['description'] = $validate
+                                   ->validateLength($validate
+                                   ->validateClear($_POST['description']));
+            $data['name'] = $validate->validateLength($validate->validateClear($_POST['name']));
+            $data['final_price_with_tax'] = $validate
+                                            ->validatePrice($validate
+                                            ->validateClear($_POST['final_price_with_tax']));
+            $data['is_saleable'] = $validate->validateIsSaleable($_POST['is_saleable']);
+
+            if(true === ($validation = $validate->validateAll($data))) {
+                $this->_model = new ProductModel($this->_connectToDataBase());
+                $this->_model->updateProduct($id, $data);
+
+                header("Location: http://interncgi.loc/panel/index");
+            } else {
+                $this->view->generate('PanelEditView.php', 'TemplateView.php', $validation);
+            }
+
         }
     }
 
@@ -76,16 +92,16 @@ class PanelController extends Controller
      */
     public function actionGetProducts()
     {
-        $this->_url = $_SESSION['mageUrl'];
-        $this->_page = 1;
-        $this->_limit = 0;
+        $url = $_SESSION['mageUrl'];
+        $page = 1;
+        $limit = 0;
 
         $callbackUrl = "http://interncgi.loc/panel/getProducts";
-        $temporaryCredentialsRequestUrl = "http://{$this->_url}/oauth/initiate?oauth_callback=" . urlencode
+        $temporaryCredentialsRequestUrl = "http://{$url}/oauth/initiate?oauth_callback=" . urlencode
             ($callbackUrl);
-        $adminAuthorizationUrl = "http://{$this->_url}/oauth/authorize";
-        $accessTokenRequestUrl = "http://{$this->_url}/oauth/token";
-        $apiUrl = "http://{$this->_url}/api/rest";
+        $adminAuthorizationUrl = "http://{$url}/oauth/authorize";
+        $accessTokenRequestUrl = "http://{$url}/oauth/token";
+        $apiUrl = "http://{$url}/api/rest";
         $consumerKey = '2ca734828a4a6ddfa1e324aa946d6944';
         $consumerSecret = '2db53b6ba7c39778cc7630b9cf68539d';
 
@@ -113,15 +129,18 @@ class PanelController extends Controller
                 exit;
             } else {
                 $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
-                $resourceUrl = "$apiUrl/products?page=$this->_page&limit=$this->_limit";
+                $resourceUrl = "$apiUrl/products?page=$page&limit=$limit";
                 //$resourceUrl = "$apiUrl/products";
                 $oauthClient->fetch($resourceUrl, array(), 'GET',
                     array("Content-Type" => "application/json","Accept" => "*/*"));
                 //$oauthClient->fetch($resourceUrl);
 
                 $productsList = json_decode($oauthClient->getLastResponse());
-                $this->_model = new PanelModel();
-                $this->_model->workWithDataInDataBase($productsList, $this->_page, $this->_limit);
+                $this->_model = new ProductModel($this->_connectToDataBase());
+                $productsList = array_values($this->_objectToArray($productsList));
+                if(true == $this->_model->setDataInDataBase($productsList)) {
+                    $this->_model->getDataFromDataBase();
+                }
                 header("Location: http://interncgi.loc/panel");
             }
         } catch (\OAuthException $e) {
@@ -129,10 +148,67 @@ class PanelController extends Controller
         }
     }
 
+    /**
+     * Log out from panel.
+     */
     public function actionLogOut()
     {
         unset($_SESSION['validate']);
+        session_destroy();
+        setcookie('PHPSESSID', '');
 
         header("Location: http://interncgi.loc/");
+    }
+
+    /**
+     * Get connect to database.
+     *
+     * @return object $dbh
+     */
+    private function _connectToDataBase()
+    {
+        $connect = connect::getInstance();
+        $dbh = $connect->getConnectToDataBase();
+        return $dbh;
+    }
+
+    /**
+     * Convert object from magento REST API to array.
+     *
+     * @param $obj
+     * @return array
+     */
+    private function _objectToArray($obj) {
+        if(is_object($obj)) $obj = (array) $obj;
+        if(is_array($obj)) {
+            $new = array();
+            foreach($obj as $key => $val) {
+                $new[$key] = $this->_objectToArray($val);
+            }
+        }
+        else $new = $obj;
+        return $new;
+    }
+
+    /**
+     * Get number of page for pagination.
+     */
+    private function _getNumberPagesToPaginator()
+    {
+        $numberRowsInDataBase = $this->_countRowsInDataBase();
+        $_SESSION['numberPages'] = round($numberRowsInDataBase/$_SESSION['onPage'], 0, PHP_ROUND_HALF_UP);
+    }
+
+    /**
+     * Count all rows in database.
+     *
+     * @return int $count.
+     */
+    private function _countRowsInDataBase()
+    {
+        $this->_model = new ProductModel($this->_connectToDataBase());
+        $data = $this->_model->getDataFromDataBase();
+        $count = count($data);
+        return $count;
     }
 }

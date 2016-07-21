@@ -15,7 +15,7 @@ class AuthorizationController extends Controller
     {
 
         if (isset($_SESSION['validate']) && $_SESSION['validate'] == 'yes') {
-            header("Location: http://interncgi.loc/panel");
+                header("Location: /panel/index");
         } else {
             unset($_SESSION['validate']);
             $this->view->generate('AuthorizationView.php', 'TemplateView.php');
@@ -38,9 +38,9 @@ class AuthorizationController extends Controller
         $this->verified = $this->model->setData($this->data);
 
         if($this->verified === TRUE) {
-            header("Location: http://interncgi.loc/panel");
+            header("Location: /panel/index?page=1&subject=name&method=ASC&onPage=15");
         } else {
-            header("Location: http://interncgi.loc/authorization");
+            header("Location: /authorization");
         }
     }
 

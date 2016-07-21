@@ -30,11 +30,11 @@
                     <div class="modal-body">
                         <form role="form" method="post" action="http://interncgi.loc/panel/getMageUrl">
                             <div class="form-group">
-                                <label for="mageUrl">Url:</label>
+                                <label for="mageUrl">URL:</label>
                                 <input type="text"
                                        class="form-control"
                                        id="mageUrl"
-                                       placeholder="Enter URL"
+                                       placeholder="Ex: magento.com"
                                        name="mageUrl"
                                        required>
                             </div>
@@ -57,13 +57,13 @@
                         Sort by: <select name="subject">
                             <option value="name"
                                 <?php
-                                if(isset($_GET['subject']) && $_GET['subject'] == 'name') {
+                                if(isset($_SESSION['subject']) && $_SESSION['subject'] == 'name') {
                                     echo 'selected';
                                 }
                                 ?>>Name</option>
-                            <option value="final_price_with_tax"
+                            <option value="price"
                                 <?php
-                                if(isset($_GET['subject']) && $_GET['subject'] == 'final_price_with_tax') {
+                                if(isset($_SESSION['subject']) && $_SESSION['subject'] == 'price') {
                                     echo 'selected';
                                 }
                                 ?>>Price</option>
@@ -71,16 +71,42 @@
                         <select name="method">
                             <option value="ASC"
                                 <?php
-                                if(isset($_GET['method']) && $_GET['method'] == 'ASC') {
+                                if(isset($_SESSION['method']) && $_SESSION['method'] == 'ASC') {
                                     echo 'selected';
                                 }
                                 ?>>Ascending</option>
                             <option value="DESC"
                                 <?php
-                                if(isset($_GET['method']) && $_GET['method'] == 'DESC') {
+                                if(isset($_SESSION['method']) && $_SESSION['method'] == 'DESC') {
                                     echo 'selected';
                                 }
                                 ?>>Descending</option>
+                        </select>
+                        Number of entries per page: <select name="onPage">
+                            <option value="15"
+                                <?php
+                                if(isset($_SESSION['onPage']) && $_SESSION['onPage'] == 15) {
+                                    echo 'selected';
+                                }
+                                ?>>15</option>
+                            <option value="30"
+                                <?php
+                                if(isset($_SESSION['onPage']) && $_SESSION['onPage'] == 30) {
+                                    echo 'selected';
+                                }
+                                ?>>30</option>
+                            <option value="50"
+                                <?php
+                                if(isset($_SESSION['onPage']) && $_SESSION['onPage'] == 50) {
+                                    echo 'selected';
+                                }
+                                ?>>50</option>
+                            <option value="100"
+                                <?php
+                                if(isset($_SESSION['onPage']) && $_SESSION['onPage'] == 100) {
+                                    echo 'selected';
+                                }
+                                ?>>100</option>
                         </select>
 
                         <button type="submit" class="btn btn-default">Sort</button>
@@ -93,7 +119,11 @@
                     echo '<tr>';
                     foreach ($data[$i] as $key => $value) {
                         if($key == 'id' || $key == 'name' || $key == 'final_price_with_tax') {
-                            echo '<td>' . $value . '</td>';
+                            if($key == 'final_price_with_tax') {
+                                echo '<td>' . number_format($value, 2, '.', ' ') . '</td>';
+                            } else {
+                                echo '<td>' . $value . '</td>';
+                            }
                         } else {
                             continue;
                         }
@@ -108,5 +138,33 @@
             ?>
             </table>
         </div>
+        <ul class="pagination">
+            <?php
+            $get = "&subject={$_SESSION['subject']}&method={$_SESSION['method']}&onPage={$_SESSION['onPage']}";
+            $page = $_SESSION['page'];
+            $numberPages = $_SESSION['numberPages'];
+            $previous = $page - 1;
+            if(($previous == 0) || ($previous < 0)) {
+                $previous = 1;
+            }
+            $next = $page + 1;
+            if($next > $numberPages) {
+                $next = $page;
+            }
+            echo "<li><a href='/panel/index?page=" . $previous . $get . "'><</a></li>";
+            $i = 1;
+            do {
+                if($i == $page) {
+                    echo "<li class='active'><a href='/panel/index?page=" . $i . $get . "'>" . $i . "</a></li>";
+                } else {
+                    echo "<li><a href='/panel/index?page=" . $i . $get . "'>" . $i . "</a></li>";
+                }
+                $i++;
+            }
+            while($i <= $numberPages);
+
+            echo "<li><a href='/panel/index?page=" . $next . $get . "'>></a></li>";
+            ?>
+        </ul>
     </div>
 </div>

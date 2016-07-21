@@ -9,7 +9,7 @@ class Route
      */
 	public static function start()
 	{
-		session_start();
+
 		/**
 		 * Controller and act by default
 		 */

@@ -66,7 +66,7 @@ class ProductModel extends EntityModel
                     continue;
                 }
             }
-            if(!is_null($this->_updateData)) {
+            if(null !== $this->_updateData) {
                 $this->save();
             } else {
                 $this->_data = $data[$i];
@@ -83,14 +83,18 @@ class ProductModel extends EntityModel
      * @param $numOnPage
      * @return array $dataAll.
      */
-    public function getDataFromDataBase($nextPage = null, $numOnPage = null, $orderBy)
+    public function getDataFromDataBase($nextPage = null, $numOnPage = null, $orderBy = null)
     {
         if($nextPage == null) {
             $page = 0;
         } else {
             $page = $nextPage * $numOnPage - $numOnPage;
         }
-        $orderBySql =  "ORDER BY {$orderBy['subject']} {$orderBy['method']} ";
+        if($orderBy !== null) {
+            $orderBySql =  "ORDER BY {$orderBy['subject']} {$orderBy['method']} ";
+        } else {
+            $orderBySql = '';
+        }
 
         if($numOnPage == null) {
             $sql = "SELECT * FROM `" . $this->_tableName . "` " . $orderBySql;
@@ -109,8 +113,9 @@ class ProductModel extends EntityModel
         }
     }
 
-    public function getLineData()
+    public function getRowData($id)
     {
+        $this->load($id);
         return $this->_data;
     }
 
