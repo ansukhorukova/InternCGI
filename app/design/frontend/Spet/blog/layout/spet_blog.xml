@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+            <reference name="head">
+                <action method="addItem"><type>skin_css</type><name>css/myStyle.css</name></action>
+            </reference>
+        </reference>
+
+    </default>
+    <blog_articles_index translate="label">
+        <reference name="head">
+            <action method="setTitle"><title>All Posts</title></action>
+        </reference>
+        <reference name="content">
+            <block type="blog/articles" name="articles" template="blog/main.phtml" />
+        </reference>
+    </blog_articles_index>
+    <blog_single_single translate="label">
+        <reference name="head">
+            <action method="setTitle"><title>Single Post</title></action>
+        </reference>
+        <reference name="content">
+            <block type="blog/articles" name="single_post" template="blog/single.phtml" />
+        </reference>
+    </blog_single_single>
+    <blog_single_post translate="label">
+        <reference name="head">
+            <action method="setTitle"><title>Post</title></action>
+        </reference>
+        <reference name="content">
+            <block type="blog/articles" name="add_or_edit_post" template="blog/post.phtml" />
+        </reference>
+    </blog_single_post>
+</layout>

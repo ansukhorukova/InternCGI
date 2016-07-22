@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Spet_TestModule>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Spet_TestModule>
+    </modules>
+</config>

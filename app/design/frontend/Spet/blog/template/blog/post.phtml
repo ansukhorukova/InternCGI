@@ -1,0 +1,59 @@
+<?php
+$post = $this->getSinglePost();
+$pathToImage = $this->getPathToImage();
+?>
+<div class="container">
+    <?php if(!empty($post['blogpost_id']) && $this->checkUserAuthorization()) {
+        echo '<h1>Edit post</h1>';
+    } else {
+        echo '<h1>Add new post</h1>';
+    }
+    ?>
+
+    <form class="form-inline" enctype="multipart/form-data"
+          id="addNewPostForm" method="post" action="/blog/single/save">
+        <input type="hidden" name="blogpost_id"
+               value="<?php if(!empty($post['blogpost_id']) && $this->checkUserAuthorization())
+                   echo $post['blogpost_id']; ?>"
+        >
+        <div class="form-group">
+            <h3>Title:</h3>
+            <input type="text" class="form-control validate-no-html-tags validate-length maximum-length-255"
+                   id="title" name="title" placeholder="Enter title"
+                   value="<?php if(!empty($post['blogpost_id']) && $this->checkUserAuthorization())
+                       echo $post['title']; ?>"
+            >
+        </div><br>
+        <div class="form-group">
+            <h3>Post text:</h3>
+            <?php if(!empty($post['blogpost_id']) && $this->checkUserAuthorization())
+            {$postText = $post['post'];} else {$postText = '';} ?>
+            <textarea name="post" class="post-area" required="required"
+                      placeholder="Enter post text."><?=$postText?></textarea>
+        </div>
+        <?php
+        if(isset($post['image'])) {
+        echo "<br><img src='" . $pathToImage . $post['image']  . "' style='max-width:800px;max-height:600px;'><br>";
+        echo "<div class='checkbox'>
+                    <label><input type='checkbox' name='delete_photo'>Delete previously photo?</label>
+              </div>";
+        }
+        ?>
+        <br>
+        <label for="attachment"><?php echo Mage::helper('contacts')->__('Please choose your image') ?></label>
+        <div class="input-box">
+            <input name="MAX_FILE_SIZE" type="hidden" value="2000000" />
+            <input name="image" id="attachment" class="input-text" type="file" />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-default">Save</button>
+        <button type="submit" style="float: right" onclick="history.back()"
+                class="btn btn-default">Back</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+    //< ![CDATA[
+    var customForm = new VarienForm('addNewPostForm');
+    //]]>
+</script>

@@ -1,0 +1,28 @@
+<div>
+
+    <?php
+        $post = $this->getSinglePost();
+        $pathToImage = $this->getPathToImage();
+
+        if($this->checkUserAuthorization()) {
+            echo "<form class='form-inline' method='post' action='/blog/single/post'>
+                     <input type='hidden' name='id' value='" . $post['blogpost_id'] . "'>
+                     <button style='float: left' type='submit' class='btn btn-default'>Edit post</button>
+                 </form>";
+
+            echo "<form class='form-inline' method='post' action='/blog/single/delete'>
+                     <input type='hidden' name='id' value='" . $post['blogpost_id'] . "'>
+                     <button style='float: right' type='submit' class='btn btn-default'>Delete</button>
+                 </form><br><br>";
+        }
+
+        echo '<h1 class="main-text-on-blog" style="word-wrap: break-word">' . $post['title'] . '</h1>';
+        if(isset($post['image'])) {
+            echo "<img src='" . $pathToImage . $post['image']  . "' style='max-width:800px;max-height:600px;'><br>";
+        }
+        echo '<div class="main-text-on-blog">' . $post['post'] . '</div>' . '<br>';
+        echo '<p>' . $post['date'] . ' ' . $post['name'] . ' ' . $post['lname'] . '</p>';
+    ?>
+    <button type="submit" style="float: right" onclick="history.back()"
+            class="btn btn-default">Back</button>
+</div>

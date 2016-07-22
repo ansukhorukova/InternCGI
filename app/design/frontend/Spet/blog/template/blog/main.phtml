@@ -1,0 +1,61 @@
+<div>
+    <?php
+        $posts = $this->getAllPosts();
+        $pathToImage = $this->getPathToImage();
+    ?>
+    <h1>All posts</h1>
+    <form style="float: left" class="form-inline"
+          action="/blog/articles">
+        <div class="form-group">
+            Sort by: <select name="subject">
+                <option value="lname"
+                    <?php
+                        if(isset($_GET['subject']) && $_GET['subject'] == 'lname') {
+                            echo 'selected';
+                        }
+                    ?>>Author</option>
+                <option value="date"
+                    <?php
+                    if(isset($_GET['subject']) && $_GET['subject'] == 'date') {
+                        echo 'selected';
+                    }
+                    ?>>Date</option>
+            </select>
+            <select name="method">
+                <option value="ASC"
+                    <?php
+                    if(isset($_GET['method']) && $_GET['method'] == 'ASC') {
+                        echo 'selected';
+                    }
+                    ?>>Ascending</option>
+                <option value="DESC"
+                    <?php
+                    if(isset($_GET['method']) && $_GET['method'] == 'DESC') {
+                        echo 'selected';
+                    }
+                    ?>>Descending</option>
+            </select>
+
+            <button type="submit" class="btn btn-default">Sort</button>
+        </div>
+    </form>
+    <?php
+
+          if($this->checkUserAuthorization()) {
+              echo "<button style='float: right'><a href='/blog/single/post'>Add new post</a></button>";
+          }
+          echo '<br><br>';
+          foreach($posts as $blogpost) {
+              echo "<a href=\"/blog/single/single/id/{$blogpost->getBlogpostId()}\">
+                    <h1 class=\"main-text-on-blog\" style='word-wrap: break-word'>"
+                        . $blogpost->getTitle() . '</h1></a>';
+              $img = $blogpost->getImage();
+              if(isset($img)) {
+                  echo "<img src='" . $pathToImage . $img  . "' style='max-width:800px;max-height:600px;'>";
+              }
+              echo '<p class="main-text-on-blog">' . nl2br(Mage::helper('core/string')->truncate($blogpost->getPost(), 200)) . ' '
+                  . "<a href=\"single/single/id/{$blogpost->getBlogpostId()}\">Read more</a></p><br>";
+              echo $blogpost->getDate() . ' ' . $blogpost->getName() . ' ' .  $blogpost->getLname() .  '<br><br>';
+          }
+    ?>
+</div>

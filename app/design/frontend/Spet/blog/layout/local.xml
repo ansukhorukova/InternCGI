@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+   <layout version="0.1.0">
+     <default translate="label" module="page">
+      <reference name="root">
+          <reference name="head">
+              <!-- Remove the rwd parent's styles.css file -->
+              <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+
+           <!-- Add it again before your css/myStyle.css file -->
+           <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action>
+         </reference>
+      </reference>
+     </default>
+</layout>
