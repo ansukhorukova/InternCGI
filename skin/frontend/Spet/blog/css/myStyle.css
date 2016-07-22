@@ -1,0 +1,17 @@
+body {
+    background: #00ffff;
+}
+
+a {
+    color: #99331f ;
+    text-decoration: underline;
+}
+
+.main-text-on-blog {
+    margin-top: 10px;
+    width: 800px;
+}
+
+.post-area {
+    height: 300px;
+}

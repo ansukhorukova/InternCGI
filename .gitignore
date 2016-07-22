@@ -1,1 +1,3 @@
 .idia/
+var/session/
+var/cache/
