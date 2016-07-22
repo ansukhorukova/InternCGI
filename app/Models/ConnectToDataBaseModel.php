@@ -36,6 +36,9 @@ class ConnectToDataBaseModel
      */
     private $_dbh = null;
 
+    /**
+     * ConnectToDataBaseModel constructor.
+     */
     private function __construct()
     {
         $config = $this->_getConfigData();
@@ -49,6 +52,11 @@ class ConnectToDataBaseModel
     private function __clone() { /* ... @return Singleton */ }
     private function __wakeup() { /* ... @return Singleton */ }
 
+    /**
+     * Create and return instance connection.
+     *
+     * @return \PDO|static
+     */
     static public function getInstance() {
         return
             self::$instance === null

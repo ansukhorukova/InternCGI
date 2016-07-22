@@ -8,7 +8,7 @@
         </ul>
     </div>
 
-    <div class="col-sm-10">
+    <div class="col-sm-9">
         <div class="bigh">
             <h1>Welcome!</h1>
             <h2>Please sing in</h2>

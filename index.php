@@ -7,17 +7,8 @@ require_once __DIR__ . '/app/Bootstrap.php';
 
 use Core\Route;
 
-/*
-$chooseLogger = new LoggerController(ConfigPathToLoggers::$loggerInFile);
-$logger = $chooseLogger->getLogger();
-*/
 
-Route::start(); // Starting the route
 /**
- * Use logger to write log into DB or File
+ * Start application.
  */
-/*
-$message = "I'm a message";
-$logger->notice($message);
-*/
-//$connectToDataBase->disConnect();
+Route::start(); // Starting the route

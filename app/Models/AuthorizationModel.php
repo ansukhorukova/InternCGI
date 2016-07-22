@@ -3,6 +3,7 @@
 namespace Models;
 
 use Core\Model;
+use Lib\Validate;
 
 class AuthorizationModel extends Model
 {
@@ -20,17 +21,19 @@ class AuthorizationModel extends Model
 
     public function setData($data)
     {
-        if (!filter_var($data['email'] = $this->_testInput($data['email']), FILTER_VALIDATE_EMAIL) === false) {
+        $validate = new Validate();
+
+        if (!filter_var($data['email'] = $validate->validateClear($data['email']), FILTER_VALIDATE_EMAIL) === false) {
             $this->email = $data['email'];
         } else {
             $this->_setSession('no');
             return false;
         }
 
-        $this->password = $this->_testInput($data['password']);
+        $this->password = $validate->validateClear($data['password']);
         $this->optionsForPass['salt'] = 'D/vtVeH03t213d!@$' . strrev($this->password);
         $this->password = password_hash($this->password, PASSWORD_BCRYPT, $this->optionsForPass);
-        $this->remember = $this->_testInput($data['remember']);
+        $this->remember = $validate->validateClear($data['remember']);
 
         $this->dbh = $this->getConnect();
 
@@ -46,14 +49,6 @@ class AuthorizationModel extends Model
             $this->_setSession('no');
             return false;
         }
-    }
-
-    protected function _testInput($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
 
     protected function _setSession($parameter)

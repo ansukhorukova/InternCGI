@@ -23,28 +23,28 @@ class PanelController extends Controller
             $sort = new SortBy();
             $orderBy = $sort->sortBy($_GET);
 
-            $this->_getNumberPagesToPaginator();
             $this->_model = new ProductModel($this->_connectToDataBase());
+            $this->_model->getNumberPagesToPaginator();
             $data = $this->_model->getDataFromDataBase($_SESSION['page'], $_SESSION['onPage'], $orderBy);
             $this->view->generate('PanelView.php', 'TemplateView.php', $data);
         }
     }
 
     /**
-     * Get remote magento url
+     * Get remote magento url.
      */
     public function actionGetMageUrl()
     {
         if(isset($_POST['mageUrl'])) {
             $_SESSION['mageUrl'] = $_POST['mageUrl'];
-            header("Location: http://interncgi.loc/panel/getProducts");
+            header("Location: /panel/getProducts");
         } else {
-            header("Location: http://interncgi.loc/panel");
+            header("Location: /panel");
         }
     }
 
     /**
-     * Get product edit page
+     * Get product edit page.
      */
     public function actionEdit()
     {
@@ -83,7 +83,7 @@ class PanelController extends Controller
                 $this->_model = new ProductModel($this->_connectToDataBase());
                 $this->_model->updateProduct($id, $data);
 
-                header("Location: http://interncgi.loc/panel/index");
+                header("Location: /panel/index");
             } else {
                 $this->view->generate('PanelEditView.php', 'TemplateView.php', $validation);
             }
@@ -141,11 +141,11 @@ class PanelController extends Controller
 
                 $productsList = json_decode($oauthClient->getLastResponse());
                 $this->_model = new ProductModel($this->_connectToDataBase());
-                $productsList = array_values($this->_objectToArray($productsList));
+                $productsList = array_values($this->_model->objectToArray($productsList));
                 if(true == $this->_model->setDataInDataBase($productsList)) {
                     $this->_model->getDataFromDataBase();
                 }
-                header("Location: http://interncgi.loc/panel");
+                header("Location: /panel");
             }
         } catch (\OAuthException $e) {
             print_r($e);
@@ -157,10 +157,8 @@ class PanelController extends Controller
      */
     public function actionLogOut()
     {
-        unset($_SESSION['validate']);
-        session_destroy();
-        setcookie('PHPSESSID', '');
-
+        session_unset();
+        session_register_shutdown();
         header("Location: http://interncgi.loc/");
     }
 
@@ -174,45 +172,5 @@ class PanelController extends Controller
         $connect = connect::getInstance();
         $dbh = $connect->getConnectToDataBase();
         return $dbh;
-    }
-
-    /**
-     * Convert object from magento REST API to array.
-     *
-     * @param $obj
-     * @return array
-     */
-    private function _objectToArray($obj) {
-        if(is_object($obj)) $obj = (array) $obj;
-        if(is_array($obj)) {
-            $new = array();
-            foreach($obj as $key => $val) {
-                $new[$key] = $this->_objectToArray($val);
-            }
-        }
-        else $new = $obj;
-        return $new;
-    }
-
-    /**
-     * Get number of page for pagination.
-     */
-    private function _getNumberPagesToPaginator()
-    {
-        $numberRowsInDataBase = $this->_countRowsInDataBase();
-        $_SESSION['numberPages'] = round($numberRowsInDataBase/$_SESSION['onPage'], 0, PHP_ROUND_HALF_UP);
-    }
-
-    /**
-     * Count all rows in database.
-     *
-     * @return int $count.
-     */
-    private function _countRowsInDataBase()
-    {
-        $this->_model = new ProductModel($this->_connectToDataBase());
-        $data = $this->_model->getDataFromDataBase();
-        $count = count($data);
-        return $count;
     }
 }

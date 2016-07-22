@@ -45,6 +45,12 @@ class UserModel extends EntityModel
 
     }
 
+    /**
+     * Loading user, by email, to check him.
+     *
+     * @param $email
+     * @return bool
+     */
     public function loadByEmail($email)
     {
         $sql = "SELECT `password` FROM `" . $this->_tableName . "` WHERE " . $this->_email . " = ?";
@@ -58,6 +64,11 @@ class UserModel extends EntityModel
         }
     }
 
+    /**
+     * Get user password.
+     *
+     * @return mixed
+     */
     public function getPassword() {
         return $this->_data['password'];
     }

@@ -13,9 +13,9 @@ class SortBy
      */
     public function sortBy($get) {
         if(!empty($get)) {
-            return $this->_sortBy($_GET);
+            return $this->_formingGetRequest($get);
         } else {
-            return $this->_sortBy();
+            return $this->_formingGetRequest();
         }
     }
 
@@ -25,7 +25,7 @@ class SortBy
      * @param resource $get
      * @return array $orderBy
      */
-    private function _sortBy($get = null)
+    private function _formingGetRequest($get = null)
     {
         $validate = new Validate();
         if(null !== $get) {

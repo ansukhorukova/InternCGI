@@ -11,6 +11,9 @@ class AuthorizationController extends Controller
     protected $data = array();
 
 
+    /**
+     * Get authorization page.
+     */
     public function actionIndex()
     {
 
@@ -22,6 +25,9 @@ class AuthorizationController extends Controller
         }
     }
 
+    /**
+     * Check users and redirect them to the panel.
+     */
     public function actionCheckUser()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
