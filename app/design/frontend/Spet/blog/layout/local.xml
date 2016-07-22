@@ -6,21 +6,9 @@
               <!-- Remove the rwd parent's styles.css file -->
               <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
 
-           <!-- Add it again before your css/myStyle.css file -->
-           <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action>
+              <!-- Add it again before your css/myStyle.css file -->
+              <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action>
          </reference>
       </reference>
-         <block type="page/template_links" name="top.links" as="topLinks">
-             <action method="addLink" translate="label title">
-                 <label>Blog</label>
-                 <url>/blog/articles</url>
-                 <title>Blog</title>
-                 <prepare/>
-                 <urlParams/>
-                 <position>1</position>
-                 <liParams>class-name</liParams>
-                 <aParams></aParams>
-             </action>
-         </block>
      </default>
 </layout>

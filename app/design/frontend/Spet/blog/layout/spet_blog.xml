@@ -2,6 +2,16 @@
 <layout version="0.1.0">
     <default>
         <reference name="root">
+            <reference name="top.links">
+                <action method="addLink" translate="label title">
+                    <label>Blog</label>
+                    <url>/blog/articles</url>
+                    <title>Blog</title>
+                    <prepare/>
+                    <urlParams/>
+                    <position>1</position>
+                </action>
+            </reference>
             <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
             <reference name="head">
                 <action method="addItem"><type>skin_css</type><name>css/myStyle.css</name></action>
