@@ -31,6 +31,9 @@
         <reference name="head">
             <action method="setTitle"><title>Single Post</title></action>
         </reference>
+        <reference name="right">
+            <block type="blog/articles" name="product_sidebar" template="blog/sidebar.phtml" before=""/>
+        </reference>
         <reference name="content">
             <block type="blog/articles" name="single_post" template="blog/single.phtml" />
         </reference>

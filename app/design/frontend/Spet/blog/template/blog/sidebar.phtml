@@ -1,0 +1,11 @@
+<div>
+    <h1>Hello</h1>
+    <?php
+    $path = Mage::getBaseDir('media') . DS .'catalog';
+    //var_dump($products = $this->getProducts());exit;
+    $products = $this->getProducts();
+    foreach ($products as $product) {
+        var_dump($product);
+    }
+    ?>
+</div>

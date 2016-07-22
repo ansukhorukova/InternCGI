@@ -27,6 +27,21 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
     }
 
     /**
+     * Get all posts from database.
+     *
+     * @return object $posts
+     */
+    public function getProducts()
+    {
+        $products = Mage::getModel('catalog/product')->getCollection();
+        $products->getSelect()->join(array('pap' => 'products_and_posts'), 'pap.product_id = entity_id');
+        $products->getSelect()->join(array('bp' => 'blog_posts'), 'bp.blogpost_id = post_id');
+        
+
+        return $products;
+    }
+
+    /**
      * Get single post from database.
      *
      * @param array $params

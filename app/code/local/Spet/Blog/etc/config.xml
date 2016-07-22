@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Spet_Blog>
-            <version>1.0.0</version>
+            <version>1.0.3</version>
         </Spet_Blog>
     </modules>
     <frontend>
@@ -47,9 +47,15 @@
                     <articles>
                         <table>blog_posts</table>
                     </articles>
+                    <products>
+                        <table>products_and_posts</table>
+                    </products>
                     <customer>
                         <table>customer_entity</table>
                     </customer>
+                    <catalog>
+                        <table>catalog_product_entity</table>
+                    </catalog>
                 </entities>
             </blog_resource>
         </models>

@@ -42,4 +42,36 @@ class Spet_Blog_Block_Articles extends Mage_Core_Block_Template
         return '/media/blog/';
     }
 
+    /**
+     *
+     *
+     * @return
+     */
+    public function getProducts()
+    {
+        return Mage::getModel('blog/articles')->getProducts();
+    }
+
+   /* public function getPriceHtml($product, $displayMinimalPrice = false, $idSuffix = '', $showStuff = true)
+    {
+        $type_id = $product->getTypeId();
+        if (Mage::helper('catalog')->canApplyMsrp($product)) {
+            $realPriceHtml = $this->_preparePriceRenderer($type_id)
+                ->setProduct($product)
+                ->setDisplayMinimalPrice($displayMinimalPrice)
+                ->setIdSuffix($idSuffix)
+                ->setShowStuff($showStuff) //add this line
+                ->toHtml();
+            $product->setAddToCartUrl($this->getAddToCartUrl($product));
+            $product->setRealPriceHtml($realPriceHtml);
+            $type_id = $this->_mapRenderer;
+        }
+        return $this->_preparePriceRenderer($type_id)
+            ->setProduct($product)
+            ->setDisplayMinimalPrice($displayMinimalPrice)
+            ->setIdSuffix($idSuffix)
+            ->setShowStuff($showStuff) //add this line
+            ->toHtml();
+    }*/
+
 }

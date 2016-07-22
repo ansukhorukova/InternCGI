@@ -4,6 +4,10 @@
         <Spet_Blog>
             <active>true</active>
             <codePool>local</codePool>
+            <depends>
+                <Mage_Customer />
+                <Mage_Catalog />
+            </depends>
         </Spet_Blog>
     </modules>
 </config>
