@@ -1,6 +1,6 @@
 <?php
 
-class Spet_Blog_Block_Articles extends Mage_Core_Block_Template
+class Spet_Blog_Block_Articles extends Mage_Catalog_Block_Product
 {
     /**
      * Get all posts and show them.
@@ -49,7 +49,9 @@ class Spet_Blog_Block_Articles extends Mage_Core_Block_Template
      */
     public function getProducts()
     {
-        return Mage::getModel('blog/articles')->getProducts();
+        $params = $this->getRequest()->getParams();
+
+        return Mage::getModel('blog/articles')->getProducts($params['id']);
     }
 
    /* public function getPriceHtml($product, $displayMinimalPrice = false, $idSuffix = '', $showStuff = true)

@@ -17,7 +17,6 @@
                 <action method="addItem"><type>skin_css</type><name>css/myStyle.css</name></action>
             </reference>
         </reference>
-
     </default>
     <blog_articles_index translate="label">
         <reference name="head">

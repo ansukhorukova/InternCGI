@@ -31,12 +31,18 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
      *
      * @return object $posts
      */
-    public function getProducts()
+    public function getProducts($id)
     {
-        $products = Mage::getModel('catalog/product')->getCollection();
-        $products->getSelect()->join(array('pap' => 'products_and_posts'), 'pap.product_id = entity_id');
-        $products->getSelect()->join(array('bp' => 'blog_posts'), 'bp.blogpost_id = post_id');
-        
+        $entityId = Mage::getModel('blog/articles')->getCollection()->addFieldToFilter('blogpost_id', $id);
+        $entityId->getSelect()->join(array('pap' => 'products_and_posts'), "pap.post_id = $id");
+        $dataArray = $entityId->getData();
+        for($i = 0; $i < count($dataArray); $i++) {
+            $arrayEntityId[] = $dataArray[$i]['product_id'];
+        }
+
+        $products = Mage::getModel('catalog/product')->getCollection()
+            ->addFieldToFilter('entity_id', $arrayEntityId)
+            ->addAttributeToSelect(['id', 'name', 'short_description', 'image', 'url_path', 'price', 'special_price']);
 
         return $products;
     }
