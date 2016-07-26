@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Spet_Grid>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Spet_Grid>
+    </modules>
+</config>

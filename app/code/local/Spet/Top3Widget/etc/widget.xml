@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<widgets>
+    <Top3Widget_topsearches type="Top3Widget/topsearches">
+        <name>Top Searching</name>
+        <description type="desc">List Top Searches</description>
+    </Top3Widget_topsearches>
+</widgets>

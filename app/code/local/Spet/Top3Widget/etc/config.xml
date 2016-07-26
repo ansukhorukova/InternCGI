@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Spet_Top3Widget>
+            <version>1.0.0</version>
+        </Spet_Top3Widget>
+    </modules>
+    <global>
+        <blocks>
+            <Top3Widget>
+                <class>Spet_Top3Widget_Block</class>
+            </Top3Widget>
+        </blocks>
+        <helpers>
+            <Top3Widget>
+                <class>Spet_Top3Widget_Helper</class>
+            </Top3Widget>
+        </helpers>
+    </global>
+</config>

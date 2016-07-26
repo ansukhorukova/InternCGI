@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
+
     <modules>
         <Spet_Blog>
             <version>1.0.3</version>
         </Spet_Blog>
     </modules>
+
     <frontend>
         <routers>
             <blog>
@@ -23,7 +25,9 @@
             </updates>
         </layout>
     </frontend>
+
     <global>
+
         <resources>
             <spet_blog_setup>
                 <setup>
@@ -31,21 +35,26 @@
                 </setup>
             </spet_blog_setup>
         </resources>
+
         <blocks>
             <blog>
                 <class>Spet_Blog_Block</class>
             </blog>
         </blocks>
+
         <helpers>
-            <blog>
+            <spet_blog>
                 <class>Spet_Blog_Helper</class>
-            </blog>
+            </spet_blog>
         </helpers>
+
         <models>
+
             <blog>
                 <class>Spet_Blog_Model</class>
                 <resourceModel>blog_resource</resourceModel>
             </blog>
+
             <blog_resource>
                 <class>Spet_Blog_Model_Resource</class>
                 <entities>
@@ -63,6 +72,26 @@
                     </catalog>
                 </entities>
             </blog_resource>
+
         </models>
+
     </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <spet_blog before="Mage_Adminhtml">Spet_Blog_Adminhtml</spet_blog>
+                    </modules>
+                </args>
+                <blocks>
+                    <spet_blog>
+                        <class>Spet_Blog_Block_Adminhtml</class>
+                    </spet_blog>
+                </blocks>
+            </adminhtml>
+        </routers>
+    </admin>
+
 </config>
