@@ -36,6 +36,11 @@
                 <class>Spet_Blog_Block</class>
             </blog>
         </blocks>
+        <helpers>
+            <blog>
+                <class>Spet_Blog_Helper</class>
+            </blog>
+        </helpers>
         <models>
             <blog>
                 <class>Spet_Blog_Model</class>

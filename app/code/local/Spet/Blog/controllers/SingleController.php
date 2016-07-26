@@ -33,6 +33,7 @@ class Spet_Blog_SingleController extends Mage_Core_Controller_Front_Action
 
         if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
             try {
+                Mage::getModel('blog/articles')->deletePhoto($dataToSavePost);
                 $fileName = $_FILES['image']['name'];
                 $fileExt = strtolower(substr(strrchr($fileName, ".") ,1));
                 $fileNameWithOutExtension = rtrim($fileName, $fileExt);

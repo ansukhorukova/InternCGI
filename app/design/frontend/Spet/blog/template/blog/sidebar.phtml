@@ -5,9 +5,12 @@
     //var_dump($products = $this->getProducts());exit;
     $products = $this->getProducts();
     foreach ($products as $product) {
+        $categoryId = $product->getCategoryIds();
 
-        echo "<a href='" . Mage::getBaseUrl() . $product->getUrlPath() . "'>" . $product->getName() . "</a>";
-        echo "<a href='" . Mage::getBaseUrl() . $product->getUrlPath() . "'>" . 
+        $url = Mage::helper('blog')->rewrittenProductUrl($product->getId(), $categoryId[0], $product->getStoreId());
+
+        echo "<a href='" . Mage::getBaseUrl() . $url . "'>" . $product->getName() . "</a>";
+        echo "<a href='" . Mage::getBaseUrl() . $url . "'>" .
              "<img src='" . $path . $product->getImage() . "' width='100px'></a>";
         echo $this->getPriceHtml($product);
         echo $product->getShortDescription();
