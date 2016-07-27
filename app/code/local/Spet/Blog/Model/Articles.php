@@ -15,7 +15,7 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
      *
      * @return object $posts
      */
-    public function getAllPosts($orderBy)
+    public function getAllPosts($orderBy = null)
     {
         $posts = Mage::getModel('blog/articles')->getCollection()->setOrder($orderBy['subject'], $orderBy['method']);
         $posts->getSelect()->join(array('ce' => 'customer_entity'), 'ce.entity_id = author_id');

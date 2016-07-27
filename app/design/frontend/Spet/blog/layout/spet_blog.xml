@@ -23,7 +23,7 @@
             <action method="setTitle"><title>All Posts</title></action>
         </reference>
         <reference name="content">
-            <block type="blog/articles" name="articles" template="blog/main.phtml" />
+            <block type="spet_blog/articles" name="articles" template="blog/main.phtml" />
         </reference>
     </blog_articles_index>
     <blog_single_single translate="label">
@@ -31,10 +31,10 @@
             <action method="setTitle"><title>Single Post</title></action>
         </reference>
         <reference name="right">
-            <block type="blog/articles" name="product_sidebar" template="blog/sidebar.phtml" before=""/>
+            <block type="spet_blog/articles" name="product_sidebar" template="blog/sidebar.phtml" before=""/>
         </reference>
         <reference name="content">
-            <block type="blog/articles" name="single_post" template="blog/single.phtml" />
+            <block type="spet_blog/articles" name="single_post" template="blog/single.phtml" />
         </reference>
     </blog_single_single>
     <blog_single_post translate="label">
@@ -42,7 +42,7 @@
             <action method="setTitle"><title>Post</title></action>
         </reference>
         <reference name="content">
-            <block type="blog/articles" name="add_or_edit_post" template="blog/post.phtml" />
+            <block type="spet_blog/articles" name="add_or_edit_post" template="blog/post.phtml" />
         </reference>
     </blog_single_post>
 </layout>

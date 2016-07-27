@@ -37,9 +37,9 @@
         </resources>
 
         <blocks>
-            <blog>
+            <spet_blog>
                 <class>Spet_Blog_Block</class>
-            </blog>
+            </spet_blog>
         </blocks>
 
         <helpers>
@@ -85,11 +85,6 @@
                         <spet_blog before="Mage_Adminhtml">Spet_Blog_Adminhtml</spet_blog>
                     </modules>
                 </args>
-                <blocks>
-                    <spet_blog>
-                        <class>Spet_Blog_Block_Adminhtml</class>
-                    </spet_blog>
-                </blocks>
             </adminhtml>
         </routers>
     </admin>

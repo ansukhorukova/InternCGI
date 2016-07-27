@@ -31,8 +31,8 @@ class Spet_Grid_Model_Observer {
                 array(
                     'header'   => Mage::helper('sales')->__('Shipping Method'),
                     'align'    => 'left',
+                    'type'     => 'options',
                     'options'  => $shippingMethods,
-                    'type'     => 'text',
                     'index'    => 'shipping_method',
                     'filter_index'    => 'shipping_method',
                 ),

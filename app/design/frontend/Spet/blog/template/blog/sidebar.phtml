@@ -7,7 +7,7 @@
     foreach ($products as $product) {
         $categoryId = $product->getCategoryIds();
 
-        $url = Mage::helper('blog/link')->rewrittenProductUrl($product->getId(), $categoryId[0], $product->getStoreId());
+        $url = Mage::helper('spet_blog/link')->rewrittenProductUrl($product->getId(), $categoryId[0], $product->getStoreId());
 
         echo "<a href='" . Mage::getBaseUrl() . $url . "'>" . $product->getName() . "</a>";
         echo "<a href='" . Mage::getBaseUrl() . $url . "'>" .
