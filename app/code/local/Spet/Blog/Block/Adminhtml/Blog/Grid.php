@@ -12,6 +12,38 @@ class Spet_Blog_Block_Adminhtml_Blog_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->setUseAjax(true);
     }
 
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('blogpost_id');
+        $this->getMassactionBlock()->setFormFieldName('blogpost_id');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label'=> Mage::helper('spet_blog')->__('Delete'),
+            'url'  => $this->getUrl('*/*/delete', array('' => '')),
+            'confirm' => Mage::helper('spet_blog')->__('Are you sure?')
+        ));
+
+        $statuses = $this->getOptionArray();
+
+
+        //array_unshift($statuses, array('label'=>'', 'value'=>''));
+        $this->getMassactionBlock()->addItem('status', array(
+            'label'=> Mage::helper('catalog')->__('Change status'),
+            'url'  => $this->getUrl('*/*/status', array('_current'=>true)),
+            'additional' => array(
+                'visibility' => array(
+                    'name' => 'status',
+                    'type' => 'select',
+                    'class' => 'required-entry',
+                    'label' => Mage::helper('catalog')->__('Status'),
+                    'values' => $statuses
+                    )
+            )));
+
+        return $this;
+
+    }
+
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('blog/articles')->getCollection();
@@ -35,6 +67,16 @@ class Spet_Blog_Block_Adminhtml_Blog_Grid extends Mage_Adminhtml_Block_Widget_Gr
             'width'        => '10px',
             'align'     => 'center',
             'index'  => 'blogpost_id'
+        ));
+
+        $this->addColumn('status', array(
+            'header' => $helper->__('Status'),
+            'width'        => '10px',
+            'align'     => 'center',
+            'type'      => 'options',
+            'options'   => $this->getOptionArray(),
+            'filter_condition_callback' => array($this, '_sortStatus'),
+            'renderer'     => 'Spet_Blog_Block_Adminhtml_Renderer_Status'
         ));
 
         $this->addColumn('title', array(
@@ -81,7 +123,12 @@ class Spet_Blog_Block_Adminhtml_Blog_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
     public function getRowUrl($row)
     {
-        return $this->getUrl('*/*/edit', array('blogpost_id'=> $row->getBlogpostId()));
+        return $this->getUrl('*/*/edit', array('blogpost_id' => $row->getBlogpostId()));
+    }
+
+    public function getGridUrl()
+    {
+        return $this->getUrl('*/*/grid', array('_current'=>true));
     }
 
     protected function _nameFilter($collection, $column)
@@ -96,7 +143,22 @@ class Spet_Blog_Block_Adminhtml_Blog_Grid extends Mage_Adminhtml_Block_Widget_Gr
                 ->where( "ce1.value like ? OR ce2.value like ?"
                     , "%$value[$i]%");
         }
+        return $this;
+    }
+
+    protected function _sortStatus($collection, $column)
+    {
+        $value = $column->getFilter()->getValue();
+
+        $this->getCollection()->getSelect()->where('status = ?', "$value");
 
         return $this;
+    }
+
+    public function getOptionArray()
+    {
+        $array[0] = 'Off';
+        $array[1] = 'On';
+        return $array;
     }
 }

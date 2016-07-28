@@ -4,7 +4,7 @@ class Spet_Blog_Block_Adminhtml_Blog_Edit extends Mage_Adminhtml_Block_Widget_Fo
     public function __construct()
     {
         parent::__construct();
-        $this->_objectId = 'blockpost_id';
+        $this->_objectId = 'blogpost_id';
         $this->_blockGroup = 'spet_blog';
         $this->_controller = 'adminhtml_blog';
         $this->_mode = 'edit';

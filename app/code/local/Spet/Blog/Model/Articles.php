@@ -23,6 +23,7 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
                              'ce1.entity_id = author_id AND ce1.attribute_id = 5', 'ce1.value as name');
         $posts->getSelect()->join(array('ce2' => 'customer_entity_varchar'),
                              'ce2.entity_id = author_id AND ce2.attribute_id = 7', 'ce2.value as lname');
+        $posts->getSelect()->where("`status` = '1'");
         return $posts;
     }
 
@@ -193,8 +194,8 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
      *
      * @param array $data
      * @param array $file
+     * @return array $data
      */
-
     public function savePhotoFileInDataBase($data, $file)
     {
         if(isset($data['delete_photo']) && $data['delete_photo'] == 'on') {

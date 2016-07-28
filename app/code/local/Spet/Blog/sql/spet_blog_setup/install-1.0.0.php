@@ -24,6 +24,9 @@ $table = $installer->getConnection()
     ->addColumn('image', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
         'nullable'  => true,
     ))
+    ->addColumn('status', Varien_Db_Ddl_Table::TYPE_VARCHAR, 2, array(
+        'nullable'  => false,
+    ))
     ->addColumn('date', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
         'nullable'  => false,
         'default' => Varien_Db_Ddl_Table::TIMESTAMP_UPDATE

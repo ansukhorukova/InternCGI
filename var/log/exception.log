@@ -5646,3 +5646,29 @@ Stack trace:
 #12 /home/spet/www/magento1/app/Mage.php(684): Mage_Core_Model_App->run(Array)
 #13 /home/spet/www/magento1/index.php(83): Mage::run('', 'store')
 #14 {main}
+2016-07-28T15:12:48+00:00 ERR (3): 
+exception 'Mage_Core_Exception' with message 'Invalid block type: Mage_Inchoo_Orders_Block_Adminhtml_Sales_Order_Grid' in /home/spet/www/magento1/app/Mage.php:595
+Stack trace:
+#0 /home/spet/www/magento1/app/code/core/Mage/Core/Model/Layout.php(495): Mage::throwException('Invalid block t...')
+#1 /home/spet/www/magento1/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('inchoo_orders/a...', Array)
+#2 /home/spet/www/magento1/app/code/local/Spet/Blog/controllers/Adminhtml/BlogController.php(90): Mage_Core_Model_Layout->createBlock('inchoo_orders/a...')
+#3 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Spet_Blog_Adminhtml_BlogController->gridAction()
+#4 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('grid')
+#5 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#6 /home/spet/www/magento1/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#7 /home/spet/www/magento1/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#8 /home/spet/www/magento1/index.php(83): Mage::run('', 'store')
+#9 {main}
+2016-07-28T15:13:03+00:00 ERR (3): 
+exception 'Mage_Core_Exception' with message 'Invalid block type: Mage_Inchoo_Orders_Block_Adminhtml_Sales_Order_Grid' in /home/spet/www/magento1/app/Mage.php:595
+Stack trace:
+#0 /home/spet/www/magento1/app/code/core/Mage/Core/Model/Layout.php(495): Mage::throwException('Invalid block t...')
+#1 /home/spet/www/magento1/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('inchoo_orders/a...', Array)
+#2 /home/spet/www/magento1/app/code/local/Spet/Blog/controllers/Adminhtml/BlogController.php(90): Mage_Core_Model_Layout->createBlock('inchoo_orders/a...')
+#3 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Spet_Blog_Adminhtml_BlogController->gridAction()
+#4 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('grid')
+#5 /home/spet/www/magento1/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#6 /home/spet/www/magento1/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#7 /home/spet/www/magento1/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#8 /home/spet/www/magento1/index.php(83): Mage::run('', 'store')
+#9 {main}
