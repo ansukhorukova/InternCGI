@@ -26,6 +26,12 @@
         </events>
     </adminhtml>
     <global>
+        <blocks>
+            <spet_grid>
+                <class>Spet_Grid_Block</class>
+            </spet_grid>
+        </blocks>
+
         <resources>
             <spet_grid_setup>
                 <setup>

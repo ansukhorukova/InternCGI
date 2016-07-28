@@ -2,7 +2,6 @@
     <h1>Hello</h1>
     <?php
     $path = Mage::getBaseUrl('media') . 'catalog/product';
-    //var_dump($products = $this->getProducts());exit;
     $products = $this->getProducts();
     foreach ($products as $product) {
         $categoryId = $product->getCategoryIds();

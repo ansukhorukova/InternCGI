@@ -26,18 +26,15 @@ class Spet_Grid_Model_Observer {
                 $shippingMethods[$code] = $shippingTitle;
             }
 
-            $block->addColumnAfter(
-                'shipping_method',
-                array(
-                    'header'   => Mage::helper('sales')->__('Shipping Method'),
-                    'align'    => 'left',
-                    'type'     => 'options',
-                    'options'  => $shippingMethods,
-                    'index'    => 'shipping_method',
-                    'filter_index'    => 'shipping_method',
-                ),
-                'shipping_name'
-            );
+            $block->addColumnAfter('shipping_method', array(
+                'header'   => Mage::helper('sales')->__('Shipping Method'),
+                'type'         => 'options',
+                'options'  => $shippingMethods,
+                'index'        => 'shipping_method',
+                'filter_condition_callback' => array($this, 'filterShippings'),
+                'renderer'     => 'Spet_Grid_Block_Adminhtml_Renderer_Shipping'
+            ), 'shipping_name');
+
 
             //similary you can addd new columns
             //...
@@ -55,7 +52,19 @@ class Spet_Grid_Model_Observer {
     {
         $collection = $observer->getOrderGridCollection();
         $select = $collection->getSelect();
-
         $select->joinLeft(array('shipping' => 'sales_flat_order'), 'shipping.entity_id = main_table.entity_id',array('shipping_method' => 'shipping_description'));
+    }
+
+    public function filterShippings($collection, $column)
+    {
+        if (!$value = $column->getFilter()->getValue())
+        {
+            return $this;
+        }
+            $collection->getSelect()
+                ->where( "shipping.shipping_method like ?", "%$value%");
+
+
+        return $this;
     }
 }
