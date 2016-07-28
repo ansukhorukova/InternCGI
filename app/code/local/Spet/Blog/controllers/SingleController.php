@@ -27,34 +27,8 @@ class Spet_Blog_SingleController extends Mage_Core_Controller_Front_Action
     {
         $dataToSavePost = $this->getRequest()->getPost();
 
-        if(isset($dataToSavePost['delete_photo']) && $dataToSavePost['delete_photo'] == 'on') {
-            Mage::getModel('blog/articles')->deletePhoto($dataToSavePost);
-        }
-
         if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
-            try {
-                Mage::getModel('blog/articles')->deletePhoto($dataToSavePost);
-                $fileName = $_FILES['image']['name'];
-                $fileExt = strtolower(substr(strrchr($fileName, ".") ,1));
-                $fileNameWithOutExtension = rtrim($fileName, $fileExt);
-                $fileName = $fileNameWithOutExtension . time() . '.' . $fileExt;
-                $dataToSavePost['imageName'] = $fileName;
-
-                $uploader = new Varien_File_Uploader('image');
-                //add more file types you want to allow
-                $uploader->setAllowedExtensions(array('jpg', 'png', 'gif'));
-                $uploader->setAllowRenameFiles(false);
-                $uploader->setFilesDispersion(false);
-                $path = Mage::getBaseDir('media') . DS . 'blog';
-                if(!is_dir($path)){
-                    mkdir($path, 0777, true);
-                }
-                $uploader->save($path . DS, $fileName );
-
-            } catch (Exception $e) {
-                Mage::getSingleton('customer/session')->addError($e->getMessage());
-                $error = true;
-            }
+            $dataToSavePost = Mage::getModel('blog/articles')->savePhotoFileInDataBase($dataToSavePost, $_FILES);
         }
 
         if(!isset($dataToSavePost['author_id']) && !isset($dataToSavePost['blogpost_id'])) {

@@ -39,7 +39,7 @@ class Spet_Blog_Block_Articles extends Mage_Catalog_Block_Product
 
     public function getPathToImage()
     {
-        return '/media/blog/';
+        return Mage::getBaseUrl('media');
     }
 
     /**

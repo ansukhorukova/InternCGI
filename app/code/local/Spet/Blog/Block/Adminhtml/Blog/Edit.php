@@ -14,7 +14,7 @@ class Spet_Blog_Block_Adminhtml_Blog_Edit extends Mage_Adminhtml_Block_Widget_Fo
             'onclick' => 'saveAndContinueEdit()',
             'class' => 'save',
         ), -100);
-        $this->_updateButton('save', 'label', Mage::helper('spet_blog')->__('Save Example'));
+        $this->_updateButton('save', 'label', Mage::helper('spet_blog')->__('Save Post'));
 
         $this->_formScripts[] = "
             function toggleEditor() {

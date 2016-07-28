@@ -53,6 +53,21 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
     }
 
     /**
+     * Get products Id from database to admin panel.
+     *
+     * @return object $posts
+     */
+    public function getProductsToAdmin()
+    {
+        $products = Mage::getModel('catalog/product')->getCollection()
+            ->addAttributeToSelect(['id',
+                'name',
+                ]);
+        $products->getSelect();
+        return $products;
+    }
+
+    /**
      * Get single post from database.
      *
      * @param array $params
@@ -149,7 +164,7 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
             $this->save();
             $file = $fileFromDataBase;
         }
-        $path = Mage::getBaseDir('media') . DS . 'blog/' . $file;
+        $path = Mage::getBaseDir('media') . DS . $file;
         if(!is_dir($path) && file_exists($path)) {
             unlink($path);
         }
@@ -170,5 +185,47 @@ class Spet_Blog_Model_Articles extends Mage_Core_Model_Abstract
             $this->setImage($data['imageName']);
         }
         $this->save();
+    }
+
+
+    /**
+     * Set file in dir
+     *
+     * @param array $data
+     * @param array $file
+     */
+
+    public function savePhotoFileInDataBase($data, $file)
+    {
+        if(isset($data['delete_photo']) && $data['delete_photo'] == 'on') {
+            Mage::getModel('blog/articles')->deletePhoto($data);
+        }
+
+        if($data['blogpost_id'] != '') {
+            Mage::getModel('blog/articles')->deletePhoto($data);
+        }
+        try {
+            $fileName = $file['image']['name'];
+            $fileExt = strtolower(substr(strrchr($fileName, ".") ,1));
+            $fileNameWithOutExtension = rtrim($fileName, $fileExt);
+            $fileName = $fileNameWithOutExtension . time() . '.' . $fileExt;
+            $uploader = new Varien_File_Uploader('image');
+            //add more file types you want to allow
+            $uploader->setAllowedExtensions(array('jpg', 'png', 'gif'));
+            $uploader->setAllowRenameFiles(false);
+            $uploader->setFilesDispersion(false);
+            $path = Mage::getBaseDir('media') . DS . 'blog';
+            if(!is_dir($path)){
+                mkdir($path, 0777, true);
+            }
+            $uploader->save($path . DS, $fileName);
+            $data['imageName'] = 'blog/' . $fileName;
+
+        } catch (Exception $e) {
+            Mage::getSingleton('customer/session')->addError($e->getMessage());
+            $error = true;
+        }
+
+        return $data;
     }
 }

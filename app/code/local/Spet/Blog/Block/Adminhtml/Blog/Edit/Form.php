@@ -7,8 +7,9 @@ class Spet_Blog_Block_Adminhtml_Blog_Edit_Form extends Mage_Adminhtml_Block_Widg
         if (Mage::getSingleton('adminhtml/session')->getExempleData()) {
             $data = Mage::getSingleton('adminhtml/session')->getExempleData();
             Mage::getSingleton('adminhtml/session')->getExempleData(null);
-        } elseif (Mage::registry('blog')) {
+        } elseif (Mage::registry('blog') && Mage::registry('products')) {
             $data = Mage::registry('blog')->getData();
+            $products = Mage::registry('products');
         } else {
             $data = array();
         }
@@ -59,12 +60,31 @@ class Spet_Blog_Block_Adminhtml_Blog_Edit_Form extends Mage_Adminhtml_Block_Widg
 
         $fieldset->addField('image', 'image', array(
             'label' 	=> Mage::helper('spet_blog')->__('Image'),
-            'style' 	=> 'width: 850px; height: 500px;',
-            'name'  	=> '<img src="' . Mage::getBaseDir('media') . 'blog/' . 'image">',
+            //'value'  	=> '<img src="' . Mage::getBaseUrl('media') . 'image">',
+            'name'      => 'image'
+        ));
+
+        $fieldset->addField('products', 'multiselect', array(
+            'label' 	=> Mage::helper('spet_blog')->__('Products'),
+            'required'  => true,
+            'values'  	=> $this->_toOptionArray($products),
+            'name'      => 'products'
         ));
 
         $form->setValues($data);
 
         return parent::_prepareForm();
+    }
+
+    protected function _toOptionArray($products)
+    {
+        foreach ($products as $product) {
+            $productsArray[] = [
+                'value' => $product->getEntityId(),
+                'label' => $product->getName()
+                ];
+        }
+
+        return $productsArray;
     }
 }
