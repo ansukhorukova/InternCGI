@@ -10,10 +10,5 @@ class Spet_Blog_Block_Adminhtml_Blog extends Mage_Adminhtml_Block_Widget_Grid_Co
 
         parent::__construct();
 
-//        $this->_addButton('save', array(
-//            'label' => Mage::helper('adminhtml')->__('Save Edit'),
-//            'onclick'   => 'saveEdit()',
-//            'class'     => 'save',
-//        ));
     }
 }

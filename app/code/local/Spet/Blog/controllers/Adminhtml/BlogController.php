@@ -61,7 +61,7 @@ class Spet_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Actio
 
     public function deleteAction()
     {
-        $blogpost_ids = $this->getRequest()->getParam('blogpost_id');      // $this->getMassactionBlock()->setFormFieldName('tax_id'); from Mage_Adminhtml_Block_Tax_Rate_Grid
+        $blogpost_ids = $this->getRequest()->getParam('blogpost_id');
         if(!is_array($blogpost_ids)) {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('spet_blog')->__('Please select posts.'));
         } else {

@@ -29,20 +29,6 @@ class Spet_Blog_Block_Adminhtml_Blog_Edit_Form extends Mage_Adminhtml_Block_Widg
             'legend' => Mage::helper('spet_blog')->__('Edit post')
         ));
 
-//        $fieldset->addField('name', 'text', array(
-//            'label' 	=> Mage::helper('spet_blog')->__('Name'),
-//            'class' 	=> 'required-entry',
-//             'required'  => true,
-//             'name'  	=> 'name',
-//        ));
-//
-//       $fieldset->addField('lname', 'text', array(
-//           'label' 	=> Mage::helper('spet_blog')->__('Last Name'),
-//           'class' 	=> 'required-entry',
-//           'required'  => true,
-//           'name'  	=> 'lname',
-//       ));
-
         $fieldset->addField('title', 'text', array(
            'label' 	=> Mage::helper('spet_blog')->__('Title'),
            'class' 	=> 'required-entry',

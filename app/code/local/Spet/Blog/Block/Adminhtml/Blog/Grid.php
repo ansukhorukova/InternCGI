@@ -25,8 +25,6 @@ class Spet_Blog_Block_Adminhtml_Blog_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
         $statuses = $this->getOptionArray();
 
-
-        //array_unshift($statuses, array('label'=>'', 'value'=>''));
         $this->getMassactionBlock()->addItem('status', array(
             'label'=> Mage::helper('catalog')->__('Change status'),
             'url'  => $this->getUrl('*/*/status', array('_current'=>true)),
