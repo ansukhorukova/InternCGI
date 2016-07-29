@@ -444,6 +444,8 @@ final class Mage
      */
     public static function dispatchEvent($name, array $data = array())
     {
+//        $fl = fopen('/home/spet/www/events.txt', 'w+');
+//        fwrite($fl, $name . "\n");
         Varien_Profiler::start('DISPATCH EVENT:'.$name);
         $result = self::app()->dispatchEvent($name, $data);
         Varien_Profiler::stop('DISPATCH EVENT:'.$name);

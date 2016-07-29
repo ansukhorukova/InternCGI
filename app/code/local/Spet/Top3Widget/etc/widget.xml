@@ -1,7 +1,26 @@
 <?xml version="1.0" ?>
 <widgets>
-    <Top3Widget_topsearches type="Top3Widget/topsearches">
-        <name>Top Searching</name>
+    <top3Widget_topsearches type="top3Widget/topsearches">
+        <name>Top 3 products</name>
         <description type="desc">List Top Searches</description>
-    </Top3Widget_topsearches>
+        <parameters>
+            <widget_title translate="label">
+                <label>Title</label>
+                <sort_order>1</sort_order>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+            </widget_title>
+            <widget_number translate="label">
+                <label>Number Products</label>
+                <sort_order>2</sort_order>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+            </widget_number>
+        </parameters>
+    </top3Widget_topsearches>
+    <parameters>
+
+    </parameters>
 </widgets>

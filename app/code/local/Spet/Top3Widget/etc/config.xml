@@ -6,15 +6,65 @@
         </Spet_Top3Widget>
     </modules>
     <global>
+        <resources>
+            <spet_top3Widget_setup>
+                <setup>
+                    <module>Spet_Top3Widget</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+            </spet_top3Widget_setup>
+        </resources>
+
         <blocks>
-            <Top3Widget>
+            <top3Widget>
                 <class>Spet_Top3Widget_Block</class>
-            </Top3Widget>
+            </top3Widget>
         </blocks>
+
+        <models>
+            <top3Widget>
+                <class>Spet_Top3Widget_Model</class>
+            </top3Widget>
+        </models>
+
         <helpers>
-            <Top3Widget>
+            <spet_top3Widget>
                 <class>Spet_Top3Widget_Helper</class>
-            </Top3Widget>
+            </spet_top3Widget>
         </helpers>
     </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <spet_top3Widget before="Mage_Adminhtml">Spet_Top3Widget_Adminhtml</spet_top3Widget>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <is_top>
+                                            <title>Education</title>
+                                        </is_top>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
 </config>
