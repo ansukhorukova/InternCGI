@@ -56,6 +56,9 @@ class Spet_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Actio
         foreach ($status['blogpost_id'] as $post) {
             $rateModel->load($post)->setStatus($status['status'])->save();
         }
+        Mage::getSingleton('adminhtml/session')->addSuccess(
+            Mage::helper('spet_blog')->__('Status of %d record(s) were changed.', count($status['blogpost_id']))
+        );
         $this->_redirect('*/*/index');
     }
 

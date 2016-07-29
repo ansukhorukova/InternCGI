@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Spet_Price>
+            <version>1.0.0</version>
+        </Spet_Price>
+    </modules>
+    <adminhtml>
+        <events>
+
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <spet_price_core_block_abstract_prepare_layout_before>
+                        <class>Spet_Price_Model_Observer</class>
+                        <method>addMassActionToCatalogProduct</method>
+                    </spet_price_core_block_abstract_prepare_layout_before>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+
+        </events>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <spet_price before="Mage_Adminhtml">Spet_Price_Adminhtml</spet_price>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <global>
+        <blocks>
+            <spet_price>
+                <class>Spet_Price_Block</class>
+            </spet_price>
+        </blocks>
+
+        <helpers>
+            <spet_price>
+                <class>Spet_Price_Helper</class>
+            </spet_price>
+        </helpers>
+    </global>
+</config>

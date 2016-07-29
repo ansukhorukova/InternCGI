@@ -75,6 +75,17 @@
 
         </models>
 
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <spet_blog_blogconfig>
+                        <class>blog/observer</class>
+                        <method>showStatus</method>
+                    </spet_blog_blogconfig>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+        </events>
+
     </global>
 
     <admin>
@@ -88,5 +99,27 @@
             </adminhtml>
         </routers>
     </admin>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <blogconfig>
+                                            <title>Blog Config</title>
+                                        </blogconfig>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
 
 </config>
