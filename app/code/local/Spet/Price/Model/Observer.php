@@ -2,6 +2,12 @@
 
 class Spet_Price_Model_Observer
 {
+    /**
+     * Observer executed at the event when opened catalog product page.
+     *    Adds new mass action, and redirects to executable controller.
+     *
+     * @param resource $observer
+     */
     public function addMassActionToCatalogProduct($observer)
     {
         $block = $observer->getEvent()->getBlock();
@@ -32,13 +38,21 @@ class Spet_Price_Model_Observer
 
     }
 
+    /**
+     * Get array of options to change price.
+     *
+     * @return array $options.
+     */
     public function getOptionArray()
     {
-        $array['sum'] = '+ n';
-        $array['sub'] = '- n';
-        $array['sumPercent'] = '+ n%';
-        $array['subPercent'] = '- n%';
-        $array['multiply'] = '* n';
-        return $array;
+        $options = [
+            'sum'        => '+ n',
+            'sub'        => '- n',
+            'sumPercent' => '+ n%',
+            'subPercent' => '- n%',
+            'multiply'   => '* n'
+        ];
+
+        return $options;
     }
 }

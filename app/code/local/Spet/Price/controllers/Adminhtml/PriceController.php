@@ -2,6 +2,10 @@
 
 class Spet_Price_Adminhtml_PriceController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * Implement change price, save it in database
+     *     and redirect to the catalog product page.
+     */
     public function indexAction()
     {
         $data = $this->getRequest()->getParams();
@@ -17,7 +21,6 @@ class Spet_Price_Adminhtml_PriceController extends Mage_Adminhtml_Controller_Act
         foreach ($data['product'] as $product) {
             $oldPrice = $catalogModel->load($product)->getPrice();
             $number = $data['number'];
-            $percentOfPrice = $oldPrice * $number/100;
 
             switch ($data['expression']) {
                 case 'sum':
@@ -27,10 +30,10 @@ class Spet_Price_Adminhtml_PriceController extends Mage_Adminhtml_Controller_Act
                     $priceToSave = $oldPrice - $number;
                     break;
                 case 'sumPercent':
-                    $priceToSave = $oldPrice + $percentOfPrice;
+                    $priceToSave = $oldPrice + ($oldPrice * $number/100);
                     break;
                 case 'subPercent':
-                    $priceToSave = $oldPrice - $percentOfPrice;
+                    $priceToSave = $oldPrice - ($oldPrice * $number/100);
                     break;
                 case 'multiply':
                     $priceToSave = $oldPrice * $number;
